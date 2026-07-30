@@ -192,7 +192,7 @@ def role_selection_screen():
         <div class="hero-box">
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hika Way itti Nagaan Dhuftan!
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hika Way itti Nagaan Dhuftan!</1i>
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
