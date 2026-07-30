@@ -4,7 +4,7 @@ import streamlit as str_app
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
-    page_title="Hiika Way (HW) App", page_icon="📖", layout="centered"
+    page_title="Hika Way (HW) App", page_icon="📖", layout="centered"
 )
 
 # CUSTOM STYLING (Background, Border, and Cover Page UI Enhancements)
@@ -98,13 +98,9 @@ str_app.markdown(
     .welcome-img-text {
         font-weight: bold;
         color: #004d40;
-        margin-top: 10px;
-        font-size: 1.15rem;
-        text-align: center;
-        background-color: #e0f2f1;
-        padding: 8px;
-        border-radius: 8px;
-        border: 2px solid #80cbc4;
+        margin-top: 8px;
+        font-size: 1.05rem;
+        text-align: left;
     }
     </style>
 """,
@@ -166,7 +162,7 @@ def role_selection_screen():
         <div class="hero-box">
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
@@ -174,14 +170,14 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Suuraa harka bitaatti galchuu fi jalaan "WELL COME ! TO HIKA WAY APP" barreessuu
-    col_img, col_space = str_app.columns([1.2, 2])
+    # Suuraa bitaatti argamu size isaa xiqqeessuuf width fayyadamneerra
+    col_img, col_space = str_app.columns([1, 2.5])
     with col_img:
         try:
-            str_app.image("makaa qixxeessaa.jpg", use_container_width=True)
+            str_app.image("makaa qixxeessaa.jpg", width=180)
             str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
         except Exception:
-            str_app.warning("Suuraan 'makaa qixxeessaa.jpg' jedhu kuusaa (folder) keessatti hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
+            str_app.warning("Suuraan 'maqaa qixxeessaa.jpg' jedhu hin argamne.")
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
