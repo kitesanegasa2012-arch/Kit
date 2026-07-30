@@ -193,7 +193,6 @@ def role_selection_screen():
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
                 Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu "Hika Way" Kitesa Negasa tiin kalaqameetti Nagaan Dhuftan!</1i>
-               
             </p>
         </div>
     """,
