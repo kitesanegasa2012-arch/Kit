@@ -1,0 +1,562 @@
+[
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 1",
+        "text": "Lakkoofsi 145 fi lakkoofsi 234 walitti dabaluun meeqa fidu?",
+        "options": [
+            "A) 379",
+            "B) 369",
+            "C) 389",
+            "D) 359"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 2",
+        "text": "Buufanni fayyaa magaalaa tokkoo torban tokko keessatti marsaa jalqabaatiin namoota 420 tajaajile. Marsaa 2ffaadhaan immoo namoonni 280 dabalata tajaajilaman.",
+        "question": "Gaaffii: Waliigalaan namoonni tajaajilaman meeqa?",
+        "expected": [
+            "dhibba torba",
+            "700"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 3",
+        "text": "Lakkoofsa 650 irraa 275 hirisuun meeqa fida?",
+        "options": [
+            "A) 375",
+            "B) 385",
+            "C) 365",
+            "D) 395"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 4",
+        "text": "Mana kuusaa midhaanii keessatti boqqolloo kiishni 850 ture. Kana keessaa kiishni 320 gabaaf ba'e.",
+        "question": "Gaaffii: Kiishni boqqolloo mana kuusaa keessatti hafe meeqa?",
+        "expected": [
+            "shantamii dhibba shan",
+            "530"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu Salphaa 5",
+        "text": "Bu'aan baay'isuu 15 × 4 meeqa?",
+        "options": [
+            "A) 60",
+            "B) 50",
+            "C) 70",
+            "D) 55"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 6",
+        "text": "Qonnaan bulaan tokko lafa isaa irratti ooyiruu sagal qaba. Ooyiruu tokko irraa gaarii midhaanii 45 sassaabe.",
+        "question": "Gaaffii: Waliigalaan gaariin midhaanii sassaabame meeqa?",
+        "expected": [
+            "dhibba afur fi shantama",
+            "405"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 7",
+        "text": "Bu'aan herrega 432 + 256 meeqa?",
+        "options": [
+            "A) 688",
+            "B) 678",
+            "C) 698",
+            "D) 658"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 8",
+        "text": "Lakkoofsi 1000 dura kan dhufu isa kam?",
+        "options": [
+            "A) 999",
+            "B) 990",
+            "C) 909",
+            "D) 1001"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 9",
+        "text": "Mana barumsaa tokko keessatti barattoonni dhiiraa 512 fi intalli 488 jiru.",
+        "question": "Gaaffii: Waliigalaan barattoonni mana barumsichaa meeqa?",
+        "expected": [
+            "kuma tokko",
+            "1000"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 10",
+        "text": "Bu'aan hirisuu 900 - 435 meeqa?",
+        "options": [
+            "A) 465",
+            "B) 475",
+            "C) 455",
+            "D) 485"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 11",
+        "text": "Konkolaataan fe'umsaa tokko sibiila kiiloo kiraamii 750 fe'ee deemaa ture. Kiiloo kiraamiin 225 karaatti bu'e.",
+        "question": "Gaaffii: Sibiilli konkolaaticha keessatti hafe ulfaatina meeqa qaba?",
+        "expected": [
+            "kiiloo kiraamii dhibba shanii fi shantami",
+            "525"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 12",
+        "text": "Deebiin 12 × 5 meeqa?",
+        "options": [
+            "A) 60",
+            "B) 55",
+            "C) 65",
+            "D) 50"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Gurguddaa 13",
+        "text": "Lakkoofota armaan gadii keessaa isa kamtu hundarra guddaa dha?",
+        "options": [
+            "A) 842",
+            "B) 824",
+            "C) 482",
+            "D) 804"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 14",
+        "text": "Paakeetiin maallaqaa tokko qarshii 96 qaba. Namoonni 8 wal simanii qooddatan.",
+        "question": "Gaaffii: Namni tokko qarshii meeqa argate?",
+        "expected": [
+            "qarshii kudha lama",
+            "12"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 15",
+        "text": "Herregni 350 + 350 deebii maali fida?",
+        "options": [
+            "A) 700",
+            "B) 650",
+            "C) 750",
+            "D) 600"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 16",
+        "text": "Buufata bishaanii tokkoo guyyaatti liitira bishaanii 840 oomisha. Sana keessaa liitiriin 390 maatiif qoodame.",
+        "question": "Gaaffii: Bishaanni taankii keessatti hafe meeqa?",
+        "expected": [
+            "liitira dhibba afur fi shantami",
+            "450"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Safartuu Hammaa 17",
+        "text": "Kiiloo meetirri tokko meetira meeqa qaba?",
+        "options": [
+            "A) 1000 m",
+            "B) 100 m",
+            "C) 10 m",
+            "D) 10,000 m"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 18",
+        "text": "Deebiin 540 - 120 meeqa?",
+        "options": [
+            "A) 420",
+            "B) 410",
+            "C) 430",
+            "D) 400"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 19",
+        "text": "Barattoonni waldaa qulqullummaa qopheessuun mukoota 315 dhaaban. Gubbaadhumatti immoo barattoonni kutaa lammaffaa dabalanii mukoota 185 dhaaban.",
+        "question": "Gaaffii: Waliigalaan mukoonni dhaabaman meeqa?",
+        "expected": [
+            "kuma tokko",
+            "500"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 20",
+        "text": "Lakkoofsi 225 fi 375 yoo walitti dabalaman meeqa ta'u?",
+        "options": [
+            "A) 600",
+            "B) 590",
+            "C) 610",
+            "D) 580"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu 21",
+        "text": "Lakkoofsi 1000 irraa 250 hirisuun meeqa fida?",
+        "options": [
+            "A) 750",
+            "B) 700",
+            "C) 800",
+            "D) 650"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 22",
+        "text": "Gabaaf imaluun loon dhibba sadii fi shantama (350) deemtootaan oofaman. Gabaarraas loon dhibba tokko fi afurtama (140) dabalatanii deebi'an.",
+        "question": "Gaaffii: Loon waliigalaa mana deebi'an meeqa?",
+        "expected": [
+            "dhibba afur fi shantami",
+            "490"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 23",
+        "text": "Deebiin 20 × 10 meeqa?",
+        "options": [
+            "A) 200",
+            "B) 150",
+            "C) 250",
+            "D) 100"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Qoodduu (Division) 24",
+        "text": "Deebiin qoodduu 72 ÷ 8 meeqa?",
+        "options": [
+            "A) 9",
+            "B) 8",
+            "C) 7",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 25",
+        "text": "Sanduuqa keessa hancufni 500 jira. Barattoonni dhibba lama fi shantama (250) fudhataniiru.",
+        "question": "Gaaffii: Hancufni sanduuqa keessa hafe meeqa?",
+        "expected": [
+            "dhibba lama fi shantami",
+            "250"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Bocawwan 26",
+        "text": "Bocni roga-sadii (triangle) gola meeqa qaba?",
+        "options": [
+            "A) 3",
+            "B) 4",
+            "C) 2",
+            "D) 0"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 27",
+        "text": "345 + 155 meeqa fida?",
+        "options": [
+            "A) 500",
+            "B) 490",
+            "C) 510",
+            "D) 480"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 28",
+        "text": "Qajeelchi barnootaa mana kitaabaaf kitaabota 600 qopheesse. Isaan keessaa kitaabni 240 mana kitaabaa sadarkaa 1ffaa qofaaf kenne.",
+        "question": "Gaaffii: Kitaabni mana kuusaa keessatti hafe meeqa?",
+        "expected": [
+            "dhibba sadii fi shantami",
+            "360"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 29",
+        "text": "Deebiin 800 - 350 meeqa?",
+        "options": [
+            "A) 450",
+            "B) 550",
+            "C) 400",
+            "D) 500"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 30",
+        "text": "Abbaan maatii tokko qarshii 900 qaba. Qarshii 450 immoo bitaaf oomishe.",
+        "question": "Gaaffii: Qarshiin amma harka isaa hafe meeqa?",
+        "expected": [
+            "qarshii dhibba afur fi shantami",
+            "450"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 31",
+        "text": "Lakkoofsi 525 fi 527 gidduu jiru isa kam?",
+        "options": [
+            "A) 526",
+            "B) 524",
+            "C) 528",
+            "D) 523"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 32",
+        "text": "Konkolaataan tokko magaalaa tokko irraa ka'ee kiiloo meetira 350 deemee boqote. Ammas kiiloo meetira 150 deemuu itti fufe.",
+        "question": "Gaaffii: Waliigalaan fageenyi deeme meeqa?",
+        "expected": [
+            "kiiloo meetira dhibba shan",
+            "500"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 33",
+        "text": "512 + 188 meeqa fida?",
+        "options": [
+            "A) 700",
+            "B) 690",
+            "C) 710",
+            "D) 680"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 34",
+        "text": "Deebiin 450 - 225 meeqa?",
+        "options": [
+            "A) 225",
+            "B) 235",
+            "C) 215",
+            "D) 245"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 35",
+        "text": "Warshaan suuqii tokko kophee 320 ganama oomisha. Waaree booda immoo kophee 280 oomishan.",
+        "question": "Gaaffii: Waliigalaan kopheen oomisame meeqa?",
+        "expected": [
+            "dhibba ja'a",
+            "600"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 36",
+        "text": "Deebiin 11 × 9 meeqa?",
+        "options": [
+            "A) 99",
+            "B) 90",
+            "C) 108",
+            "D) 88"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 37",
+        "text": "Qalama 720 qindeessanii sanduuqatti kaa'uun barbaachise. Sanduuqi tokko qalama 90 qabata.",
+        "question": "Gaaffii: Sanduuqni meeqa barbaachisa?",
+        "expected": [
+            "sadii",
+            "8"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 38",
+        "text": "415 + 385 meeqa fida?",
+        "options": [
+            "A) 800",
+            "B) 790",
+            "C) 810",
+            "D) 780"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 39",
+        "text": "Deebiin 960 - 460 meeqa?",
+        "options": [
+            "A) 500",
+            "B) 400",
+            "C) 600",
+            "D) 450"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 40",
+        "text": "Kuusaa midhaanii keessatti buqqollee kiishi 600 tu turan. Qonnaan bulaan 225 fudhate.",
+        "question": "Gaaffii: Kiishni midhaanii kuusaa keessatti hafe meeqa?",
+        "expected": [
+            "dhibba sadii fi shantami",
+            "375"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Safartuu 41",
+        "text": "Bocni roga-afurtuu bal'ina isaa herreguuf maal faayyadamna?",
+        "options": [
+            "A) Dheerina × Bal'ina (L × W)",
+            "B) Dheerina + Bal'ina",
+            "C) Dheerina - Bal'ina",
+            "D) Dheerina ÷ Bal'ina"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 42",
+        "text": "Deebiin 25 × 4 meeqa?",
+        "options": [
+            "A) 100",
+            "B) 75",
+            "C) 125",
+            "D) 50"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 43",
+        "text": "Maatiin tokko waggaatti buna kiiloo kiraamii 140 oomisha. Waggaa 2ffaa immoo kiiloo kiraamii 160 dabalate.",
+        "question": "Gaaffii: Waliigalaan oomisni bunaa meeqa?",
+        "expected": [
+            "dhibba sadii",
+            "300"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 44",
+        "text": "Deebiin 750 - 250 meeqa?",
+        "options": [
+            "A) 500",
+            "B) 450",
+            "C) 550",
+            "D) 600"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 45",
+        "text": "Mana barumsaa sadarkaa tokkoffaa keessatti dareen barnootaa 20 jiru. Dareen tokko barattoota 40 qaba.",
+        "question": "Gaaffii: Waliigalaan barattoonni mana barumsichaa meeqa?",
+        "expected": [
+            "dhibba saddeet",
+            "800"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 46",
+        "text": "Lakkoofsi 999 irraa 1 dabaluun meeqa fida?",
+        "options": [
+            "A) 1000",
+            "B) 990",
+            "C) 1001",
+            "D) 909"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 47",
+        "text": "Mukti magaalaa keessatti dhaabame tokko waggaa darbe santimeetira 120 dheerate. Waggaa kana immoo santimeetira 80 dabalate.",
+        "question": "Gaaffii: Dheerina muktichaa guutuu meeqa?",
+        "expected": [
+            "santimeetira dhibba lama",
+            "200"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 48",
+        "text": "Deebiin 450 + 550 meeqa?",
+        "options": [
+            "A) 1000",
+            "B) 950",
+            "C) 1050",
+            "D) 900"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 49",
+        "text": "Daldalaan tokko qarshii 850 qaba. Qarshii 350 immoo bittaa meeshaatiif baase.",
+        "question": "Gaaffii: Qarshiin amma harka isaa hafe meeqa?",
+        "expected": [
+            "qarshii dhibba shan",
+            "500"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Xumuraa 50",
+        "text": "Lakkoofsi 1000 irraa 500 yoo hirifamu meeqa hafe?",
+        "options": [
+            "A) 500",
+            "B) 400",
+            "C) 600",
+            "D) 300"
+        ],
+        "answer": "A"
+    }
+]
