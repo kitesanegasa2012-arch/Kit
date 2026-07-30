@@ -94,13 +94,43 @@ str_app.markdown(
         color: #e0f2f1;
     }
     
-    /* Custom Styling for Profile Image & Text */
-    .welcome-img-text {
+    /* Custom Styling for Text Card */
+    .books-info-card {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 15px;
+        border-left: 6px solid #004d40;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+    }
+    .books-info-card h4 {
+        color: #004d40;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.15rem;
+    }
+    .books-info-card ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #333333;
+        font-size: 0.95rem;
+        text-align: left;
+    }
+    .books-info-card li {
+        margin-bottom: 5px;
+    }
+    
+    .welcome-text-banner {
+        text-align: center;
         font-weight: bold;
         color: #004d40;
-        margin-top: 8px;
-        font-size: 1.05rem;
-        text-align: left;
+        font-size: 1.2rem;
+        background-color: #e0f2f1;
+        padding: 12px;
+        border-radius: 10px;
+        border: 2px dashed #00897b;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
     }
     </style>
 """,
@@ -171,14 +201,24 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Maqaa suuraa sirrii 'maqaa qixxeessaa.jpg' jedhuutti jijjiirameera
-    col_img, col_space = str_app.columns([1, 2.5])
-    with col_img:
-        try:
-            str_app.image("maqaa qixxeessaa.jpg", width=180)
-            str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
-        except Exception:
-            str_app.warning("Suuraan 'maqaa qixxeessaa.jpg' jedhu hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
+    # Suuraa dhiisuudhaan bakka sana kitaabilee 1-6 galchuun, jalatti immoo banner barsiisaa kaa'uu
+    str_app.markdown(
+        """
+        <div class="books-info-card">
+            <h4>📚 Qabiyyee Kitaabota Dabalamoo (Kutaa 1 - 6):</h4>
+            <ul>
+                <li><b>Kutaa 1 & 2:</b> Qubee bu'uuraa, jechoota gaggabaaboo fi herrega lakkoofsaa jalqabaa.</li>
+                <li><b>Kutaa 3 & 4:</b> Dubbisa hubachuu, jechoota hiika isaanii waliin, fi shallaggaa walxaxaa hin taane.</li>
+                <li><b>Kutaa 5 & 6:</b> Gaaffilee hubannoo dubbisaa bal'aa, caqasa, fi rakkoolee herregaa fi ingliffaa olaanoo.</li>
+            </ul>
+        </div>
+        
+        <div class="welcome-text-banner">
+            WELCOME TO HIKA WAY APP
+        </div>
+    """,
+        unsafe_allow_html=True,
+    )
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
