@@ -1,0 +1,564 @@
+[
+    {
+        "type": "mcq",
+        "title": "Grammar & Vocabulary 1",
+        "text": "Which word is an abstract noun in the following sentence? 'Education is the key to personal and national success.'",
+        "options": [
+            "A) Education (or success)",
+            "B) key",
+            "C) personal",
+            "D) national"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Reading Comprehension 2",
+        "text": "During the dry season in East Africa, pastoralist communities migrate across seasonal grazing routes to sustain their cattle.",
+        "question": "Gaaffii: Why do pastoralist communities migrate during the dry season?",
+        "expected": [
+            "to sustain their cattle",
+            "sustain their cattle"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Science - Ecosystems 3",
+        "text": "What term is given to animals that eat both plant and animal matter for nutrition?",
+        "options": [
+            "A) Omnivores",
+            "B) Herbivores",
+            "C) Carnivores",
+            "D) Decomposers"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The school environmental club planted two hundred indigenous tree seedlings around the campus compound.'",
+        "question": "Gaaffii: How many tree seedlings did the environmental club plant?",
+        "expected": [
+            "two hundred",
+            "200"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers & Math 5",
+        "text": "What is the square root of one hundred forty-four?",
+        "options": [
+            "A) Twelve",
+            "B) Fourteen",
+            "C) Ten",
+            "D) Sixteen"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: History & Heritage",
+        "text": "The ancient ruins of Aksum showcase magnificent stone obelisks reflecting Ethiopia's rich architectural heritage.",
+        "question": "Gaaffii: What do the ancient ruins of Aksum showcase?",
+        "expected": [
+            "magnificent stone obelisks",
+            "stone obelisks"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Pronouns 7",
+        "text": "Choose the correct relative pronoun: 'The scientist ____ discovered the new star species received international recognition.'",
+        "options": [
+            "A) who",
+            "B) which",
+            "C) whose",
+            "D) where"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Social Expressions 8",
+        "text": "What is the most polite way to respond when someone thanks you for assisting them with a project?",
+        "options": [
+            "A) You are very welcome",
+            "B) Don't talk to me",
+            "C) I am busy",
+            "D) Leave me alone"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Science & Physics 9",
+        "text": "Gravity is a universal attractive force that pulls objects toward the center of the Earth.",
+        "question": "Gaaffii: What does gravity pull objects toward?",
+        "expected": [
+            "the center of the Earth",
+            "center of the Earth"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 10",
+        "text": "Which blood components are primarily responsible for fighting off infections and foreign pathogens?",
+        "options": [
+            "A) White blood cells",
+            "B) Red blood cells",
+            "C) Blood platelets",
+            "D) Plasma"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: Geography",
+        "text": "The Blue Nile River originates from Lake Tana in the Ethiopian highlands and flows toward Sudan and Egypt.",
+        "question": "Gaaffii: From which lake does the Blue Nile River originate?",
+        "expected": [
+            "Lake Tana",
+            "lake tana"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Phonics & Spelling 12",
+        "text": "Which prefix can be added to the word 'active' to mean the opposite?",
+        "options": [
+            "A) In- (Inactive)",
+            "B) Un-",
+            "C) Dis-",
+            "D) Mis-"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Professions 13",
+        "text": "Who specializes in writing computer programs and software applications?",
+        "options": [
+            "A) Software developer (Programmer)",
+            "B) Accountant",
+            "C) Architect",
+            "D) Journalist"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "The school orchestra rehearsed traditional melodies for hours before the regional cultural festival.",
+        "question": "Gaaffii: What did the school orchestra rehearse before the festival?",
+        "expected": [
+            "traditional melodies",
+            "melodies"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography & Continents 15",
+        "text": "Through which African country does the Equator pass directly?",
+        "options": [
+            "A) Kenya",
+            "B) Egypt",
+            "C) South Africa",
+            "D) Morocco"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: Technology",
+        "text": "Global Positioning System (GPS) receivers use satellite signals to determine precise geographic locations on Earth.",
+        "question": "Gaaffii: What do GPS receivers use to determine geographic locations?",
+        "expected": [
+            "satellite signals",
+            "signals"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Tenses 17",
+        "text": "Complete with the correct past continuous tense: 'While the teacher was explaining, the students ____ notes in their books.'",
+        "options": [
+            "A) were writing",
+            "B) wrote",
+            "C) write",
+            "D) will write"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Expressions 18",
+        "text": "What phrase should you use when interrupting a meeting to deliver an urgent message?",
+        "options": [
+            "A) Pardon me for interrupting",
+            "B) Listen to me now",
+            "C) Get out of my way",
+            "D) Silence everyone"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather & Climate 19",
+        "text": "Condensation occurs when invisible water vapor cools down and turns back into liquid water droplets.",
+        "question": "Gaaffii: What happens when water vapor cools down during condensation?",
+        "expected": [
+            "turns back into liquid water droplets",
+            "turns into water droplets"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Relationships 20",
+        "text": "What term describes the relationship between your father's mother and you?",
+        "options": [
+            "A) Grandmother and grandchild",
+            "B) Aunt and niece",
+            "C) Sister and brother",
+            "D) Cousin and cousin"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation & Logistics 21",
+        "text": "Which cargo carrier is designed to transport large numbers of standardized metal shipping containers across oceans?",
+        "options": [
+            "A) Container ship",
+            "B) Bicycle",
+            "C) Passenger car",
+            "D) Tractor"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 22: Agriculture",
+        "text": "Modern irrigation systems supply controlled amounts of water to agricultural crops during dry periods.",
+        "question": "Gaaffii: What do modern irrigation systems supply to agricultural crops?",
+        "expected": [
+            "controlled amounts of water",
+            "water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Calendar & Time 23",
+        "text": "How many months make up a complete quarter of a calendar year?",
+        "options": [
+            "A) Three",
+            "B) Four",
+            "C) Six",
+            "D) Twelve"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Science - Chemistry 24",
+        "text": "What chemical symbol represents the element Gold on the periodic table?",
+        "options": [
+            "A) Au",
+            "B) Ag",
+            "C) Fe",
+            "D) Cu"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 25: Science Lab",
+        "text": "Students wear protective safety goggles in the laboratory when handling chemical solutions.",
+        "question": "Gaaffii: Why do students wear protective safety goggles in the laboratory?",
+        "expected": [
+            "when handling chemical solutions",
+            "safety"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Prepositions 26",
+        "text": "Complete with the correct preposition: 'The research report was published ____ an international scientific journal.'",
+        "options": [
+            "A) in",
+            "B) on",
+            "C) at",
+            "D) by"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 27",
+        "text": "Who inspects structural safety, electrical wiring, and building plans before construction approval?",
+        "options": [
+            "A) Building inspector (or engineer)",
+            "B) Chef",
+            "C) Driver",
+            "D) Farmer"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 28: Conservation",
+        "text": "Establishing national parks preserves endangered wildlife habitats and promotes sustainable ecological tourism.",
+        "question": "Gaaffii: What do national parks preserve for wildlife?",
+        "expected": [
+            "endangered wildlife habitats",
+            "habitats"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geometrical Shapes 29",
+        "text": "What is the sum of all interior angles in a standard triangle in degrees?",
+        "options": [
+            "A) 180°",
+            "B) 360°",
+            "C) 90°",
+            "D) 270°"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 30: Astronomy",
+        "text": "A solar eclipse occurs when the Moon passes directly between the Earth and the Sun, blocking sunlight.",
+        "question": "Gaaffii: What position causes a solar eclipse?",
+        "expected": [
+            "Moon passes directly between the Earth and the Sun",
+            "Moon between Earth and Sun"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days & Time 31",
+        "text": "Which Ethiopian calendar month follows Meskerem and marks the continuing autumn season?",
+        "options": [
+            "A) Faajjii / Onkololeessa (Tikimt)",
+            "B) Tahasa",
+            "C) Sene",
+            "D) Nehasie"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Animals & Classification 32",
+        "text": "Which class of vertebrate animals gives birth to live young and feeds them with milk produced by mammary glands?",
+        "options": [
+            "A) Mammals",
+            "B) Reptiles",
+            "C) Amphibians",
+            "D) Birds"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 33: Environment",
+        "text": "Reforestation initiatives combat global climate change by absorbing carbon dioxide from the atmosphere.",
+        "question": "Gaaffii: What gas do trees absorb from the atmosphere during reforestation?",
+        "expected": [
+            "carbon dioxide",
+            "CO2"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 34",
+        "text": "Which vital organ filters waste products from the bloodstream to produce urine?",
+        "options": [
+            "A) Kidneys",
+            "B) Lungs",
+            "C) Liver",
+            "D) Heart"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 35: Space Exploration",
+        "text": "Artificial satellites launched into orbit assist humanity with global telecommunications and weather forecasting.",
+        "question": "Gaaffii: What do artificial satellites assist humanity with?",
+        "expected": [
+            "global telecommunications and weather forecasting",
+            "telecommunications and weather forecasting"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Physics & Energy 36",
+        "text": "What form of energy is stored in food, batteries, and chemical fuels before being released?",
+        "options": [
+            "A) Chemical energy",
+            "B) Kinetic energy",
+            "C) Thermal energy",
+            "D) Nuclear energy"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 37",
+        "text": "What analytical process do scientists perform when comparing experimental measurements with theoretical models?",
+        "options": [
+            "A) Validation (or evaluation)",
+            "B) Guessing",
+            "C) Ignoring",
+            "D) Deleting"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 38: Cultural Heritage",
+        "text": "The Gadaa system is a traditional democratic socio-political system practiced by the Oromo people.",
+        "question": "Gaaffii: What type of traditional system is the Gadaa system?",
+        "expected": [
+            "democratic socio-political system",
+            "traditional democratic system"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather & Climate 39",
+        "text": "Which instrument measures atmospheric humidity or water vapor content in the air?",
+        "options": [
+            "A) Hygrometer",
+            "B) Barometer",
+            "C) Anemometer",
+            "D) Thermometer"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 40: Renewable Energy",
+        "text": "Geothermal power plants utilize natural underground heat from volcanic sources to generate clean electricity.",
+        "question": "Gaaffii: What source of energy do geothermal power plants utilize?",
+        "expected": [
+            "natural underground heat",
+            "underground heat"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animal Habitats 41",
+        "text": "Which unique ecosystem features water-saturated soil and serves as a vital natural filter for freshwater?",
+        "options": [
+            "A) Wetland (Marsh/Swamp)",
+            "B) Desert sand dunes",
+            "C) Rocky mountain peaks",
+            "D) Paved highways"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Synonyms 42",
+        "text": "Which word is a synonym for the adjective 'meticulous'?",
+        "options": [
+            "A) Thorough (or careful)",
+            "B) Careless",
+            "C) Hasty",
+            "D) Lazy"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 43: Ocean Science",
+        "text": "Ocean currents regulate global climate by distributing warm tropical water toward polar regions.",
+        "question": "Gaaffii: How do ocean currents regulate global climate?",
+        "expected": [
+            "by distributing warm tropical water toward polar regions",
+            "distributing warm water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Botany & Plant Science 44",
+        "text": "What green pigment inside plant chloroplasts captures solar light energy for photosynthesis?",
+        "options": [
+            "A) Chlorophyll",
+            "B) Carotene",
+            "C) Hemoglobin",
+            "D) Melanin"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 45: Earth Science",
+        "text": "Seismographs record seismic waves generated by underground tectonic faults during earthquakes.",
+        "question": "Gaaffii: What do seismographs record during earthquakes?",
+        "expected": [
+            "seismic waves",
+            "waves generated by faults"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "School Science Equipment 46",
+        "text": "What laboratory glassware is used for precise volumetric titration and measuring liquid chemicals?",
+        "options": [
+            "A) Burette (or graduated cylinder)",
+            "B) Test tube rack",
+            "C) Glass funnel",
+            "D) Watch glass"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Plurals 47",
+        "text": "What is the correct plural form of the noun 'phenomenon'?",
+        "options": [
+            "A) Phenomena",
+            "B) Phenomenons",
+            "C) Phenomenases",
+            "D) Phenomeni"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 48: Astrophysics",
+        "text": "Stellar evolution describes the life cycle stages of stars from birth in nebulae to final white dwarfs or neutron stars.",
+        "question": "Gaaffii: What does stellar evolution describe?",
+        "expected": [
+            "life cycle stages of stars",
+            "life cycle of stars"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography Basics 49",
+        "text": "What imaginary line marks zero degrees longitude passing through Greenwich, England?",
+        "options": [
+            "A) Prime Meridian",
+            "B) Equator",
+            "C) Tropic of Cancer",
+            "D) International Date Line"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Final Review 50",
+        "text": "Which branch of physical science investigates the composition, structure, properties, and reactions of matter?",
+        "options": [
+            "A) Chemistry",
+            "B) Biology",
+            "C) Astronomy",
+            "D) Geology"
+        ],
+        "answer": "A"
+    }
+]
