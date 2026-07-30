@@ -1,0 +1,564 @@
+[
+    {
+        "type": "mcq",
+        "title": "Grammar & Vocabulary 1",
+        "text": "Which word is an adjective in the following sentence? 'The brave firefighter rescued the cat.'",
+        "options": [
+            "A) brave",
+            "B) firefighter",
+            "C) rescued",
+            "D) cat"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Reading Comprehension 2",
+        "text": "Hassan woke up early on Saturday morning and helped his father clean the family garden.",
+        "question": "Gaaffii: When did Hassan help his father?",
+        "expected": [
+            "Saturday morning",
+            "on Saturday morning"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Animals 3",
+        "text": "Which mammal is capable of true flight in the air?",
+        "options": [
+            "A) Bat",
+            "B) Ostrich",
+            "C) Penguin",
+            "D) Kangaroo"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The heavy rain caused a sudden flood across the lower valley.'",
+        "question": "Gaaffii: What caused a sudden flood across the valley?",
+        "expected": [
+            "heavy rain",
+            "the heavy rain"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers & Math 5",
+        "text": "What is the product of twelve multiplied by five?",
+        "options": [
+            "A) Sixty",
+            "B) Fifty",
+            "C) Seventy",
+            "D) Forty-five"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: Library Rules",
+        "text": "Students must keep absolute silence while reading books inside the school library.",
+        "question": "Gaaffii: How must students behave inside the library?",
+        "expected": [
+            "keep absolute silence",
+            "silence"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Pronouns 7",
+        "text": "Choose the correct possessive pronoun: 'This red jacket belongs to me. It is ____.'",
+        "options": [
+            "A) mine",
+            "B) yours",
+            "C) hers",
+            "D) theirs"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Social Expressions 8",
+        "text": "What is the most appropriate response when someone apologizes to you for a minor mistake?",
+        "options": [
+            "A) That's quite all right",
+            "B) Good morning",
+            "C) Goodbye",
+            "D) Shut the door"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Science & Nature 9",
+        "text": "Plants absorb water and mineral nutrients from the soil through their deep roots.",
+        "question": "Gaaffii: Through what part do plants absorb water from the soil?",
+        "expected": [
+            "roots",
+            "their deep roots"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 10",
+        "text": "Which internal organ pumps oxygenated blood throughout the human body?",
+        "options": [
+            "A) Heart",
+            "B) Lungs",
+            "C) Stomach",
+            "D) Brain"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: Community Work",
+        "text": "Villagers gathered together to construct a sturdy bridge across the flowing river.",
+        "question": "Gaaffii: What did the villagers construct across the river?",
+        "expected": [
+            "a sturdy bridge",
+            "bridge"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Phonics & Spelling 12",
+        "text": "Which word contains a silent letter at the beginning?",
+        "options": [
+            "A) Knife",
+            "B) Cat",
+            "C) Dog",
+            "D) Sun"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Professions 13",
+        "text": "Who designs buildings, bridges, and structural layouts?",
+        "options": [
+            "A) Architect",
+            "B) Baker",
+            "C) Farmer",
+            "D) Driver"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "The athletic cheetah sprinted across the savannah grass chasing its prey.",
+        "question": "Gaaffii: How did the cheetah move across the savannah?",
+        "expected": [
+            "sprinted",
+            "sprinted across the savannah"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography 15",
+        "text": "What is the largest continent on planet Earth by land area?",
+        "options": [
+            "A) Asia",
+            "B) Africa",
+            "C) Europe",
+            "D) Antarctica"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: Technology",
+        "text": "Computers process large amounts of electronic data to help students complete research projects.",
+        "question": "Gaaffii: What do computers process to help students?",
+        "expected": [
+            "electronic data",
+            "large amounts of electronic data"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Tenses 17",
+        "text": "Complete the sentence with the correct future tense: 'Tomorrow, we ____ visit our grandparents.'",
+        "options": [
+            "A) will",
+            "B) did",
+            "C) have",
+            "D) were"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Expressions 18",
+        "text": "What do you say when you interrupt someone politely to ask a quick question?",
+        "options": [
+            "A) Excuse me",
+            "B) Good night",
+            "C) Goodbye",
+            "D) Thank you"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather & Environment 19",
+        "text": "Solar panels convert direct sunlight into usable electrical energy for homes.",
+        "question": "Gaaffii: What do solar panels convert into electrical energy?",
+        "expected": [
+            "sunlight",
+            "direct sunlight"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Relationships 20",
+        "text": "What do you call your father's sister?",
+        "options": [
+            "A) Aunt",
+            "B) Uncle",
+            "C) Niece",
+            "D) Grandmother"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation 21",
+        "text": "Which aircraft is capable of hovering vertically in the air and landing in small spaces?",
+        "options": [
+            "A) Helicopter",
+            "B) Airplane",
+            "C) Glider",
+            "D) Rocket"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 22: Nutrition",
+        "text": "Drinking fresh milk strengthens human bones because it contains high amounts of calcium.",
+        "question": "Gaaffii: What mineral in milk strengthens human bones?",
+        "expected": [
+            "calcium",
+            "high amounts of calcium"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Calendar & Time 23",
+        "text": "How many days are in a standard non-leap calendar year?",
+        "options": [
+            "A) 365",
+            "B) 366",
+            "C) 360",
+            "D) 300"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Science - States of Matter 24",
+        "text": "At what temperature in Celsius does pure water freeze into solid ice?",
+        "options": [
+            "A) 0°C",
+            "B) 100°C",
+            "C) 50°C",
+            "D) 10°C"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 25: School Science",
+        "text": "During the laboratory experiment, the science teacher heated water in a glass beaker.",
+        "question": "Gaaffii: What did the teacher heat in the glass beaker?",
+        "expected": [
+            "water",
+            "heated water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Prepositions 26",
+        "text": "Complete with the correct preposition: 'The picture hangs securely ____ the wall.'",
+        "options": [
+            "A) on",
+            "B) in",
+            "C) at",
+            "D) under"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 27",
+        "text": "Who investigates crimes, maintains public order, and protects citizens?",
+        "options": [
+            "A) Police officer",
+            "B) Firefighter",
+            "C) Teacher",
+            "D) Architect"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 28: Agriculture",
+        "text": "Farmers use tractor-driven plows to turn over hardened soil before planting crops.",
+        "question": "Gaaffii: What do farmers use to turn over hardened soil?",
+        "expected": [
+            "tractor-driven plows",
+            "plows"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geometrical Shapes 29",
+        "text": "What geometric term describes a polygon with five straight sides and angles?",
+        "options": [
+            "A) Pentagon",
+            "B) Square",
+            "C) Triangle",
+            "D) Hexagon"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 30: Astronomy",
+        "text": "Earth completes one full rotation on its imaginary axis every twenty-four hours.",
+        "question": "Gaaffii: How long does it take Earth to complete one full rotation?",
+        "expected": [
+            "twenty-four hours",
+            "24 hours"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days & Time 31",
+        "text": "Which month of the year has the fewest number of days?",
+        "options": [
+            "A) February",
+            "B) January",
+            "C) March",
+            "D) April"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Animals & Classification 32",
+        "text": "Which animal group is cold-blooded and breathes through gills when young and lungs as adults?",
+        "options": [
+            "A) Amphibians",
+            "B) Mammals",
+            "C) Birds",
+            "D) Reptiles"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 33: Environment",
+        "text": "Recycling plastic bottles helps reduce environmental pollution and conserves natural resources.",
+        "question": "Gaaffii: What does recycling plastic bottles help reduce?",
+        "expected": [
+            "environmental pollution",
+            "pollution"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 34",
+        "text": "Which sensory organ is primarily responsible for detecting sounds and maintaining balance?",
+        "options": [
+            "A) Ear",
+            "B) Eye",
+            "C) Nose",
+            "D) Tongue"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 35: Space",
+        "text": "The brilliant Moon orbits around planet Earth as Earth's only natural satellite.",
+        "question": "Gaaffii: What is the Moon to planet Earth?",
+        "expected": [
+            "natural satellite",
+            "Earth's only natural satellite"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Kitchen & Cooking 36",
+        "text": "What kitchen appliance is used to preserve perishable food items at very low temperatures?",
+        "options": [
+            "A) Refrigerator",
+            "B) Microwave",
+            "C) Toaster",
+            "D) Blender"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 37",
+        "text": "What do scientists do when they carefully study and examine experimental data?",
+        "options": [
+            "A) Analyze",
+            "B) Sleep",
+            "C) Ignore",
+            "D) Hide"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 38: School History",
+        "text": "The school museum displays ancient cultural artifacts from local Oromo history.",
+        "question": "Gaaffii: What does the school museum display?",
+        "expected": [
+            "ancient cultural artifacts",
+            "artifacts"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather & Climate 39",
+        "text": "What instrument is used by meteorologists to measure atmospheric air pressure?",
+        "options": [
+            "A) Barometer",
+            "B) Thermometer",
+            "C) Anemometer",
+            "D) Rain gauge"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 40: Ecosystems",
+        "text": "Forest ecosystems provide vital natural habitats for hundreds of wild animal species.",
+        "question": "Gaaffii: What do forest ecosystems provide for wild animals?",
+        "expected": [
+            "vital natural habitats",
+            "habitats"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animal Habitats 41",
+        "text": "Which large desert is located in Northern Africa and is the largest hot desert in the world?",
+        "options": [
+            "A) Sahara Desert",
+            "B) Kalahari Desert",
+            "C) Gobi Desert",
+            "D) Mojave Desert"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Synonyms 42",
+        "text": "Which word is a synonym for the adjective 'intelligent'?",
+        "options": [
+            "A) Smart",
+            "B) Foolish",
+            "C) Lazy",
+            "D) Slow"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 43: Ocean Life",
+        "text": "Blue whales are enormous marine mammals that feed primarily on tiny shrimp-like krill.",
+        "question": "Gaaffii: What do blue whales feed on primarily?",
+        "expected": [
+            "krill",
+            "tiny shrimp-like krill"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Fruits & Botany 44",
+        "text": "Which tropical fruit grows on tall palm trees and contains refreshing liquid water inside?",
+        "options": [
+            "A) Coconut",
+            "B) Banana",
+            "C) Apple",
+            "D) Orange"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 45: Geology",
+        "text": "Volcanoes erupt molten rock, ash, and volcanic gases from deep beneath Earth's crust.",
+        "question": "Gaaffii: Where does molten rock erupt from during a volcanic eruption?",
+        "expected": [
+            "beneath Earth's crust",
+            "deep beneath Earth's crust"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "School Supplies 46",
+        "text": "What instrument do students use to draw perfect geometric circles on paper?",
+        "options": [
+            "A) Compass",
+            "B) Ruler",
+            "C) Eraser",
+            "D) Pencil"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Plurals 47",
+        "text": "What is the correct irregular plural form of the word 'tooth'?",
+        "options": [
+            "A) Teeth",
+            "B) Tooths",
+            "C) Teethes",
+            "D) Tooth"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 48: Energy Sources",
+        "text": "Hydroelectric power plants generate electricity using the immense force of flowing water.",
+        "question": "Gaaffii: What do hydroelectric power plants use to generate electricity?",
+        "expected": [
+            "flowing water",
+            "immense force of flowing water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography Basics 49",
+        "text": "What imaginary line divides planet Earth into the Northern and Southern Hemispheres?",
+        "options": [
+            "A) Equator",
+            "B) Prime Meridian",
+            "C) Tropic of Cancer",
+            "D) International Date Line"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Final Review 50",
+        "text": "Which scientific instrument is used by students to observe microscopic organisms up close?",
+        "options": [
+            "A) Microscope",
+            "B) Telescope",
+            "C) Thermometer",
+            "D) Barometer"
+        ],
+        "answer": "A"
+    }
+]
