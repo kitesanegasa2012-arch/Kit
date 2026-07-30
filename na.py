@@ -4,7 +4,7 @@ import streamlit as str_app
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
-    page_title="Hika Way (HW) App", page_icon="📖", layout="centered"
+    page_title="Hiika Way (HW) App", page_icon="📖", layout="centered"
 )
 
 # CUSTOM STYLING (Background, Border, and Cover Page UI Enhancements)
@@ -162,7 +162,8 @@ def role_selection_screen():
         <div class="hero-box">
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!<br><br>
+                <b>App kanaaf: Kutaa 1 - Kutaa 6 (Afaan Oromoo, Herrega, Ingliffaa)</b><br>
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
@@ -170,14 +171,14 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Suuraa bitaatti argamu size isaa xiqqeessuuf width fayyadamneerra
+    # Maqaa suuraa sirrii 'maqaa qixxeessaa.jpg' jedhuutti jijjiirameera
     col_img, col_space = str_app.columns([1, 2.5])
     with col_img:
         try:
-            str_app.image("makaa qixxeessaa.jpg", width=180)
+            str_app.image("maqaa qixxeessaa.jpg", width=180)
             str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
         except Exception:
-            str_app.warning("Suuraan 'maqaa qixxeessaa.jpg' jedhu hin argamne.")
+            str_app.warning("Suuraan 'maqaa qixxeessaa.jpg' jedhu hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
