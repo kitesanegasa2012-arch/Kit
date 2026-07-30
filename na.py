@@ -4,7 +4,7 @@ import streamlit as str_app
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
-    page_title="Hiika Way (HW) App", page_icon="📖", layout="centered"
+    page_title="HIKA WAY (HW) App", page_icon="📖", layout="centered"
 )
 
 # CUSTOM STYLING (Background, Border, and Cover Page UI Enhancements)
@@ -192,8 +192,7 @@ def role_selection_screen():
         <div class="hero-box">
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!<br><br>
-                <b>App kanaaf: Kutaa 1 - Kutaa 6 (Afaan Oromoo, Herrega, Ingliffaa)</b><br>
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hika Way itti Nagaan Dhuftan!
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
@@ -205,7 +204,7 @@ def role_selection_screen():
     str_app.markdown(
         """
         <div class="books-info-card">
-            <h4>📚 Qabiyyee Kitaabota Dabalamoo (Kutaa 1 - 6):</h4>
+            <h4>📚 Qabiyyee Kitaabota Madaalliif Dhiyaatan (Kutaa 1 - 6):</h4>
             <ul>
                 <li><b>Kutaa 1 & 2:</b> Qubee bu'uuraa, jechoota gaggabaaboo fi herrega lakkoofsaa jalqabaa.</li>
                 <li><b>Kutaa 3 & 4:</b> Dubbisa hubachuu, jechoota hiika isaanii waliin, fi shallaggaa walxaxaa hin taane.</li>
