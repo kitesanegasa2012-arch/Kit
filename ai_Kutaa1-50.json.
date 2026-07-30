@@ -1,0 +1,544 @@
+[
+    {
+        "type": "mcq",
+        "title": "Letter Recognition 1",
+        "text": "Which letter comes after 'A' in the English alphabet?",
+        "options": [
+            "A) B",
+            "B) C",
+            "C) D",
+            "D) E"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 2",
+        "text": "Read the word: CAT",
+        "question": "Gaaffii: What is the first letter of the word?",
+        "expected": [
+            "C",
+            "c"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Animals 3",
+        "text": "Which animal says 'Meow'?",
+        "options": [
+            "A) Dog",
+            "B) Cat",
+            "C) Cow",
+            "D) Bird"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The ball is red.'",
+        "question": "Gaaffii: What color is the ball?",
+        "expected": [
+            "red",
+            "the red",
+            "red color"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers 1-5 5",
+        "text": "How many apples are there? https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcS2uthYS-rW_fowC1tWDMaz7RU2EUrYDHiDJ2ahKxtWLCJIR2H1IGsANLJw9HJCflrrBRlcCizfP00HXUI",
+        "options": [
+            "A) Two",
+            "B) Three",
+            "C) Four",
+            "D) Five"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: Family",
+        "text": "This is my mother. Her name is Sara.",
+        "question": "Gaaffii: Who is this? (Write the answer)",
+        "expected": [
+            "mother",
+            "my mother"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Capital Letters 7",
+        "text": "What is the capital letter for 'dog'?",
+        "options": [
+            "A) DOG",
+            "B) Dog",
+            "C) dOG",
+            "D) doG"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Greetings 8",
+        "text": "What do you say in the morning?",
+        "options": [
+            "A) Good morning",
+            "B) Good night",
+            "C) Goodbye",
+            "D) Good afternoon"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Colors 9",
+        "text": "The sky is blue.",
+        "question": "Gaaffii: What color is the sky?",
+        "expected": [
+            "blue",
+            "the blue"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Body Parts 10",
+        "text": "Which part do you use to listen?",
+        "options": [
+            "A) Ear",
+            "B) Eye",
+            "C) Nose",
+            "D) Mouth"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: School",
+        "text": "I have a pencil. It is yellow.",
+        "question": "Gaaffii: What color is the pencil?",
+        "expected": [
+            "yellow",
+            "a yellow"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Letter Sound 12",
+        "text": "What sound does the letter 'B' make?",
+        "options": [
+            "A) /b/ as in bat",
+            "B) /k/ as in cat",
+            "C) /d/ as in dog",
+            "D) /a/ as in apple"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Fruit 13",
+        "text": "Which one is a fruit? https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS6ZjdEMhHNHz_4MV91yz1xpkh0RdKjq0ECnrkh94rCAHlcgkhIZHIL0EOz2nBaKaxpyf6OdKWEi7JqJqo",
+        "options": [
+            "A) Apple",
+            "B) Table",
+            "C) Pencil",
+            "D) Book"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "Look at the picture. The boy is running.",
+        "question": "Gaaffii: What is the boy doing?",
+        "expected": [
+            "running",
+            "he is running"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Classroom Objects 15",
+        "text": "Where do you write at school?",
+        "options": [
+            "A) On the board",
+            "B) On the chair",
+            "C) On the bag",
+            "D) On the floor"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: My Pet",
+        "text": "I have a dog. His name is Max.",
+        "question": "Gaaffii: What pet do I have?",
+        "expected": [
+            "dog",
+            "a dog"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Alphabet Order 17",
+        "text": "Which letter comes before 'C'?",
+        "options": [
+            "A) B",
+            "B) A",
+            "C) D",
+            "D) E"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Words 19",
+        "text": "What do you say when someone gives you a gift?",
+        "options": [
+            "A) Thank you",
+            "B) Sorry",
+            "C) Hello",
+            "D) Goodbye"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather 20",
+        "text": "It is sunny today.",
+        "question": "Gaaffii: How is the weather today?",
+        "expected": [
+            "sunny",
+            "it is sunny"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Members 21",
+        "text": "Who is your father's father?",
+        "options": [
+            "A) Grandfather",
+            "B) Uncle",
+            "C) Brother",
+            "D) Cousin"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation 22",
+        "text": "Which one flies in the sky?",
+        "options": [
+            "A) Airplane",
+            "B) Car",
+            "C) Boat",
+            "D) Bicycle"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 23: Food",
+        "text": "I like pizza. It is yummy.",
+        "question": "Gaaffii: Do I like pizza?",
+        "expected": [
+            "Yes",
+            "Yes, I do"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers 6-10 24",
+        "text": "What number is this? https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQOxSAn7B-gaBpBebPH-ZAY5Asi-ZLBpve_YMw6trhJWU4X8RdqvJVv3ymGk1vfNjTHMAKcQDm2rrIJYGE",
+        "options": [
+            "A) Five",
+            "B) Six",
+            "C) Seven",
+            "D) Eight"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Clothes 25",
+        "text": "What do you wear on your feet?",
+        "options": [
+            "A) Shoes",
+            "B) Hat",
+            "C) Shirt",
+            "D) Jacket"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 26: Actions",
+        "text": "Stand up, please.",
+        "question": "Gaaffii: What should you do?",
+        "expected": [
+            "stand up"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Yes/No Questions 27",
+        "text": "Is an elephant small?",
+        "options": [
+            "A) No",
+            "B) Yes"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 28",
+        "text": "Who helps sick people?",
+        "options": [
+            "A) Doctor",
+            "B) Teacher",
+            "C) Farmer",
+            "D) Driver"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 29: Feelings",
+        "text": "I am happy.",
+        "question": "Gaaffii: How am I feeling?",
+        "expected": [
+            "happy",
+            "I am happy"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Shapes 30",
+        "text": "What shape is a ball?",
+        "options": [
+            "A) Round (Circle)",
+            "B) Square",
+            "C) Triangle",
+            "D) Star"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 31: My House",
+        "text": "This is my house. It is big.",
+        "question": "Gaaffii: Is the house big or small?",
+        "expected": [
+            "big"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days of the Week 32",
+        "text": "What day comes after Monday?",
+        "options": [
+            "A) Tuesday",
+            "B) Wednesday",
+            "C) Sunday",
+            "D) Friday"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Farm Animals 33",
+        "text": "Which animal gives us milk?",
+        "options": [
+            "A) Cow",
+            "B) Lion",
+            "C) Tiger",
+            "D) Monkey"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 34: Toys",
+        "text": "I have a red ball.",
+        "question": "Gaaffii: What toy do I have?",
+        "expected": [
+            "ball",
+            "a red ball"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Parts of the Body 35",
+        "text": "How many eyes do you have?",
+        "options": [
+            "A) Two",
+            "B) One",
+            "C) Three",
+            "D) Four"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 36: Time",
+        "text": "It is time to sleep. Good night.",
+        "question": "Gaaffii: When do we say good night?",
+        "expected": [
+            "to sleep",
+            "at night"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Kitchen Items 37",
+        "text": "Where do you eat food?",
+        "options": [
+            "A) Plate",
+            "B) Cup",
+            "C) Spoon",
+            "D) Fork"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 38",
+        "text": "What do you do with a book?",
+        "options": [
+            "A) Read",
+            "B) Run",
+            "C) Sleep",
+            "D) Eat"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 39: My School Bag",
+        "text": "My bag is heavy.",
+        "question": "Gaaffii: Is my bag heavy or light?",
+        "expected": [
+            "heavy"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather 40",
+        "text": "What do you use when it rains?",
+        "options": [
+            "A) Umbrella",
+            "B) Sunglasses",
+            "C) Jacket",
+            "D) Sweater"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 41: Zoo",
+        "text": "The lion is in the cage.",
+        "question": "Gaaffii: Where is the lion?",
+        "expected": [
+            "in the cage"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animals 42",
+        "text": "Which animal is very tall?",
+        "options": [
+            "A) Giraffe",
+            "B) Dog",
+            "C) Cat",
+            "D) Mouse"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Opposites 43",
+        "text": "What is the opposite of 'big'?",
+        "options": [
+            "A) Small",
+            "B) Tall",
+            "C) Long",
+            "D) Hot"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 44: Drink",
+        "text": "I drink water.",
+        "question": "Gaaffii: What do I drink?",
+        "expected": [
+            "water",
+            "I drink water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Fruits 45",
+        "text": "Which fruit is yellow and long?",
+        "options": [
+            "A) Banana",
+            "B) Apple",
+            "C) Orange",
+            "D) Grape"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 46: Outside",
+        "text": "Let's play outside.",
+        "question": "Gaaffii: Where do we want to play?",
+        "expected": [
+            "outside"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Classroom Objects 47",
+        "text": "What do you use to cut paper?",
+        "options": [
+            "A) Scissors",
+            "B) Pencil",
+            "C) Glue",
+            "D) Eraser"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "My Self 48",
+        "text": "Are you a boy or a girl?",
+        "options": [
+            "A) Boy",
+            "B) Girl"
+        ],
+        "answer": "A) Boy"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 49: Name",
+        "text": "My name is Anna.",
+        "question": "Gaaffii: What is my name?",
+        "expected": [
+            "Anna",
+            "My name is Anna"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "General Knowledge 50",
+        "text": "What color is the sun?",
+        "options": [
+            "A) Yellow",
+            "B) Blue",
+            "C) Green",
+            "D) Black"
+        ],
+        "answer": "A"
+    }
+]
