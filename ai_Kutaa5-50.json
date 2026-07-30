@@ -1,0 +1,564 @@
+[
+    {
+        "type": "mcq",
+        "title": "Grammar & Vocabulary 1",
+        "text": "Which word is a conjunction in the following sentence? 'She wanted to play football, but it started to rain.'",
+        "options": [
+            "A) but",
+            "B) wanted",
+            "C) football",
+            "D) rain"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Reading Comprehension 2",
+        "text": "During the dry season, nomadic herders travel long distances across the lowlands to find fresh pasture for their livestock.",
+        "question": "Gaaffii: Why do nomadic herders travel long distances during the dry season?",
+        "expected": [
+            "to find fresh pasture for their livestock",
+            "find fresh pasture"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Science - Ecosystems 3",
+        "text": "What term describes organisms that manufacture their own food through photosynthesis using sunlight?",
+        "options": [
+            "A) Producers",
+            "B) Consumers",
+            "C) Decomposers",
+            "D) Carnivores"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The school science club organized an exhibition to display renewable energy models.'",
+        "question": "Gaaffii: What did the science club display in the exhibition?",
+        "expected": [
+            "renewable energy models",
+            "energy models"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers & Math 5",
+        "text": "What is the result of four hundred divided by eight?",
+        "options": [
+            "A) Fifty",
+            "B) Forty",
+            "C) Sixty",
+            "D) Eighty"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: History",
+        "text": "Historical monuments provide valuable insights into the ancient civilizations and traditions of our ancestors.",
+        "question": "Gaaffii: What do historical monuments provide valuable insights into?",
+        "expected": [
+            "ancient civilizations and traditions",
+            "civilizations and traditions"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Pronouns 7",
+        "text": "Choose the correct reflexive pronoun to complete: 'He repaired the broken bicycle all by ____.'",
+        "options": [
+            "A) himself",
+            "B) herself",
+            "C) yourself",
+            "D) itself"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Social Expressions 8",
+        "text": "What is the most appropriate way to ask a classmate for permission to use their colored pencils?",
+        "options": [
+            "A) May I please borrow your colored pencils?",
+            "B) Give me your pencils right now.",
+            "C) Why do you have pencils?",
+            "D) These pencils are mine."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Science & Physics 9",
+        "text": "Friction is a contact force that opposes the relative motion of two solid surfaces in contact.",
+        "question": "Gaaffii: What does friction oppose between two solid surfaces?",
+        "expected": [
+            "relative motion",
+            "the relative motion"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 10",
+        "text": "Which major organ system provides structural support, protection for internal organs, and facilitates body movement?",
+        "options": [
+            "A) Skeletal system",
+            "B) Digestive system",
+            "C) Respiratory system",
+            "D) Circulatory system"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: Geography",
+        "text": "The Great Rift Valley features dramatic escarpments, deep volcanic lakes, and rich biodiversity.",
+        "question": "Gaaffii: What geographic features are found in the Great Rift Valley?",
+        "expected": [
+            "escarpments, deep volcanic lakes, and rich biodiversity",
+            "volcanic lakes and biodiversity"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Phonics & Spelling 12",
+        "text": "Which word contains a suffix that indicates past tense?",
+        "options": [
+            "A) Walked",
+            "B) Walking",
+            "C) Walks",
+            "D) Walk"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Professions 13",
+        "text": "Who is trained to fly commercial aircraft safely carrying passengers across international destinations?",
+        "options": [
+            "A) Pilot",
+            "B) Mechanic",
+            "C) Sailor",
+            "D) Conductor"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "The dedicated researchers carefully collected water samples from various sections of the river.",
+        "question": "Gaaffii: What did the researchers collect from the river?",
+        "expected": [
+            "water samples",
+            "samples"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography & Africa 15",
+        "text": "Which country in East Africa is known as the origin of coffee and features high plateau highlands?",
+        "options": [
+            "A) Ethiopia",
+            "B) Kenya",
+            "C) Tanzania",
+            "D) Uganda"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: Technology",
+        "text": "Modern weather satellites orbit Earth, capturing cloud patterns and atmospheric data to forecast storms.",
+        "question": "Gaaffii: What do weather satellites capture to forecast storms?",
+        "expected": [
+            "cloud patterns and atmospheric data",
+            "cloud patterns"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Tenses 17",
+        "text": "Complete with the correct present continuous tense: 'Look! The students ____ an English exam right now.'",
+        "options": [
+            "A) are writing",
+            "B) wrote",
+            "C) will write",
+            "D) writes"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Expressions 18",
+        "text": "What do you say to express gratitude when someone helps you solve a difficult homework problem?",
+        "options": [
+            "A) Thank you for your kind help",
+            "B) Go away",
+            "C) I don't care",
+            "D) See you never"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather & Climate 19",
+        "text": "Evaporation occurs when liquid water absorbs heat energy from the sun and transforms into water vapor.",
+        "question": "Gaaffii: What energy source drives the process of evaporation?",
+        "expected": [
+            "heat energy from the sun",
+            "heat energy"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Relationships 20",
+        "text": "What do you call the daughter of your brother or sister?",
+        "options": [
+            "A) Niece",
+            "B) Nephew",
+            "C) Aunt",
+            "D) Cousin"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation & Infrastructure 21",
+        "text": "Which transportation route connects major cities using modern electric rail networks for fast travel?",
+        "options": [
+            "A) Railway",
+            "B) Footpath",
+            "C) Dirt road",
+            "D) River canal"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 22: Agriculture",
+        "text": "Crop rotation helps maintain soil fertility by alternating different plant species across seasons.",
+        "question": "Gaaffii: What does crop rotation help maintain in the soil?",
+        "expected": [
+            "soil fertility",
+            "fertility"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Calendar & Time 23",
+        "text": "How many decades are equal to a century?",
+        "options": [
+            "A) Ten",
+            "B) Five",
+            "C) Twenty",
+            "D) Hundred"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Science - States of Matter 24",
+        "text": "At what temperature in Celsius does pure liquid water boil and change into steam?",
+        "options": [
+            "A) 100°C",
+            "B) 0°C",
+            "C) 50°C",
+            "D) 25°C"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 25: School Library",
+        "text": "Students borrow reference books from the library, ensuring they return them within two weeks.",
+        "question": "Gaaffii: Within how many weeks must students return borrowed library books?",
+        "expected": [
+            "two weeks",
+            "2 weeks"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Prepositions 26",
+        "text": "Complete with the correct preposition of time: 'Our school break starts ____ Monday morning.'",
+        "options": [
+            "A) on",
+            "B) in",
+            "C) at",
+            "D) by"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 27",
+        "text": "Who designs safe water supply systems, public roads, and major structural bridges?",
+        "options": [
+            "A) Civil engineer",
+            "B) Chef",
+            "C) Teacher",
+            "D) Accountant"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 28: Conservation",
+        "text": "Wildlife conservation protects endangered animal species from illegal hunting and habitat destruction.",
+        "question": "Gaaffii: What does wildlife conservation protect endangered species from?",
+        "expected": [
+            "illegal hunting and habitat destruction",
+            "illegal hunting"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geometrical Shapes 29",
+        "text": "What is the mathematical name for a polygon that has six equal sides and angles?",
+        "options": [
+            "A) Hexagon",
+            "B) Pentagon",
+            "C) Octagon",
+            "D) Square"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 30: Astronomy",
+        "text": "Earth takes approximately 365 and one-quarter days to complete one full revolution around the sun.",
+        "question": "Gaaffii: How long does Earth take to complete one full revolution around the sun?",
+        "expected": [
+            "365 and one-quarter days",
+            "365 1/4 days"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days & Time 31",
+        "text": "Which season in tropical regions typically brings heavy rainfall and green vegetation?",
+        "options": [
+            "A) Rainy season",
+            "B) Dry season",
+            "C) Winter",
+            "D) Autumn"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Animals & Classification 32",
+        "text": "Which group of vertebrates is characterized by having feathers, wings, and laying hard-shelled eggs?",
+        "options": [
+            "A) Birds (Aves)",
+            "B) Mammals",
+            "C) Reptiles",
+            "D) Amphibians"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 33: Environment",
+        "text": "Planting trees along riverbanks prevents soil erosion and protects water purity.",
+        "question": "Gaaffii: What does planting trees along riverbanks prevent?",
+        "expected": [
+            "soil erosion",
+            "erosion"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 34",
+        "text": "Which part of the human brain controls balance, coordination, and precise muscle movements?",
+        "options": [
+            "A) Cerebellum",
+            "B) Cerebrum",
+            "C) Brainstem",
+            "D) Spinal cord"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 35: Space Exploration",
+        "text": "Astronomers use powerful optical and radio telescopes to study distant stars and galaxies.",
+        "question": "Gaaffii: What instruments do astronomers use to study distant stars?",
+        "expected": [
+            "optical and radio telescopes",
+            "telescopes"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Kitchen & Science 36",
+        "text": "What process is used to separate insoluble solid particles from a liquid using filter paper?",
+        "options": [
+            "A) Filtration",
+            "B) Evaporation",
+            "C) Condensation",
+            "D) Melting"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 37",
+        "text": "What mental action do students perform when they evaluate facts to solve a logic puzzle?",
+        "options": [
+            "A) Deduce (or reason)",
+            "B) Sleep",
+            "C) Forget",
+            "D) Ignore"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 38: Cultural Heritage",
+        "text": "Traditional Oromo songs and folk tales are passed down orally from generation to generation.",
+        "question": "Gaaffii: How are traditional Oromo songs and folk tales passed down?",
+        "expected": [
+            "orally from generation to generation",
+            "orally"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather & Climate 39",
+        "text": "Which meteorological instrument is used to measure wind speed?",
+        "options": [
+            "A) Anemometer",
+            "B) Barometer",
+            "C) Thermometer",
+            "D) Rain gauge"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 40: Renewable Energy",
+        "text": "Hydroelectric dams harness the kinetic energy of flowing river water to generate electricity.",
+        "question": "Gaaffii: What energy of river water do hydroelectric dams harness?",
+        "expected": [
+            "kinetic energy",
+            "kinetic energy of flowing river water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animal Habitats 41",
+        "text": "Which aquatic biome covers approximately seventy-one percent of the Earth's total surface area?",
+        "options": [
+            "A) Oceans (Marine biome)",
+            "B) Freshwater rivers",
+            "C) Swamps",
+            "D) Ponds"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Synonyms 42",
+        "text": "Which word is a synonym for the adjective 'ancient'?",
+        "options": [
+            "A) Old (or historic)",
+            "B) Modern",
+            "C) New",
+            "D) Young"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 43: Ocean Science",
+        "text": "Coral reefs provide essential breeding grounds and shelter for thousands of marine fish species.",
+        "question": "Gaaffii: What do coral reefs provide for marine fish species?",
+        "expected": [
+            "breeding grounds and shelter",
+            "shelter"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Botany & Agriculture 44",
+        "text": "Which plant part anchors the plant firmly in the ground and absorbs water and minerals?",
+        "options": [
+            "A) Root",
+            "B) Leaf",
+            "C) Flower",
+            "D) Stem"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 45: Geology",
+        "text": "Tectonic plate movements along Earth's crust frequently trigger powerful earthquakes and volcanic activity.",
+        "question": "Gaaffii: What do tectonic plate movements frequently trigger?",
+        "expected": [
+            "earthquakes and volcanic activity",
+            "earthquakes"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "School Supplies 46",
+        "text": "What scientific instrument magnifies tiny objects that are invisible to the naked human eye?",
+        "options": [
+            "A) Microscope",
+            "B) Telescope",
+            "C) Periscope",
+            "D) Stethoscope"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Plurals 47",
+        "text": "What is the correct plural form of the noun 'analysis'?",
+        "options": [
+            "A) Analyses",
+            "B) Analysises",
+            "C) Analysises",
+            "D) Analysis"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 48: Earth Science",
+        "text": "The atmosphere protects living organisms by absorbing harmful ultraviolet radiation from the sun.",
+        "question": "Gaaffii: What harmful radiation does the atmosphere absorb?",
+        "expected": [
+            "ultraviolet radiation",
+            "harmful ultraviolet radiation"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography Basics 49",
+        "text": "What imaginary lines run horizontally around the globe parallel to the Equator?",
+        "options": [
+            "A) Lines of Latitude (Parallels)",
+            "B) Lines of Longitude (Meridians)",
+            "C) Prime Meridian",
+            "D) International Date Line"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Final Review 50",
+        "text": "Which branch of science studies matter, energy, motion, force, and their interactions?",
+        "options": [
+            "A) Physics",
+            "B) Biology",
+            "C) Chemistry",
+            "D) Geology"
+        ],
+        "answer": "A"
+    }
+]
