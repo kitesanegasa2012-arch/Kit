@@ -1,0 +1,567 @@
+[
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 1: Maatii Koo",
+        "text": "Maatiin koo abbaa, harmee fi obboleessa kooti. Nuti waliin nagaadhaan jiraanna. Abbaan hojiif gara gabaa deema, harmeen immoo mana keessatti nu kunuunsiifti.",
+        "question": "Gaaffii: Maatiin koo eenyufa'i? (Deebii gabaabaa barreessi)",
+        "expected": [
+            "abbaa",
+            "harmee",
+            "obboleessa",
+            "abbaa, harmee fi obboleessa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Sagaleeffannoo 2",
+        "text": "Qubee Afaan Oromoo keessaa qubeen sagalee dhooftuu (ejectives) taate teessoo kamirra jirti?",
+        "options": [
+            "A) b",
+            "B) c",
+            "C) m",
+            "D) n"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Jechoota 3",
+        "text": "Jechi 'Bishaan' jedhu maaliif fayyada? Ergaa isaa keessaa isa sirrii filadhu.",
+        "options": [
+            "A) Dhugaatiif fi qulleeffannaaf",
+            "B) Ispoortiidhaaf qofa",
+            "C) Qoraaniif",
+            "D) Kophaa taa'uuf"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dhaggeeffachuu & Hubachuu 4",
+        "text": "Guyyaa tokko liyyuun gara manaa barnootaa deemte. Barsiisaan kitaaba ishee fuula 5 irratti qormaata kenneef. Liyyuun hojii ishee sirriitti hojjettee gammachuu argate.",
+        "question": "Gaaffii: Barsiisaan Liyuuf maal kenne?",
+        "expected": [
+            "kitaaba",
+            "qormaata",
+            "qormaata fuula 5"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Yaadachuu 5",
+        "text": "Lakkoofsi 'Tokko' Afaan Oromoon akkamitti barreeffama?",
+        "options": [
+            "A) Lamaan",
+            "B) Tokko",
+            "C) Sadii",
+            "D) Afur"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 6: Beeylada Manaa",
+        "text": "Re'een marga nyaatti. Isheen aanan mi’aawaa nuu kenniti. Nuti re'ee ni jaalanna.",
+        "question": "Gaaffii: Re'een maal nuu kenniti?",
+        "expected": [
+            "aanan",
+            "aanan mi'aawaa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Sagalee 7",
+        "text": "Qubeewwan sagalee dheeraa qaban adda baasi:",
+        "options": [
+            "A) a, e, i, o, u",
+            "B) aa, ee, ii, oo, uu",
+            "C) b, c, d, f",
+            "D) p, v, z"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Hawaasummaa 8",
+        "text": "Yeroo namni nagaan nu gaafatu deebiin keenya maali ta'uu qaba?",
+        "options": [
+            "A) Nagaadhaa",
+            "B) Galatoomi, nagaan keenya",
+            "C) Dhaqi",
+            "D) Hin dhaga'u"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Hubannoo 9: Addee fi Guyyaa",
+        "text": "Addeessuu fi urjiin halkan ba'u. Aduun immoo ganama baatee lafaaf ibsaa kenniti.",
+        "question": "Gaaffii: Aduun yoom baati?",
+        "expected": [
+            "ganama",
+            "guyyaa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Shallaguu fi Dubbisuu 10",
+        "text": "Jechoota armaan gadii keessaa isa maqaa namaa ta'e kam?",
+        "options": [
+            "A) Farda",
+            "B) Boruu",
+            "C) Mana",
+            "D) Marga"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 11: Fira Koo",
+        "text": "Obboleessi koo hiriyaa kooti. Nuti tapha kubbaa miilaa taphanna. Yeroo hundaa waliin gorsina.",
+        "question": "Gaaffii: Nuti maal taphanna?",
+        "expected": [
+            "kubbaa",
+            "kubbaa miilaa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Jechoota 12",
+        "text": "Jechi 'Manni' jedhu keessatti qubeen jalqabaa tanamtuu dha?",
+        "options": [
+            "A) m",
+            "B) n",
+            "C) i",
+            "D) a"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Yaaddoo 13",
+        "text": "Bara keessaa waqtiimidhaan itti facaasuufi qotu (Ganna/Bona) keessaa isa kam?",
+        "options": [
+            "A) Ganna",
+            "B) Teessoo",
+            "C) Gabatee",
+            "D) Qalama"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Hubannoo 14: Qulqullina",
+        "text": "Harki keenya yeroo nyaatru qullaa ta'uu qaba. Bishaan fi saamunaan dhiqachuun dhibee irraa nu baraara.",
+        "question": "Gaaffii: Dhibee irraa maalitu nu baraara?",
+        "expected": [
+            "dhiqachuun",
+            "saamunaan",
+            "bishaan fi saamunaan"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee Laafaa fi Jabaa 15",
+        "text": "Qubee 'ch' fi 'c' garaagarummaa qabu. 'C' n sagalee maaliiti?",
+        "options": [
+            "A) Ejectives (Laafaa/Cicha)",
+            "B) Dubbii duwwaa",
+            "C) Lakkoofsa",
+            "D) Mallattoo"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 16: Mukkeen Biqilaa",
+        "text": "Mukkeen omisha qilleensa qulqulluu nuu kennu. Biqiltoota kunuunsuun barbaachisaadha.",
+        "question": "Gaaffii: Mukkeen maal nuu kennu?",
+        "expected": [
+            "qilleensa",
+            "qilleensa qulqulluu"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Shallaguu 17",
+        "text": "Manni barnootaa keenya keessatti dareen barsiisaa meeqa jira? (Akka fakkeenyaatti)",
+        "options": [
+            "A) Kufaatii",
+            "B) Lakkoofsa barattootaa",
+            "C) Qajeelfama qofa",
+            "D) Deebiin hin jiru"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "mcq",
+        "title": "Gaalee Sirrii 18",
+        "text": "Hima sirrii ta'e filadhu:",
+        "options": [
+            "A) Boruu gara mana barumsaa nan deema.",
+            "B) Deema mana barumsaa boruu.",
+            "C) Mana barumsaa deema boruu.",
+            "D) Nan deema mana barumsaa."
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 19: Foonii fi Aannan",
+        "text": "Loon aannan mi'aawaa nuu kennu. Aannan dhuguun fayyaa qaamaa eega.",
+        "question": "Gaaffii: Loon maal nuu kennu?",
+        "expected": [
+            "aannan",
+            "aannan mi'aawaa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Jecha Walitti Dhufeenya 20",
+        "text": "Hiika jecha 'Barsiisaa' jedhuu isa kam?",
+        "options": [
+            "A) Namicha baratu",
+            "B) Namicha barsiisu",
+            "C) Farda deemu",
+            "D) Gabaaf deemu"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 21: Guyyaa Ayyaanaa",
+        "text": "Ayyaana Irreechaa irratti ummanni uffataayyee uffatee gamtaadhaan weeddisa.",
+        "question": "Gaaffii: Irreecha irratti maal godhu?",
+        "expected": [
+            "weeddisa",
+            "weeddisuun",
+            "gamtaadhaan weeddisa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee Oromoo 22",
+        "text": "Qubee afaan Oromoo keessaa qubeen dachaa (digraphs) isa kam?",
+        "options": [
+            "A) ch, dh, ph, sh, ny",
+            "B) a, e, i",
+            "C) 1, 2, 3",
+            "D) b, d, g"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Naannoo 23",
+        "text": "Qilleensi yeroo bubbuusu maal uumama?",
+        "options": [
+            "A) Qabbana ykn qilleensa gaarii",
+            "B) Bishaan dhumate",
+            "C) Lafa caccabe",
+            "D) Qalama caccabe"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 24: Ispoortii",
+        "text": "Ispoortiin fayyaa qaamaaf baay'ee gaariidha. Ganama ganama fiigiinsi fayyaa keenya eega.",
+        "question": "Gaaffii: Fayyaa qaamaaf maaletu gaariidha?",
+        "expected": [
+            "ispoortii",
+            "fiigiinsa"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Hiikaa 25",
+        "text": "Jechi 'Gammachuu' jedhu hiika akkamii qaba?",
+        "options": [
+            "A) Gadda",
+            "B) Fuula qabbanaa'aa/Bishaan",
+            "C) Gufuu",
+            "D) Gammaduu/Kophummaa"
+        ],
+        "answer": "D"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 26: Hoospitaala",
+        "text": "Namni dhukkubsate gara hoospitaala deemuun ogeessa fayyaatiin ilaalamuu qaba.",
+        "question": "Gaaffii: Namni dhukkubsate eessa deema?",
+        "expected": [
+            "hoospitaala",
+            "gara hoospitaala"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Sagaleeffannoo 27",
+        "text": "Qubee 'dh' dubbisuuf sagaleen isaa akkamitti ba'uu qaba?",
+        "options": [
+            "A) Sagalee laafaa keessoo irraa",
+            "B) Sagalee ol kaafamee",
+            "C) Sagalee hin dhagahamne",
+            "D) Mallattoo duwwaa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Jechoota 28",
+        "text": "Mammaaksi 'Harka tokkoon qilleensi hin qabamne' maal ibsa?",
+        "options": [
+            "A) Tokkummaan humna ta'uu",
+            "B) Qilleensa qabachuu qofa",
+            "C) Kophaa deemuu",
+            "D) Hojiin dhibuu"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 29: Kitaaba",
+        "text": "Kitaabni hiriyaa keenya isa guddaadha. Kitaaba dubbisuun beekumsa dabala.",
+        "question": "Gaaffii: Kitaaba dubbisuun maal dabala?",
+        "expected": [
+            "beekumsa",
+            "beekumsa keenya"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Yaaddoo 30",
+        "text": "Bishaan qulqulluun dhangala'aa bifa akkamii qaba?",
+        "options": [
+            "A) Halluu hin qabu (Ifaa)",
+            "B) Dukkana",
+            "C) Gurraacha",
+            "D) Diimaa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 31: Aduu fi Halkan",
+        "text": "Guyyaan aduun ni baati, halkan immoo urjiitu ba'a. Mucaan xiqqaan halkan sireetti rafa.",
+        "question": "Gaaffii: Halkan maalitu ba'a?",
+        "expected": [
+            "urjiitu",
+            "urjiin"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Caasaa 32",
+        "text": "Jechi 'Nama' jedhu qabatamaan maaliin ijaarame?",
+        "options": [
+            "A) N-a-m-a",
+            "B) B-i-s-h",
+            "C) K-u-t",
+            "D) F-a-r"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Naannoo 33",
+        "text": "Bokkaan yeroo roobu bishaan eessa buusaa?",
+        "options": [
+            "A) Lafa irra fi lagaatti",
+            "B) Qilleensa qofa",
+            "C) Mana keessatti",
+            "D) Istaandardii irratti"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 34: Barataa",
+        "text": "Barataan gaariin yeroo kabajuu beeka. Ganama obboroodhaan ka'ee gara mana barumsaa deema.",
+        "question": "Gaaffii: Barataan yeroo akkamitti ka'a?",
+        "expected": [
+            "ganama",
+            "obboroodhaan",
+            "ganama obboroodhaan"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Hiika Jechootaa 35",
+        "text": "Jechi 'Goota' jedhu eenyu ibsa?",
+        "options": [
+            "A) Nama sodaa hin qabne / Jabduu",
+            "B) Nama hiyyeessa",
+            "C) Nama dhukkubsate",
+            "D) Nama ciisu"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 36: Farda",
+        "text": "Fardni bineensa saffisaan deemuudha. Namoonni fe'umsaafis ta'e geejjibaaf itti fayyadamu.",
+        "question": "Gaaffii: Fardni akkamitti deema?",
+        "expected": [
+            "saffisaan",
+            "saffisaan deema"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Sagalee 37",
+        "text": "Sagaleen qubee 'ph' irraa hoo malitu uumama?",
+        "options": [
+            "A) Sagalee jabaa dhooftuu",
+            "B) Sagalee laafaa",
+            "C) Dubbii callisaa",
+            "D) Mallattoo lakkoofsaa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hubannoo Hawaasa 38",
+        "text": "Aadaa Oromoo keessatti kabajaan maatii fi jaarsoliif qabnu akkamitti ibsama?",
+        "options": [
+            "A) Kabajuudhaan fiuu dhaggeeffachuudhaan",
+            "B) Loluudhaan",
+            "C) Dagachuudhaan",
+            "D) Dhiisuudhaan"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 39: Qalama",
+        "text": "Qalamaan fuula irratti barreessina. Qalamni qaxqaxaa barumsaaf nu gargaara.",
+        "question": "Gaaffii: Qalamaan maal goona?",
+        "expected": [
+            "barreessina",
+            "fuula irratti barreessina"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Yaadachuu 40",
+        "text": "Ji'oonni waggaa keessa jiran meeqa?",
+        "options": [
+            "A) 12",
+            "B) 10",
+            "C) 7",
+            "D) 30"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 41: Qilleensa Qulqulluu",
+        "text": "Iddoon mukkeen baay'ee qaban qilleensa baay'ee mi'aawaa fi qulqulluu qabu.",
+        "question": "Gaaffii: Iddoo akkamitti qilleensi qulqulluun jira?",
+        "expected": [
+            "mukkeen baay'ee qaban",
+            "mukkeen"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee fi Jechoota 42",
+        "text": "Jechi 'Afaan' jedhu qubee meeqa qaba?",
+        "options": [
+            "A) 4",
+            "B) 5",
+            "C) 3",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Hubannoo 43",
+        "text": "Bishaan ho'aa yeroo tuqunnu maal argina?",
+        "options": [
+            "A) Ho'ina (Oowwi)",
+            "B) Qabbana",
+            "C) Qoraan",
+            "D) Dhagaa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 44: Man'ee Barumsaa",
+        "text": "Manni barnootaa keenya bareedaa dha. Barsiisotni keenya jaalalaan nu barsiisu.",
+        "question": "Gaaffii: Barsiisotni keenya akkamitti nu barsiisu?",
+        "expected": [
+            "jaalalaan",
+            "jaalalaan nu barsiisu"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hiika Jechootaa 45",
+        "text": "Jechi 'Hiriyaa' jedhu hiika akkamii qaba?",
+        "options": [
+            "A) Hiriyoota / Michuu",
+            "B) Diina",
+            "C) Fagoo",
+            "D) Mukti"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 46: Adurree",
+        "text": "Adurreen bineensa mana keessa jiraatudha. Isheen hantuuta qabdee mana qulleessiti.",
+        "question": "Gaaffii: Adurreen maal qabdi?",
+        "expected": [
+            "hantuuta",
+            "hantuuta qabdi"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Qubee Afaan Oromoo 47",
+        "text": "Qubeewwan sagalee dubbii (vowels) meeqa tu jira?",
+        "options": [
+            "A) 5",
+            "B) 4",
+            "C) 6",
+            "D) 7"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Hubannoo 48",
+        "text": "Taphni kubbaa miilaa taphachuuf maal barbaachisa?",
+        "options": [
+            "A) Kubbaa fi dirree",
+            "B) Qalama qofa",
+            "C) Kitaaba qofa",
+            "D) Bishaan qofa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Gaaffii Dubbisuu 49: Hojii Manaa",
+        "text": "Barsiisaan hojii manaa kenneeraaf. Mucaan xiqqaan galgala hojii manaa isaa hojjete.",
+        "question": "Gaaffii: Mucaan yoom hojii manaa hojjete?",
+        "expected": [
+            "galgala"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Dandeettii Xumuraa 50",
+        "text": "Mammaaksi 'Obsaan aanan hurkudeen dhuga' jedhu ergaan isaa maali?",
+        "options": [
+            "A) Obsi bu'aa gaarii fida",
+            "B) Ariifachuun gaariidha",
+            "C) Anaan dhuguu dhiisuu",
+            "D) Lafa deemuu"
+        ],
+        "answer": "A"
+    }
+]
