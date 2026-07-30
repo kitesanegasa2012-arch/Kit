@@ -200,11 +200,11 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Suuraa dhiisuudhaan bakka sana kitaabilee 1-6 galchuun, jalatti immoo banner barsiisaa kaa'uu
+    # Suuraa dhiisuudhaan bakka sana kitaabilee 1-6 galchuun, jalatti immoo banner barsiisaa kaa'uu (Mallattoo harkaa olqabamaa waliin)
     str_app.markdown(
         """
         <div class="books-info-card">
-            <h4>📚 Qabiyyee Kitaabota Madaalliif Dhiyaatan (Kutaa 1 - 6):</h4>
+            <h4>📚 Qabiyyee Kitaabota madaallii (Kutaa 1 - 6):</h4>
             <ul>
                 <li><b>Kutaa 1 & 2:</b> Qubee bu'uuraa, jechoota gaggabaaboo fi herrega lakkoofsaa jalqabaa.</li>
                 <li><b>Kutaa 3 & 4:</b> Dubbisa hubachuu, jechoota hiika isaanii waliin, fi shallaggaa walxaxaa hin taane.</li>
@@ -213,7 +213,7 @@ def role_selection_screen():
         </div>
         
         <div class="welcome-text-banner">
-            WELCOME TO HIKA WAY APP
+            🙌 WELCOME TO HIKA WAY APP
         </div>
     """,
         unsafe_allow_html=True,
