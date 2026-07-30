@@ -1,0 +1,564 @@
+[
+    {
+        "type": "mcq",
+        "title": "Grammar & Vocabulary 1",
+        "text": "Which word is a noun in the following sentence? 'The cat runs fast.'",
+        "options": [
+            "A) cat",
+            "B) runs",
+            "C) fast",
+            "D) The"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Reading Comprehension 2",
+        "text": "Tom has a little brown dog named Max. Max likes to fetch a yellow ball in the yard.",
+        "question": "Gaaffii: What is the name of Tom's dog?",
+        "expected": [
+            "Max",
+            "max"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Animals 3",
+        "text": "Which animal lives in water and breathes with gills?",
+        "options": [
+            "A) Fish",
+            "B) Cat",
+            "C) Bird",
+            "D) Dog"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The children are planting small trees in the school garden.'",
+        "question": "Gaaffii: What are the children planting in the garden?",
+        "expected": [
+            "small trees",
+            "trees"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers & Math Words 5",
+        "text": "What number comes after ninety-nine?",
+        "options": [
+            "A) One hundred",
+            "B) Ninety-eight",
+            "C) One thousand",
+            "D) Ninety"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: Morning Routine",
+        "text": "Every morning, Anna wakes up early, brushes her teeth, and eats a healthy breakfast.",
+        "question": "Gaaffii: What does Anna do right after waking up?",
+        "expected": [
+            "brushes her teeth",
+            "brushes teeth"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Pronouns 7",
+        "text": "Choose the correct pronoun to complete: '____ are reading a very good book together.'",
+        "options": [
+            "A) They",
+            "B) He",
+            "C) She",
+            "D) It"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Social Expressions 8",
+        "text": "What is the polite response when someone says 'Thank you so much'?",
+        "options": [
+            "A) You're welcome",
+            "B) Good morning",
+            "C) Goodbye",
+            "D) Excuse me"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Nature & Seasons 9",
+        "text": "During the rainy season, farmers plow their fields and plant maize and wheat seeds.",
+        "question": "Gaaffii: What do farmers plant during the rainy season?",
+        "expected": [
+            "maize and wheat",
+            "maize and wheat seeds"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Body Parts & Senses 10",
+        "text": "Which part of the body do we use to see beautiful colors?",
+        "options": [
+            "A) Eyes",
+            "B) Ears",
+            "C) Nose",
+            "D) Hands"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: Library",
+        "text": "The school library has hundreds of interesting storybooks and science books.",
+        "question": "Gaaffii: What is inside the school library?",
+        "expected": [
+            "storybooks and science books",
+            "hundreds of interesting storybooks and science books"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Phonics & Spelling 12",
+        "text": "Which word starts with the same sound as 'Chair'?",
+        "options": [
+            "A) Chicken",
+            "B) Ship",
+            "C) Dog",
+            "D) Apple"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Professions 13",
+        "text": "Who works in a hospital and cures sick patients?",
+        "options": [
+            "A) Doctor",
+            "B) Teacher",
+            "C) Carpenter",
+            "D) Driver"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "The clever monkey climbed up the tall acacia tree to pick sweet fruits.",
+        "question": "Gaaffii: Where did the monkey climb?",
+        "expected": [
+            "up the tall acacia tree",
+            "acacia tree"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Classroom Objects 15",
+        "text": "What tool do you use to measure short distances in centimeters?",
+        "options": [
+            "A) Ruler",
+            "B) Eraser",
+            "C) Notebook",
+            "D) Backpack"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: Family Helpers",
+        "text": "Father cooks delicious dinner while mother cleans the living room after work.",
+        "question": "Gaaffii: What does father do?",
+        "expected": [
+            "cooks delicious dinner",
+            "cooks dinner"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Alphabet & Spelling 17",
+        "text": "Which group of words is written in correct alphabetical order?",
+        "options": [
+            "A) Apple, Ball, Cat, Dog",
+            "B) Dog, Cat, Ball, Apple",
+            "C) Ball, Apple, Dog, Cat",
+            "D) Cat, Apple, Dog, Ball"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Expressions 18",
+        "text": "What should you say when you want to pass by someone in a narrow hallway?",
+        "options": [
+            "A) Excuse me",
+            "B) Good night",
+            "C) Hello",
+            "D) Thank you"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather & Climate 19",
+        "text": "Strong winds blow away dry autumn leaves across the school compound.",
+        "question": "Gaaffii: What blows away the dry leaves?",
+        "expected": [
+            "strong winds",
+            "winds"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Relationships 20",
+        "text": "What do you call your mother's brother?",
+        "options": [
+            "A) Uncle",
+            "B) Aunt",
+            "C) Grandfather",
+            "D) Nephew"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation 21",
+        "text": "Which transportation crosses large oceans carrying cargo and passengers?",
+        "options": [
+            "A) Ship",
+            "B) Bicycle",
+            "C) Car",
+            "D) Bus"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 22: Healthy Food",
+        "text": "Eating fresh oranges gives our body essential Vitamin C to fight colds.",
+        "question": "Gaaffii: What vitamin do fresh oranges give us?",
+        "expected": [
+            "Vitamin C",
+            "vitamin c"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Months of the Year 23",
+        "text": "Which month comes right after January?",
+        "options": [
+            "A) February",
+            "B) March",
+            "C) December",
+            "D) April"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "House & Furniture 24",
+        "text": "Where do you sit comfortably to watch television in the living room?",
+        "options": [
+            "A) Sofa",
+            "B) Bed",
+            "C) Stove",
+            "D) Sink"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 25: School Rules",
+        "text": "Students must listen carefully when the teacher is explaining the lesson.",
+        "question": "Gaaffii: How must students listen to the teacher?",
+        "expected": [
+            "carefully",
+            "listen carefully"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Verbs 26",
+        "text": "Complete with the correct past tense: 'Yesterday, I ____ a very funny cartoon.'",
+        "options": [
+            "A) watched",
+            "B) watch",
+            "C) watches",
+            "D) watching"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 27",
+        "text": "Who grows vegetables and crops to feed the community?",
+        "options": [
+            "A) Farmer",
+            "B) Pilot",
+            "C) Baker",
+            "D) Dentist"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 28: Emotions",
+        "text": "David smiled broadly when he received a gold medal for winning the race.",
+        "question": "Gaaffii: Why did David smile broadly?",
+        "expected": [
+            "because he received a gold medal for winning the race",
+            "he received a gold medal"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geometrical Shapes 29",
+        "text": "How many equal sides does a square have?",
+        "options": [
+            "A) Four",
+            "B) Three",
+            "C) Five",
+            "D) Two"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 30: Wildlife",
+        "text": "Elephants use their long trunks to drink water and bath in the river.",
+        "question": "Gaaffii: What do elephants use their long trunks for?",
+        "expected": [
+            "to drink water and bath in the river",
+            "drink water and bath"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days & Time 31",
+        "text": "Which day comes two days after Wednesday?",
+        "options": [
+            "A) Friday",
+            "B) Saturday",
+            "C) Thursday",
+            "D) Sunday"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Animals & Young Ones 32",
+        "text": "What is a baby dog called?",
+        "options": [
+            "A) Puppy",
+            "B) Kitten",
+            "C) Calf",
+            "D) Chick"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 33: Hobbies",
+        "text": "Lina enjoys painting landscapes with watercolors every weekend.",
+        "question": "Gaaffii: What does Lina enjoy doing?",
+        "expected": [
+            "painting landscapes with watercolors",
+            "painting"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Human Body 34",
+        "text": "How many teeth does a healthy adult human usually have?",
+        "options": [
+            "A) Thirty-two",
+            "B) Twenty",
+            "C) Forty",
+            "D) Ten"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 35: Astronomy",
+        "text": "The bright sun sets in the west every evening, bringing the dark night.",
+        "question": "Gaaffii: In which direction does the sun set?",
+        "expected": [
+            "west",
+            "in the west"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Kitchen Utensils 36",
+        "text": "What do you use to cut soft food like cake or fruit?",
+        "options": [
+            "A) Knife",
+            "B) Spoon",
+            "C) Fork",
+            "D) Cup"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 37",
+        "text": "What physical action do you do when you hear music playing?",
+        "options": [
+            "A) Dance",
+            "B) Sleep",
+            "C) Read",
+            "D) Write"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 38: School Yard",
+        "text": "Children laugh and run around the playground during the morning break.",
+        "question": "Gaaffii: When do children play in the playground?",
+        "expected": [
+            "during the morning break",
+            "morning break"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather & Environment 39",
+        "text": "What weather phenomenon produces thunder and lightning?",
+        "options": [
+            "A) Thunderstorm",
+            "B) Sunny day",
+            "C) Light breeze",
+            "D) Foggy morning"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 40: Insects",
+        "text": "Busy honeybees collect sweet nectar from colorful flowers to make honey.",
+        "question": "Gaaffii: What do honeybees collect from flowers?",
+        "expected": [
+            "sweet nectar",
+            "nectar"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animal Habitats 41",
+        "text": "Where do birds build their nests to lay eggs?",
+        "options": [
+            "A) On tree branches",
+            "B) Underground in holes",
+            "C) Inside water rivers",
+            "D) On paved roads"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Antonyms 42",
+        "text": "What is the opposite of the adjective 'brave'?",
+        "options": [
+            "A) Cowardly (or scared)",
+            "B) Strong",
+            "C) Tall",
+            "D) Fast"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 43: Hydration",
+        "text": "Drinking plenty of clean water keeps our bodies healthy and active.",
+        "question": "Gaaffii: What keeps our bodies healthy and active?",
+        "expected": [
+            "drinking plenty of clean water",
+            "clean water"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Fruits & Nutrition 44",
+        "text": "Which fruit has a hard brown outer shell and sweet milk inside?",
+        "options": [
+            "A) Coconut",
+            "B) Banana",
+            "C) Apple",
+            "D) Orange"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 45: Camping",
+        "text": "The family pitched a large green tent near the lake for weekend camping.",
+        "question": "Gaaffii: Where did the family pitch their tent?",
+        "expected": [
+            "near the lake",
+            "lake"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "School Supplies 46",
+        "text": "What supplies do you use to stick two pieces of paper together?",
+        "options": [
+            "A) Glue",
+            "B) Ruler",
+            "C) Pencil",
+            "D) Eraser"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Plurals 47",
+        "text": "What is the correct plural form of the word 'child'?",
+        "options": [
+            "A) Children",
+            "B) Childs",
+            "C) Childes",
+            "D) Child"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 48: Pets",
+        "text": "My fluffy white rabbit loves nibbling on fresh carrots and lettuce leaves.",
+        "question": "Gaaffii: What does the pet rabbit love nibbling on?",
+        "expected": [
+            "fresh carrots and lettuce leaves",
+            "carrots and lettuce"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Geography Basics 49",
+        "text": "What large natural stream of flowing fresh water empties into a sea or lake?",
+        "options": [
+            "A) River",
+            "B) Mountain",
+            "C) Desert",
+            "D) Cloud"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Final Review 50",
+        "text": "Which season comes after winter, bringing blooming flowers and warmer weather?",
+        "options": [
+            "A) Spring",
+            "B) Summer",
+            "C) Autumn",
+            "D) Monsoon"
+        ],
+        "answer": "A"
+    }
+]
