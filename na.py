@@ -94,26 +94,17 @@ str_app.markdown(
         color: #e0f2f1;
     }
     
-    /* Custom Styling for Profile Image */
-    .profile-img-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 20px;
-    }
-    .profile-img-container img {
-        border-radius: 15px;
-        border: 4px solid #004d40;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        max-width: 100%;
-        height: auto;
-    }
+    /* Custom Styling for Profile Image & Text */
     .welcome-img-text {
         font-weight: bold;
         color: #004d40;
-        margin-top: 8px;
-        font-size: 1.1rem;
-        text-align: left;
+        margin-top: 10px;
+        font-size: 1.15rem;
+        text-align: center;
+        background-color: #e0f2f1;
+        padding: 8px;
+        border-radius: 8px;
+        border: 2px solid #80cbc4;
     }
     </style>
 """,
@@ -173,9 +164,10 @@ def role_selection_screen():
     str_app.markdown(
         """
         <div class="hero-box">
-            <h1>📖 Hika Way (HW) APP</h1>
+            <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hika Way itti Nagaan Dhuftan!
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!<br><br>
+                <b>App kanaaf: Kutaa 1 - Kutaa 6 (Afaan Oromoo, Herrega, Ingliffaa)</b><br>
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
@@ -183,14 +175,14 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Suuraa harka bitaatti galchuu fi jalaan "WELL COME !TO HIKA WAY APP" barreessuu
+    # Suuraa harka bitaatti galchuu fi jalaan "WELL COME ! TO HIKA WAY APP" barreessuu
     col_img, col_space = str_app.columns([1.2, 2])
     with col_img:
         try:
-            str_app.image("makaa qixxeessaa.jpg", use_container_width=True)
+            str_app.image("makaa qixxeessa.jpg", use_container_width=True)
             str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
         except Exception:
-            str_app.warning("Suuraan 'makaa qixxeessaa.jpg' jedhu hin argamne.")
+            str_app.warning("Suuraan 'makaa qixxeessa.jpg' jedhu kuusaa (folder) keessatti hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
