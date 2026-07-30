@@ -1,0 +1,562 @@
+[
+    {
+        "type": "mcq",
+        "title": "Alphabet & Phonics 1",
+        "text": "Which letter comes before 'Z' in the English alphabet?",
+        "options": [
+            "A) Y",
+            "B) X",
+            "C) W",
+            "D) V"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 2",
+        "text": "The cat sleeps on the mat.",
+        "question": "Gaaffii: Where does the cat sleep?",
+        "expected": [
+            "on the mat",
+            "mat"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Animals 3",
+        "text": "Which animal is known as the 'king of the jungle'?",
+        "options": [
+            "A) Lion",
+            "B) Elephant",
+            "C) Monkey",
+            "D) Zebra"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Listening & Understanding 4",
+        "text": "Listen to the sentence: 'The bird is flying high.'",
+        "question": "Gaaffii: What is the bird doing?",
+        "expected": [
+            "flying",
+            "flying high"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers 11-20 5",
+        "text": "What number comes after fifteen?",
+        "options": [
+            "A) Sixteen",
+            "B) Fourteen",
+            "C) Seventeen",
+            "D) Eighteen"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 6: School",
+        "text": "We go to school to learn and play.",
+        "question": "Gaaffii: Why do we go to school?",
+        "expected": [
+            "to learn and play",
+            "learn and play"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar - Pronouns 7",
+        "text": "Which pronoun is used for a boy?",
+        "options": [
+            "A) He",
+            "B) She",
+            "C) It",
+            "D) They"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Greetings & Expressions 8",
+        "text": "What do you say when you meet someone in the afternoon?",
+        "options": [
+            "A) Good afternoon",
+            "B) Good morning",
+            "C) Good night",
+            "D) Goodbye"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Colors & Nature 9",
+        "text": "Leaves on the trees are usually green.",
+        "question": "Gaaffii: What color are the leaves usually?",
+        "expected": [
+            "green",
+            "the green"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Body Parts 10",
+        "text": "Which part of the body do we use to walk?",
+        "options": [
+            "A) Legs",
+            "B) Hands",
+            "C) Eyes",
+            "D) Ears"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 11: Daily Routine",
+        "text": "I wash my face every morning.",
+        "question": "Gaaffii: What do I wash every morning?",
+        "expected": [
+            "my face",
+            "face"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Letter Sound 12",
+        "text": "What sound does the letter 'S' make at the beginning of 'Sun'?",
+        "options": [
+            "A) /s/",
+            "B) /m/",
+            "C) /t/",
+            "D) /p/"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Vocabulary - Vegetables 13",
+        "text": "Which one is a vegetable?",
+        "options": [
+            "A) Carrot",
+            "B) Apple",
+            "C) Banana",
+            "D) Orange"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Action Verbs 14",
+        "text": "The children are singing a song in the classroom.",
+        "question": "Gaaffii: What are the children doing?",
+        "expected": [
+            "singing",
+            "singing a song"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Classroom Objects 15",
+        "text": "What do you use to erase pencil marks?",
+        "options": [
+            "A) Eraser",
+            "B) Ruler",
+            "C) Pen",
+            "D) Book"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 16: Family",
+        "text": "My brother plays football with his friends.",
+        "question": "Gaaffii: What game does my brother play?",
+        "expected": [
+            "football",
+            "soccer"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Alphabet Order 17",
+        "text": "Which letter comes between 'H' and 'J'?",
+        "options": [
+            "A) I",
+            "B) G",
+            "C) K",
+            "D) F"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Polite Words 18",
+        "text": "What do you say when you step on someone's foot by mistake?",
+        "options": [
+            "A) Sorry",
+            "B) Thank you",
+            "C) Please",
+            "D) Hello"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Weather 19",
+        "text": "When it rains, we need an umbrella to stay dry.",
+        "question": "Gaaffii: What do we need when it rains?",
+        "expected": [
+            "umbrella",
+            "an umbrella"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Family Members 20",
+        "text": "Who is your mother's mother?",
+        "options": [
+            "A) Grandmother",
+            "B) Aunt",
+            "C) Sister",
+            "D) Cousin"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Transportation 21",
+        "text": "Which vehicle travels on railway tracks?",
+        "options": [
+            "A) Train",
+            "B) Car",
+            "C) Airplane",
+            "D) Boat"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 22: Breakfast",
+        "text": "I drink a cup of milk for breakfast.",
+        "question": "Gaaffii: What do I drink for breakfast?",
+        "expected": [
+            "milk",
+            "a cup of milk"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Numbers & Counting 23",
+        "text": "How many days are there in a week?",
+        "options": [
+            "A) Seven",
+            "B) Five",
+            "C) Six",
+            "D) Eight"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Clothes 24",
+        "text": "What do you wear on your head when it is sunny?",
+        "options": [
+            "A) Hat",
+            "B) Shoes",
+            "C) Socks",
+            "D) Gloves"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 25: Commands",
+        "text": "Please open your books to page ten.",
+        "question": "Gaaffii: What page should you open?",
+        "expected": [
+            "page ten",
+            "ten"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Yes/No Questions 26",
+        "text": "Can a fish swim in water?",
+        "options": [
+            "A) Yes",
+            "B) No"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Community Helpers 27",
+        "text": "Who puts out fires and saves people?",
+        "options": [
+            "A) Firefighter",
+            "B) Teacher",
+            "C) Doctor",
+            "D) Baker"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 28: Feelings",
+        "text": "The little baby is crying because he is hungry.",
+        "question": "Gaaffii: Why is the baby crying?",
+        "expected": [
+            "because he is hungry",
+            "he is hungry"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Shapes 29",
+        "text": "How many sides does a triangle have?",
+        "options": [
+            "A) Three",
+            "B) Four",
+            "C) Two",
+            "D) Five"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 30: Animals",
+        "text": "Monkeys love to eat sweet bananas.",
+        "question": "Gaaffii: What do monkeys love to eat?",
+        "expected": [
+            "bananas",
+            "sweet bananas"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Days of the Week 31",
+        "text": "What day comes before Saturday?",
+        "options": [
+            "A) Friday",
+            "B) Sunday",
+            "C) Thursday",
+            "D) Monday"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Farm Animals 32",
+        "text": "Which animal says 'Baa baa'?",
+        "options": [
+            "A) Sheep",
+            "B) Cow",
+            "C) Horse",
+            "D) Duck"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 33: Hobbies",
+        "text": "Sara likes to draw pictures with her crayons.",
+        "question": "Gaaffii: What does Sara like to do?",
+        "expected": [
+            "draw pictures",
+            "draw"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Parts of the Body 34",
+        "text": "How many hands do you have?",
+        "options": [
+            "A) Two",
+            "B) One",
+            "C) Four",
+            "D) Three"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 35: Nighttime",
+        "text": "The moon and stars shine brightly at night.",
+        "question": "Gaaffii: What shines at night?",
+        "expected": [
+            "the moon and stars",
+            "moon and stars"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Kitchen Items 36",
+        "text": "What do you use to drink hot tea or milk?",
+        "options": [
+            "A) Cup",
+            "B) Plate",
+            "C) Fork",
+            "D) Knife"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Action Verbs 37",
+        "text": "What do you do with a football?",
+        "options": [
+            "A) Kick",
+            "B) Read",
+            "C) Write",
+            "D) Paint"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 38: Classroom",
+        "text": "Our teacher writes important notes on the blackboard.",
+        "question": "Gaaffii: Where does the teacher write notes?",
+        "expected": [
+            "on the blackboard",
+            "blackboard"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Weather 39",
+        "text": "What kind of weather makes snow melt?",
+        "options": [
+            "A) Hot weather",
+            "B) Cold weather",
+            "C) Windy weather",
+            "D) Rainy weather"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 40: Garden",
+        "text": "Colorful butterflies fly from flower to flower.",
+        "question": "Gaaffii: What flies from flower to flower?",
+        "expected": [
+            "butterflies",
+            "colorful butterflies"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Animals 41",
+        "text": "Which animal has a very long neck?",
+        "options": [
+            "A) Giraffe",
+            "B) Hippo",
+            "C) Zebra",
+            "D) Tiger"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Opposites 42",
+        "text": "What is the opposite of 'hot'?",
+        "options": [
+            "A) Cold",
+            "B) Big",
+            "C) Tall",
+            "D) Fast"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 43: Thirst",
+        "text": "When running outside in the sun, children feel thirsty.",
+        "question": "Gaaffii: How do children feel when running in the sun?",
+        "expected": [
+            "thirsty",
+            "feel thirsty"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Fruits 44",
+        "text": "Which fruit is round, orange, and juicy?",
+        "options": [
+            "A) Orange",
+            "B) Banana",
+            "C) Apple",
+            "D) Grape"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 45: Playground",
+        "text": "The children play on the swings during recess.",
+        "question": "Gaaffii: Where do the children play during recess?",
+        "expected": [
+            "on the swings",
+            "swings"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Classroom Objects 46",
+        "text": "What do you use to draw straight lines?",
+        "options": [
+            "A) Ruler",
+            "B) Eraser",
+            "C) Pencil",
+            "D) Bag"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Grammar 47",
+        "text": "Complete the sentence: 'I ___ a student.'",
+        "options": [
+            "A) am",
+            "B) is",
+            "C) are",
+            "D) be"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Simple Reading 48: Pets",
+        "text": "My pet rabbit loves to eat fresh carrots.",
+        "question": "Gaaffii: What does the pet rabbit love to eat?",
+        "expected": [
+            "carrots",
+            "fresh carrots"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "General Knowledge 49",
+        "text": "What color is milk?",
+        "options": [
+            "A) White",
+            "B) Black",
+            "C) Red",
+            "D) Blue"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Final Review 50",
+        "text": "How many fingers do you have on one hand?",
+        "options": [
+            "A) Five",
+            "B) Four",
+            "C) Six",
+            "D) Ten"
+        ],
+        "answer": "A"
+    }
+]
