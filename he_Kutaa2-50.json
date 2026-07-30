@@ -1,0 +1,561 @@
+[
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 1",
+        "text": "Lakkoofsi 12 fi lakkoofsi 15 walitti dabaluun meeqa fidu?",
+        "options": [
+            "A) 27",
+            "B) 25",
+            "C) 26",
+            "D) 28"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 2",
+        "text": "Barsiisaan daree keessatti qalama 24 qopheessee barattootaaf kenne. Barattoonni qalama 10 itti fayyadaman.",
+        "question": "Gaaffii: Qalamni amma hafe meeqa?",
+        "expected": [
+            "kudhan afur",
+            "14"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 3",
+        "text": "Lakkoofsa 45 irraa 18 hirisuun meeqa fida?",
+        "options": [
+            "A) 27",
+            "B) 23",
+            "C) 37",
+            "D) 25"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 4",
+        "text": "Ganama sa'aa sadiirraatti dargaggoonni 12 hojiif bobba'an. Sa'aa booda ammas namoonni 15 itti dabalaman.",
+        "question": "Gaaffii: Waliigalaan namoonni hojiirratti hirmaatan meeqa?",
+        "expected": [
+            "digdama torba",
+            "27"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu Salphaa 5",
+        "text": "Bu'aan baay'isuu 4 × 5 meeqa?",
+        "options": [
+            "A) 20",
+            "B) 16",
+            "C) 24",
+            "D) 18"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 6",
+        "text": "Loon horsiisee bulaan tokko loon 30 qaba ture. Addeessaan loon 12 bitate.",
+        "question": "Gaaffii: Amma loon waliigalaa qabu meeqa?",
+        "expected": [
+            "shantamii lama",
+            "42"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 7",
+        "text": "Bu'aan herrega 34 + 16 meeqa?",
+        "options": [
+            "A) 50",
+            "B) 48",
+            "C) 52",
+            "D) 46"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 8",
+        "text": "Lakkoofsi 50 dura kan dhufu isa kam?",
+        "options": [
+            "A) 49",
+            "B) 51",
+            "C) 48",
+            "D) 40"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 9",
+        "text": "Mana kitaabaa keessatti kitaabni seenaa 50 turan. Barattoonni 23 fudhatanii dubbisan.",
+        "question": "Gaaffii: Kitaabni mana kitaabaa keessatti hafe meeqa?",
+        "expected": [
+            "torbaatamii sadii",
+            "27"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 10",
+        "text": "Bu'aan hirisuu 60 - 25 meeqa?",
+        "options": [
+            "A) 35",
+            "B) 45",
+            "C) 30",
+            "D) 40"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 11",
+        "text": "Maatiin tokko waggaatti boqqolloo saanduqa 18 oomishe. Waggaa 2ffaa immoo saanduqa 22 oomishan.",
+        "question": "Gaaffii: Waliigalaan oomisni waggaa lamaanii meeqa?",
+        "expected": [
+            "afurtam",
+            "40"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 12",
+        "text": "Deebiin 3 × 6 meeqa?",
+        "options": [
+            "A) 18",
+            "B) 15",
+            "C) 21",
+            "D) 12"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Gurguddaa 13",
+        "text": "Lakkoofota armaan gadii keessaa isa kamtu hundarra guddaa dha?",
+        "options": [
+            "A) 85",
+            "B) 58",
+            "C) 79",
+            "D) 64"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 14",
+        "text": "Paakeetiin tokkoorsaa (biscuits) 36 qaba. Ijoolleen 12 wal simanii qooddatan.",
+        "question": "Gaaffii: Namni tokko kosiin meeqa argate?",
+        "expected": [
+            "sadii",
+            "3"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 15",
+        "text": "Herregni 25 + 25 deebii maali fida?",
+        "options": [
+            "A) 50",
+            "B) 45",
+            "C) 55",
+            "D) 40"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 16",
+        "text": "Daree tokko keessatti barattoonni dhiiraa 18 fi barattoonni intala 22 jiru.",
+        "question": "Gaaffii: Waliigalaan barattoonni daree sanaa meeqa?",
+        "expected": [
+            "afurtam",
+            "40"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Safartuu Hammaa 17",
+        "text": "Saaktiiwwan tokko keessatti meetiroon 1 meetiriin meeqa santiimeetira qaba?",
+        "options": [
+            "A) 100 cm",
+            "B) 10 cm",
+            "C) 1000 cm",
+            "D) 50 cm"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 18",
+        "text": "Deebiin 74 - 20 meeqa?",
+        "options": [
+            "A) 54",
+            "B) 44",
+            "C) 64",
+            "D) 50"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 19",
+        "text": "Bidiruun tokko namoota 16 fe'uu dandeessi. Imaltoonni 9 yoo yaaban, namni dabalataa meeqa yaabuu danda'a?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 20",
+        "text": "Lakkoofsi 45 fi 15 yoo walitti dabalaman meeqa ta'u?",
+        "options": [
+            "A) 60",
+            "B) 50",
+            "C) 55",
+            "D) 65"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu 21",
+        "text": "Lakkoofsi 90 irraa 40 hirisuun meeqa fida?",
+        "options": [
+            "A) 50",
+            "B) 40",
+            "C) 60",
+            "D) 45"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 22",
+        "text": "Qonnaan bulaan tokko humni ooyiruu isaa irratti garbuu kiisa 28 fi qamadii kiisa 31 walitti sassaabe.",
+        "question": "Gaaffii: Waliigalaan oomisni kiisa meeqa?",
+        "expected": [
+            "shantamii sagal",
+            "59"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 23",
+        "text": "Deebiin 5 × 5 meeqa?",
+        "options": [
+            "A) 25",
+            "B) 20",
+            "C) 30",
+            "D) 15"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Qoodduu (Division) 24",
+        "text": "Deebiin qoodduu 12 ÷ 3 meeqa?",
+        "options": [
+            "A) 4",
+            "B) 3",
+            "C) 5",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 25",
+        "text": "Sanduuqa keessa hancufni 40 jira. Dargaggeessi 15 fudhate.",
+        "question": "Gaaffii: Hancufni sanduuqa keessa hafe meeqa?",
+        "expected": [
+            "shantamii shan",
+            "25"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Bocawwan 26",
+        "text": "Bocni roga-afurtuu (rectangle) cinaacha wal qixaa meeqa qaba?",
+        "options": [
+            "A) Cinaachonni walitti fuuldura jiran lamaan wal qixa",
+            "B) Hundi isaanii wal qixa miti",
+            "C) Hundi isaanii wal qixa",
+            "D) Tokkollee hin qabu"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 27",
+        "text": "19 + 21 meeqa fida?",
+        "options": [
+            "A) 40",
+            "B) 39",
+            "C) 41",
+            "D) 38"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 28",
+        "text": "Buufanni konkolaataa tokko keessatti konkolaataan 12 ganama ba'an. Sa'aa booda ammas 8 galan.",
+        "question": "Gaaffii: Konkolaataan buufaticha keessatti argaman meeqa?",
+        "expected": [
+            "digdama",
+            "20"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 29",
+        "text": "Deebiin 50 - 15 meeqa?",
+        "options": [
+            "A) 35",
+            "B) 45",
+            "C) 25",
+            "D) 40"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 30",
+        "text": "Abbaan ijoollee 4f qarshii 10 lama lama qoodanii kennan.",
+        "question": "Gaaffii: Waliigalaan qarshiin hirame meeqa?",
+        "expected": [
+            "qarshii digdama",
+            "20"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 31",
+        "text": "Lakkoofsi 75 fi 77 gidduu jiru isa kam?",
+        "options": [
+            "A) 76",
+            "B) 74",
+            "C) 78",
+            "D) 73"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 32",
+        "text": "Sa'aatiin kutaa barnootaa sa'aa 3 irratti dhaabate. Ammas sa'aatii 2 itti dabaluun deebi'ee hojjete.",
+        "question": "Gaaffii: Amma sa'aatiin meeqa agarsiisa?",
+        "expected": [
+            "sa'aa shan",
+            "5"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 33",
+        "text": "42 + 18 meeqa fida?",
+        "options": [
+            "A) 60",
+            "B) 58",
+            "C) 62",
+            "D) 50"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 34",
+        "text": "Deebiin 33 - 11 meeqa?",
+        "options": [
+            "A) 22",
+            "B) 21",
+            "C) 23",
+            "D) 20"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 35",
+        "text": "Warshaan tokko guyyaatti kophee 45 oomisha. Guyyaa 2ffaa immoo kophee 35 oomishan.",
+        "question": "Gaaffii: Waliigalaan kopheen oomisame meeqa?",
+        "expected": [
+            "gaggee",
+            "80"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 36",
+        "text": "Deebiin 2 × 9 meeqa?",
+        "options": [
+            "A) 18",
+            "B) 16",
+            "C) 20",
+            "D) 14"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 37",
+        "text": "Qalama 60 qindeessanii sanduuqatti kaa'uun barbaachise. Sanduuqi tokko qalama 20 qabata.",
+        "question": "Gaaffii: Sanduuqni meeqa barbaachisa?",
+        "expected": [
+            "sadii",
+            "3"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 38",
+        "text": "27 + 33 meeqa fida?",
+        "options": [
+            "A) 60",
+            "B) 50",
+            "C) 55",
+            "D) 65"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 39",
+        "text": "Deebiin 88 - 44 meeqa?",
+        "options": [
+            "A) 44",
+            "B) 40",
+            "C) 42",
+            "D) 46"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 40",
+        "text": "Galmoota keessatti farda 52tu argame. Isaan keessaa 14 gara bosonaatti baqatan.",
+        "question": "Gaaffii: Fardi galma keessatti hafe meeqa?",
+        "expected": [
+            "afurtamii lama",
+            "38"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Safartuu 41",
+        "text": "Bocni roga-shantamii (square) cinaacha wal qixaa meeqa qaba?",
+        "options": [
+            "A) 4",
+            "B) 3",
+            "C) 2",
+            "D) 0"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Baay'isuu 42",
+        "text": "Deebiin 6 × 4 meeqa?",
+        "options": [
+            "A) 24",
+            "B) 20",
+            "C) 28",
+            "D) 18"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 43",
+        "text": "Haati manaa mana keessatti buurnii kiisa 14 qabdi turte. Ammas dabalata kiisa 16 bitate.",
+        "question": "Gaaffii: Waliigalaan buurni kiisa meeqa qabdi?",
+        "expected": [
+            "digdama",
+            "30"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 44",
+        "text": "Deebiin 95 - 45 meeqa?",
+        "options": [
+            "A) 50",
+            "B) 45",
+            "C) 55",
+            "D) 60"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 45",
+        "text": "Mana barumsaa sadarkaa tokkoffaa keessatti dareen barnootaa 10 jiru. Dareen tokko barattoota 30 qaba.",
+        "question": "Gaaffii: Waliigalaan barattoonni mana barumsichaa meeqa?",
+        "expected": [
+            "dhibba sadii",
+            "300"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 46",
+        "text": "Lakkoofsi 99 irraa 1 dabaluun meeqa fida?",
+        "options": [
+            "A) 100",
+            "B) 90",
+            "C) 101",
+            "D) 98"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 47",
+        "text": "Mukti magaalaa keessatti dhaabame tokko waggaa darbe meetira 2 dheerate. Waggaa kana immoo meetira 3 dabalate.",
+        "question": "Gaaffii: Dheerina muktichaa guutuu meeqa?",
+        "expected": [
+            "meetira 5",
+            "5"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 48",
+        "text": "Deebiin 55 + 45 meeqa?",
+        "options": [
+            "A) 100",
+            "B) 90",
+            "C) 95",
+            "D) 105"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 49",
+        "text": "Nama tokko qarshii 75 qaba. Qarshii 25 immoo hiriyaa isaatiif kenne.",
+        "question": "Gaaffii: Qarshiin amma harka isaa hafe meeqa?",
+        "expected": [
+            "qarshii shantamii",
+            "50"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Xumuraa 50",
+        "text": "Lakkoofsi 100 irraa 50 yoo hirifamu meeqa hafe?",
+        "options": [
+            "A) 50",
+            "B) 40",
+            "C) 60",
+            "D) 30"
+        ],
+        "answer": "A"
+    }
+]
