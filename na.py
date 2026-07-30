@@ -1,3 +1,4 @@
+import json
 import random
 import streamlit as str_app
 
@@ -97,103 +98,6 @@ str_app.markdown(
     unsafe_allow_html=True,
 )
 
-# KUUSAA GAFFIILEE (MASTER DATABASE)
-MASTER_AO_DB = {
-    "Kutaa 6": [
-        {
-            "type": "reading",
-            "title": "Dubbisa 1: Hojii Gamtaa",
-            "text": "Hojjiin gamtaa milkaa'ina fida. Namoonni waliin hojjetan rakkoo salphaatti injifatu.",
-            "question": "Gaaffii Dubbisaa: Hojjiin gamtaa maal fida?",
-            "expected": ["milkaa'ina", "milkaa ina", "injifannoo"],
-        },
-        {
-            "type": "mcq",
-            "title": "Qeeqqa Barruu 2",
-            "text": "Barruu keessatti 'Milkaa'ina' jechuun hiika maal qaba?",
-            "options": ["A) Kufaatii", "B) Galma ga'uu", "C) Daddaffii", "D) Boqonnaa"],
-            "answer": "B",
-        },
-        {
-            "type": "mcq",
-            "title": "Qeeqqa Barruu 3",
-            "text": "Mammaaksi 'Tokkummaan humna' jedhu maal barsiisa?",
-            "options": ["A) Kophaa hojjechuu", "B) Waliin dhaabbachuu", "C) Lafa qabachuu", "D) Dhibbaa"],
-            "answer": "B",
-        },
-        {
-            "type": "mcq",
-            "title": "Qeeqqa Barruu 4",
-            "text": "Jechi 'Cicha' jedhu hiika kam qaba?",
-            "options": ["A) Dadhabuu", "B) Mirkaneeffannoo jabaa", "C) Lafa lakkisuu", "D) Fiigicha"],
-            "answer": "B",
-        },
-    ]
-}
-
-MASTER_MATH_DB = {
-    "Kutaa 6": [
-        {
-            "question": "L.C.M of 6 and 8 = ?",
-            "options": ["A) 24", "B) 48", "C) 12", "D) 18"],
-            "answer": "24",
-        },
-        {
-            "question": "Hangi oowwii 20% dabaluun 60 ta'e, jalqaba hammami ture?",
-            "options": ["A) 50", "B) 48", "C) 55", "D) 45"],
-            "answer": "50",
-        },
-        {
-            "question": "15 × 4 - 10 = ?",
-            "options": ["A) 50", "B) 60", "C) 40", "D) 30"],
-            "answer": "50",
-        },
-        {
-            "question": "Haftee (Remainder) 45 ukka 7tti yeroo hiramu meeqa?",
-            "options": ["A) 2", "B) 3", "C) 4", "D) 5"],
-            "answer": "3",
-        },
-    ]
-}
-
-MASTER_ENG_DB = {
-    "Kutaa 6": [
-        {
-            "type": "reading",
-            "title": "Reading 1: Scientific Research",
-            "text": "Researchers analyze data, study patterns, and draw valid conclusions based on empirical evidence.",
-            "question": "Question: What do researchers analyze?",
-            "expected": ["data", "empirical evidence"],
-        },
-        {
-            "type": "mcq",
-            "title": "Advanced Grammar 2",
-            "text": "Choose the correct passive voice: 'She writes a letter.'",
-            "options": [
-                "A) A letter is written by her.",
-                "B) A letter was written.",
-                "C) She wrote a letter.",
-                "D) Letter is write.",
-            ],
-            "answer": "A",
-        },
-        {
-            "type": "mcq",
-            "title": "Vocabulary 3",
-            "text": "What is the synonym of 'rapid'?",
-            "options": ["A) Slow", "B) Fast", "C) Heavy", "D) Small"],
-            "answer": "B",
-        },
-        {
-            "type": "mcq",
-            "title": "Grammar 4",
-            "text": "Choose the correct preposition: 'He is good ______ math.'",
-            "options": ["A) at", "B) in", "C) on", "D) with"],
-            "answer": "A",
-        },
-    ]
-}
-
 # Session State Initialization
 if "global_students" not in str_app.session_state:
     str_app.session_state.global_students = {}
@@ -207,6 +111,37 @@ if "attempts" not in str_app.session_state:
     str_app.session_state.attempts = {}
 if "student_random_questions" not in str_app.session_state:
     str_app.session_state.student_random_questions = {}
+
+
+# ==========================================
+# DYNAMIC DATABASE LOADER FUNCTION
+# ==========================================
+def load_databases_for_grade(grade_str):
+    grade_num = grade_str.replace("Kutaa ", "").strip()
+    
+    ao_file = f"ao_kutaa{grade_num}_50.json"
+    eng_file = f"ai_kutaa{grade_num}_50.json"
+    math_file = f"he_kutaa{grade_num}_50.json"
+
+    try:
+        with open(ao_file, "r", encoding="utf-8") as f:
+            ao_db = {grade_str: json.load(f)}
+    except FileNotFoundError:
+        ao_db = {grade_str: []}
+
+    try:
+        with open(math_file, "r", encoding="utf-8") as f:
+            math_db = {grade_str: json.load(f)}
+    except FileNotFoundError:
+        math_db = {grade_str: []}
+
+    try:
+        with open(eng_file, "r", encoding="utf-8") as f:
+            eng_db = {grade_str: json.load(f)}
+    except FileNotFoundError:
+        eng_db = {grade_str: []}
+        
+    return ao_db, math_db, eng_db
 
 
 # ==========================================
@@ -299,14 +234,17 @@ def name_input_screen():
                         "english": 0,
                     }
 
-                ao_pool = MASTER_AO_DB.get(grade, MASTER_AO_DB["Kutaa 6"])
-                math_pool = MASTER_MATH_DB.get(grade, MASTER_MATH_DB["Kutaa 6"])
-                eng_pool = MASTER_ENG_DB.get(grade, MASTER_ENG_DB["Kutaa 6"])
+                # Faayilota JSON irraa gaaffiiwwan fe'uu
+                ao_db, math_db, eng_db = load_databases_for_grade(grade)
+
+                ao_pool = ao_db.get(grade, [])
+                math_pool = math_db.get(grade, [])
+                eng_pool = eng_db.get(grade, [])
 
                 str_app.session_state.student_random_questions[clean_name] = {
-                    "afaan_oromoo": random.sample(ao_pool, min(2, len(ao_pool))),
-                    "math": random.sample(math_pool, min(2, len(math_pool))),
-                    "english": random.sample(eng_pool, min(2, len(eng_pool))),
+                    "afaan_oromoo": random.sample(ao_pool, min(2, len(ao_pool))) if ao_pool else [],
+                    "math": random.sample(math_pool, min(2, len(math_pool))) if math_pool else [],
+                    "english": random.sample(eng_pool, min(2, len(eng_pool))) if eng_pool else [],
                 }
 
                 str_app.session_state.current_page = "home"
@@ -363,12 +301,19 @@ def afaan_oromoo_screen():
 
     str_app.subheader(f"Afaan Oromoo - {str_app.session_state.current_grade} ({student})")
 
+    if not questions:
+        str_app.warning("Gaaffiin Afaan Oromoo faayilii kana keessatti hin argamne ykn faayiliin hin jiru.")
+        if str_app.button("🏠 Gara Manayeessaa"):
+            str_app.session_state.current_page = "home"
+            str_app.rerun()
+        return
+
     if "ao_index" not in str_app.session_state:
         str_app.session_state.ao_index = 0
         str_app.session_state.ao_score = 0
 
     idx = str_app.session_state.ao_index
-    if not questions or idx >= len(questions):
+    if idx >= len(questions):
         str_app.success("Gaaffiin Afaan Oromoo xumurameera! Gara manayeessaatti deebi'aa.")
         if str_app.button("🏠 Gara Manayeessaa"):
             str_app.session_state.ao_index = 0
@@ -380,10 +325,10 @@ def afaan_oromoo_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}: {q['title']}**")
+    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}: {q.get('title', 'Gaaffii')}**")
     c2.markdown(f"**Qabxii: {str_app.session_state.ao_score}**")
 
-    if q["type"] == "reading" and "text" in q:
+    if q.get("type") == "reading" and "text" in q:
         str_app.markdown(
             f"""
             <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
@@ -393,7 +338,7 @@ def afaan_oromoo_screen():
             unsafe_allow_html=True,
         )
 
-    str_app.markdown(f"### {q.get('question', q.get('text'))}")
+    str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
     if "options" in q:
         for opt in q["options"]:
             str_app.write(opt)
@@ -413,10 +358,10 @@ def afaan_oromoo_screen():
             is_correct = False
 
             if "answer" in q:
-                if ans.strip().upper() == q["answer"] or ans.strip().lower() == q["answer"].lower():
+                if ans.strip().upper() == str(q["answer"]).upper() or ans.strip().lower() == str(q["answer"]).lower():
                     is_correct = True
             elif "expected" in q:
-                if any(exp in ans.strip().lower() for exp in q["expected"]):
+                if any(exp.lower() in ans.strip().lower() for exp in q["expected"]):
                     is_correct = True
 
             if is_correct:
@@ -462,12 +407,19 @@ def math_screen():
 
     str_app.subheader(f"Herrega - {str_app.session_state.current_grade} ({student})")
 
+    if not questions:
+        str_app.warning("Gaaffiin Herregaa faayilii kana keessatti hin argamne ykn faayiliin hin jiru.")
+        if str_app.button("🏠 Gara Manayeessaa"):
+            str_app.session_state.current_page = "home"
+            str_app.rerun()
+        return
+
     if "m_index" not in str_app.session_state:
         str_app.session_state.m_index = 0
         str_app.session_state.m_score = 0
 
     idx = str_app.session_state.m_index
-    if not questions or idx >= len(questions):
+    if idx >= len(questions):
         str_app.success("Gaaffiin Herregaa xumurameera! Gara manayeessaatti deebi'aa.")
         if str_app.button("🏠 Gara Manayeessaa"):
             str_app.session_state.m_index = 0
@@ -481,9 +433,10 @@ def math_screen():
     c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)}**")
     c2.markdown(f"**Qabxii: {str_app.session_state.m_score}**")
 
-    str_app.markdown(f"### {q['question']}")
-    for opt in q["options"]:
-        str_app.write(opt)
+    str_app.markdown(f"### {q.get('question', '')}")
+    if "options" in q:
+        for opt in q["options"]:
+            str_app.write(opt)
 
     attempt_key = ("math", student, idx)
     if attempt_key not in str_app.session_state.attempts:
@@ -499,8 +452,9 @@ def math_screen():
             str_app.session_state.attempts[attempt_key] += 1
             is_correct = False
             cleaned_ans = m_ans.strip().upper()
+            correct_ans = str(q.get("answer", "")).upper()
 
-            if cleaned_ans == q["answer"].upper() or cleaned_ans == q["answer"][0]:
+            if cleaned_ans == correct_ans or (correct_ans and cleaned_ans == correct_ans[0]):
                 is_correct = True
 
             if is_correct:
@@ -512,7 +466,7 @@ def math_screen():
                 if rem > 0:
                     str_app.warning(f"❌ Dogoggora qaba! Carraan hafe: {rem}")
                 else:
-                    str_app.error(f"❌ Carraan xumurameera. Deebiin sirrii: {q['answer']}")
+                    str_app.error(f"❌ Carraan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
         else:
             str_app.info("Barataan carraa 3 guutee xumureera.")
 
@@ -546,12 +500,19 @@ def english_screen():
 
     str_app.subheader(f"English - {str_app.session_state.current_grade} ({student})")
 
+    if not questions:
+        str_app.warning("English questions not found or file is missing.")
+        if str_app.button("🏠 Home"):
+            str_app.session_state.current_page = "home"
+            str_app.rerun()
+        return
+
     if "e_index" not in str_app.session_state:
         str_app.session_state.e_index = 0
         str_app.session_state.e_score = 0
 
     idx = str_app.session_state.e_index
-    if not questions or idx >= len(questions):
+    if idx >= len(questions):
         str_app.success("English questions completed! Return to home.")
         if str_app.button("🏠 Home"):
             str_app.session_state.e_index = 0
@@ -563,10 +524,10 @@ def english_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Question {idx + 1} / {len(questions)} : {q['title']}**")
+    c1.markdown(f"**Question {idx + 1} / {len(questions)} : {q.get('title', 'Question')}**")
     c2.markdown(f"**Score: {str_app.session_state.e_score}**")
 
-    if q["type"] == "reading" and "text" in q:
+    if q.get("type") == "reading" and "text" in q:
         str_app.markdown(
             f"""
             <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
@@ -576,7 +537,7 @@ def english_screen():
             unsafe_allow_html=True,
         )
 
-    str_app.markdown(f"### {q.get('question', q.get('text'))}")
+    str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
     if "options" in q:
         for opt in q["options"]:
             str_app.write(opt)
@@ -597,10 +558,11 @@ def english_screen():
             cleaned_ans = e_ans.strip().lower()
 
             if "answer" in q:
-                if cleaned_ans == q["answer"].lower() or cleaned_ans == q["answer"][0].lower():
+                ans_str = str(q["answer"]).lower()
+                if cleaned_ans == ans_str or (ans_str and cleaned_ans == ans_str[0]):
                     is_correct = True
             elif "expected" in q:
-                if any(exp in cleaned_ans for exp in q["expected"]):
+                if any(exp.lower() in cleaned_ans for exp in q["expected"]):
                     is_correct = True
 
             if is_correct:
