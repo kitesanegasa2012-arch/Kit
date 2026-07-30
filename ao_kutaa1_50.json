@@ -26,10 +26,10 @@
     {
         "type": "mcq",
         "title": "Hubannoo Jechoota 3",
-        "text": "Jechi 'Bishaan' jedhu maaliif fayyada? Ergaa isaa keessaa isa sirrii filadhu.",
+        "text": "Bishaan maaliif fayyada? filannoo kana keessaa isa sirrii filadhu.",
         "options": [
-            "A) Dhugaatiif fi qulleeffannaaf",
-            "B) Ispoortiidhaaf qofa",
+            "A) Dhugaatiif fi qulqullinaaf",
+            "B) Ispoortii qofaaf",
             "C) Qoraaniif",
             "D) Kophaa taa'uuf"
         ],
@@ -38,13 +38,14 @@
     {
         "type": "reading",
         "title": "Gaaffii Dhaggeeffachuu & Hubachuu 4",
-        "text": "Guyyaa tokko liyyuun gara manaa barnootaa deemte. Barsiisaan kitaaba ishee fuula 5 irratti qormaata kenneef. Liyyuun hojii ishee sirriitti hojjettee gammachuu argate.",
-        "question": "Gaaffii: Barsiisaan Liyuuf maal kenne?",
+        "text": "Guyyaa tokko Latiin gara manaa barnootaa deemte. Barsiisaan kitaaba ishee fuula 5 irraa qormaata kenneef. Latiin hojii ishee sirriitti hojjettee gammachuu argatte.",
+        "question": "Gaaffii: Barsiisaan Latiif maal kenne?",
         "expected": [
             "kitaaba",
             "qormaata",
             "qormaata fuula 5"
         ]
+        "answer":"A"
     },
     {
         "type": "mcq",
