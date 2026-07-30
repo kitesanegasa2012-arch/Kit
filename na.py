@@ -166,8 +166,7 @@ def role_selection_screen():
         <div class="hero-box">
             <h1>📖 Hiika Way (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!<br><br>
-                <b>App kanaaf: Kutaa 1 - Kutaa 6 (Afaan Oromoo, Herrega, Ingliffaa)</b><br>
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu Fi Shallaguu Barattootaa Adda Baasu Hiika Way itti Nagaan Dhuftan!
                 <b>Created by Kitesa Negasa Feyisa</b>
             </p>
         </div>
@@ -179,10 +178,10 @@ def role_selection_screen():
     col_img, col_space = str_app.columns([1.2, 2])
     with col_img:
         try:
-            str_app.image("makaa qixxeessa.jpg", use_container_width=True)
+            str_app.image("makaa qixxeessaa.jpg", use_container_width=True)
             str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
         except Exception:
-            str_app.warning("Suuraan 'makaa qixxeessa.jpg' jedhu kuusaa (folder) keessatti hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
+            str_app.warning("Suuraan 'makaa qixxeessaa.jpg' jedhu kuusaa (folder) keessatti hin argamne. Maaloo faayilii suuraa kana bakka kooddiin kun jiruutti fe'i.")
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
