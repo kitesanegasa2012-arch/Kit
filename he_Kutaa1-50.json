@@ -1,0 +1,562 @@
+[
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 1",
+        "text": "Lakkoofsi 5 fi lakkoofsi 3 walitti dabaluun meeqa fidu?",
+        "options": [
+            "A) 8",
+            "B) 7",
+            "C) 6",
+            "D) 9"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 2",
+        "text": "Aadde Abeebee qabeenii loon afur qabdi. Loon lama dabalata bitate.",
+        "question": "Gaaffii: Amma addee Abeebee loon meeqa qabdi?",
+        "expected": [
+            "ja'a",
+            "6"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 3",
+        "text": "Yoo haguuyyuun quba harka 10 irraa 4 hirifamu, meeqa hafe?",
+        "options": [
+            "A) 6",
+            "B) 5",
+            "C) 4",
+            "D) 7"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 4",
+        "text": "Barataan tokko kitaaba Herregaa afur fi kitaaba Afaan Oromoo sadii qaba.",
+        "question": "Gaaffii: Barataan sun waliigalaan kitaaba meeqa qaba?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Bocawwan Bu'uuraa 5",
+        "text": "Bocni geengoo (circle) baay'ina golaa (corner) meeqa qaba?",
+        "options": [
+            "A) Tokkollee hin qabu (0)",
+            "B) 3",
+            "C) 4",
+            "D) 2"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 6",
+        "text": "Mukti tokko fuula isaarratti baala sagal qaba ture. Baalli sadii qilleensaan bu'e.",
+        "question": "Gaaffii: Baalli muktichaa meeqa hafe?",
+        "expected": [
+            "ja'a",
+            "6"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 7",
+        "text": "Bu'aan herrega 7 + 2 meeqa?",
+        "options": [
+            "A) 9",
+            "B) 8",
+            "C) 10",
+            "D) 5"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 8",
+        "text": "Lakkoofsi 10 fi 12 gidduu jiru isa kam?",
+        "options": [
+            "A) 11",
+            "B) 9",
+            "C) 13",
+            "D) 14"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 9",
+        "text": "Ijoolleen shan tapha irratti argaman. Ijoolleen afur dabalamaniif.",
+        "question": "Gaaffii: Waliigalaan ijoolleen taphataa jiran meeqa?",
+        "expected": [
+            "sagal",
+            "9"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Hirisuu 10",
+        "text": "Bu'aan hirisuu 8 - 3 meeqa?",
+        "options": [
+            "A) 5",
+            "B) 4",
+            "C) 6",
+            "D) 2"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 11",
+        "text": "Saanduqa keessa hancufa (pencils) kudhan turan. Sadii itti fayyadamame.",
+        "question": "Gaaffii: Hancufni saanduqa keessa hafe meeqa?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Hammaa 12",
+        "text": "Rog-sadiin (triangle) baay'ina cinaacha meeqa qaba?",
+        "options": [
+            "A) 3",
+            "B) 4",
+            "C) 2",
+            "D) 5"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Lammaffaa 13",
+        "text": "Lakkoofsi tokkoo hanga kudhanii keessaa isa kamtu guddaa dha?",
+        "options": [
+            "A) 10",
+            "B) 8",
+            "C) 9",
+            "D) 7"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 14",
+        "text": "Lammaa sanduuqa keessaa apilii shan fuute. Isaan keessaa lama nyaatte.",
+        "question": "Gaaffii: Apiliin amma hafe meeqa?",
+        "expected": [
+            "sadii",
+            "3"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 15",
+        "text": "Herregni 6 + 4 deebii maali fida?",
+        "options": [
+            "A) 10",
+            "B) 9",
+            "C) 8",
+            "D) 11"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 16",
+        "text": "Mana barumsaa keessatti dareen lamaan barattoota kudhan kudhan qabu.",
+        "question": "Gaaffii: Waliigalaan barattoonni daree lamaanii meeqa?",
+        "expected": [
+            "digdama",
+            "20"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Safartuu 17",
+        "text": "Rog-afurtuun (rectangle) baay'ina golaa meeqa qaba?",
+        "options": [
+            "A) 4",
+            "B) 3",
+            "C) 5",
+            "D) 2"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 18",
+        "text": "Deebiin 9 - 4 meeqa?",
+        "options": [
+            "A) 5",
+            "B) 6",
+            "C) 3",
+            "D) 7"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 19",
+        "text": "Tarbaayii keessatti manni fincaanii sadii fi dareen barnootaa torba jiru.",
+        "question": "Gaaffii: Waliigalaan mana ijaarsichaa meeqa?",
+        "expected": [
+            "kudhan",
+            "10"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 20",
+        "text": "Lakkoofsi 2 fi 8 yoo walitti dabalaman meeqa ta'u?",
+        "options": [
+            "A) 10",
+            "B) 9",
+            "C) 7",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa 21",
+        "text": "Lakkoofsi 15 irraa tokko hirisuun meeqa fida?",
+        "options": [
+            "A) 14",
+            "B) 16",
+            "C) 13",
+            "D) 12"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 22",
+        "text": "Tulluun fardaa shan qaba. Obboleessi isaa lama dabalate.",
+        "question": "Gaaffii: Amma fardi meeqa jira?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Bu'uuraa 23",
+        "text": "Deebiin 4 + 4 meeqa?",
+        "options": [
+            "A) 8",
+            "B) 7",
+            "C) 6",
+            "D) 9"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 24",
+        "text": "Deebiin 10 - 5 meeqa?",
+        "options": [
+            "A) 5",
+            "B) 4",
+            "C) 6",
+            "D) 3"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 25",
+        "text": "Haati manaaf handhuura margaa sagal qopheessite. Sadii loon nyaatan.",
+        "question": "Gaaffii: Margi hafe meeqa?",
+        "expected": [
+            "jaha",
+            "6"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Hammaa 26",
+        "text": "Bocni koonii (cone) boca isa kamiin fakkaata?",
+        "options": [
+            "A) Tarbaayii/Gonfoo",
+            "B) Geengoo",
+            "C) Rog-afurtuu",
+            "D) Sarara qajeelaa"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 27",
+        "text": "1 + 9 meeqa fida?",
+        "options": [
+            "A) 10",
+            "B) 8",
+            "C) 11",
+            "D) 9"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 28",
+        "text": "Kutaa barnootaa keessatti gabatee gurraacha lama fi gabatee adii tokkotu jira.",
+        "question": "Gaaffii: Waliigalaan gabateen meeqa?",
+        "expected": [
+            "sadii",
+            "3"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 29",
+        "text": "Deebiin 7 - 2 meeqa?",
+        "options": [
+            "A) 5",
+            "B) 4",
+            "C) 6",
+            "D) 3"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 30",
+        "text": "Bilisummaan ibsaa afur qaba ture. Lama nannoo biraatti kenne.",
+        "question": "Gaaffii: Ibsaan Bilisummaa harkaa hafe meeqa?",
+        "expected": [
+            "lama",
+            "2"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 31",
+        "text": "Lakkoofsi 6 dura kan dhufu isa kam?",
+        "options": [
+            "A) 5",
+            "B) 7",
+            "C) 4",
+            "D) 8"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 32",
+        "text": "Ganama sa'aa shanirratti aduun baate. Sa'aa sadii booda cume.",
+        "question": "Gaaffii: Aduun yoom cume? (Sa'aa meeqatti?)",
+        "expected": [
+            "sa'aa saddeet",
+            "8"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 33",
+        "text": "3 + 5 meeqa fida?",
+        "options": [
+            "A) 8",
+            "B) 7",
+            "C) 9",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 34",
+        "text": "Deebiin 6 - 3 meeqa?",
+        "options": [
+            "A) 3",
+            "B) 2",
+            "C) 4",
+            "D) 1"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 35",
+        "text": "Fayyisaan qalama bifa adii lama fi bifa gurraacha sadii bitate.",
+        "question": "Gaaffii: Waliigalaan qalamni Fayyisaan bitate meeqa?",
+        "expected": [
+            "shani",
+            "5"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Guddaa fi Xiqqaa 36",
+        "text": "Lakkoofota armaan gadii keessaa isa kamtu hundarra xiqqaa dha?",
+        "options": [
+            "A) 2",
+            "B) 5",
+            "C) 9",
+            "D) 7"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 37",
+        "text": "Barsiisaan kitaaba barataa sagal qajeelfamaaf kenne.",
+        "question": "Gaaffii: Baay'ina kitaabichaa barreessi.",
+        "expected": [
+            "sagal",
+            "9"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 38",
+        "text": "0 fi 7 yoo walitti dabalaman meeqa fida?",
+        "options": [
+            "A) 7",
+            "B) 0",
+            "C) 1",
+            "D) 10"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 39",
+        "text": "Deebiin 4 - 0 meeqa?",
+        "options": [
+            "A) 4",
+            "B) 0",
+            "C) 1",
+            "D) 3"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 40",
+        "text": "Gabaaf imaluun loon saddeet deemtootaan oofaman. Tokko karaatti gale.",
+        "question": "Gaaffii: Loon gabaa ga'an meeqa?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Boca Safartuu 41",
+        "text": "Kutaan roga afur qabuufi cinaachisa hundi wal qixaa ta'e maal jedhama?",
+        "options": [
+            "A) Rog-shantamii (Square)",
+            "B) Geengoo",
+            "C) Rog-sadii",
+            "D) Sarara"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 42",
+        "text": "Deebiin 5 + 5 meeqa?",
+        "options": [
+            "A) 10",
+            "B) 9",
+            "C) 8",
+            "D) 11"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 43",
+        "text": "Obboleewwan afur nyaata nyaatanii pedaaliin daabboo sadii dabalatan.",
+        "question": "Gaaffii: Waliigalaan daabboo nyaatame meeqa?",
+        "expected": [
+            "torba",
+            "7"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Hirisuu Salphaa 44",
+        "text": "Deebiin 8 - 4 meeqa?",
+        "options": [
+            "A) 4",
+            "B) 3",
+            "C) 5",
+            "D) 2"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 45",
+        "text": "Manni barumsaa keenya balbala gurguddoo sadii qaba.",
+        "question": "Gaaffii: Baay'ina balbalichaa tarreessi.",
+        "expected": [
+            "sadii",
+            "3"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Lakkoofsa Walcinaa 46",
+        "text": "Lakkoofsi 8 booda kan dhufu isa kam?",
+        "options": [
+            "A) 9",
+            "B) 7",
+            "C) 10",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 47",
+        "text": "Fardi tokko marga nyaachaa ture. Fardi biraas itti dabalamee lama ta'an.",
+        "question": "Gaaffii: Amma fardi meeqa ta'e?",
+        "expected": [
+            "lama",
+            "2"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Walitti Dabaluu 48",
+        "text": "Deebiin 2 + 7 meeqa?",
+        "options": [
+            "A) 9",
+            "B) 8",
+            "C) 10",
+            "D) 6"
+        ],
+        "answer": "A"
+    },
+    {
+        "type": "reading",
+        "title": "Dubbisuu fi Hubachuu 49",
+        "text": "Hiriyoonni shan taphata irratti wal arguu isaaniitiif harka wal qabatan.",
+        "question": "Gaaffii: Baay'ina hiriyootichaa barreessi.",
+        "expected": [
+            "shan",
+            "5"
+        ]
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Xumuraa 50",
+        "text": "Lakkoofsi 10 irraa 10 yoo hirifamu meeqa hafe?",
+        "options": [
+            "A) 0",
+            "B) 1",
+            "C) 2",
+            "D) 5"
+        ],
+        "answer": "A"
+    }
+]
