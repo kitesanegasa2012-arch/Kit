@@ -93,6 +93,28 @@ str_app.markdown(
         line-height: 1.5;
         color: #e0f2f1;
     }
+    
+    /* Custom Styling for Profile Image */
+    .profile-img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .profile-img-container img {
+        border-radius: 15px;
+        border: 4px solid #004d40;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        height: auto;
+    }
+    .welcome-img-text {
+        font-weight: bold;
+        color: #004d40;
+        margin-top: 8px;
+        font-size: 1.1rem;
+        text-align: left;
+    }
     </style>
 """,
     unsafe_allow_html=True,
@@ -162,12 +184,14 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    _, img_col, _ = str_app.columns([1, 1.5, 1])
-    with img_col:
-        str_app.image(
-            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80",
-            use_container_width=True,
-        )
+    # Suuraa harka bitaatti galchuu fi jalaan "WELL COME !TO HIKA WAY APP" barreessuu
+    col_img, col_space = str_app.columns([1.2, 2])
+    with col_img:
+        try:
+            str_app.image("makaa qixxeessa.jpg", use_container_width=True)
+            str_app.markdown('<p class="welcome-img-text">WELL COME ! TO HIKA WAY APP</p>', unsafe_allow_html=True)
+        except Exception:
+            str_app.warning("Suuraan 'makaa qixxeessa.jpg' jedhu hin argamne.")
 
     str_app.markdown(
         "<h3 style='text-align: center; color: #004d40; margin-top: 15px; margin-bottom: 15px;'>🔑 Furtuu Filadhu:</h3>",
@@ -234,7 +258,6 @@ def name_input_screen():
                         "english": 0,
                     }
 
-                # Faayilota JSON irraa gaaffiiwwan fe'uu
                 ao_db, math_db, eng_db = load_databases_for_grade(grade)
 
                 ao_pool = ao_db.get(grade, [])
