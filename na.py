@@ -146,12 +146,6 @@ if "student_random_questions" not in str_app.session_state:
 def load_databases_for_grade(grade_str, gosa_str=""):
     grade_num = grade_str.replace("Kutaa ", "").strip()
     
-    gosa_code_map = {
-        "Afaan Oromoo": "ao",
-        "Herrega (Math)": "math",
-        "English": "eng"
-    }
-    
     # Foldarii 'kit/' keessatti maqaan faayilii akka sirriitti wal simatu taasifameera
     ao_file = f"kit/ao_kutaa{grade_num}.json"
     math_file = f"kit/math_kutaa{grade_num}.json"
@@ -175,7 +169,7 @@ def load_databases_for_grade(grade_str, gosa_str=""):
 
     # Fallback pools if JSON files are missing
     default_ao = [
-        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A", "type": "mcq"},
+        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
         {"question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A", "type": "mcq"},
         {"question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B", "type": "mcq"},
         {"question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A", "type": "mcq"},
