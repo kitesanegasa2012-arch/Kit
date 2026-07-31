@@ -142,15 +142,6 @@ if "student_random_questions" not in str_app.session_state:
     str_app.session_state.student_random_questions = {}
 
 
-def filter_by_difficulty(questions_list, diff_tag):
-    filtered = []
-    for q in questions_list:
-        q_diff = str(q.get("difficulty", q.get("level", "salphaa"))).lower()
-        if diff_tag.lower() in q_diff:
-            filtered.append(q)
-    return filtered
-
-
 def load_databases_for_grade(grade_str):
     grade_num = grade_str.replace("Kutaa ", "").strip()
     
@@ -169,57 +160,54 @@ def load_databases_for_grade(grade_str):
                         if key in data and isinstance(data[key], list):
                             return data[key]
                 return default_pool
-        except (FileNotFoundError, json.JSONDecodeError) as e:
+        except (FileNotFoundError, json.JSONDecodeError):
             return default_pool
 
-    # Default pools updated to contain at least 6 questions per subject tailored to grades
+    # Fallback pools if JSON files are missing
     default_ao = [
-        {"difficulty": "Salphaa", "question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
-        {"difficulty": "Salphaa", "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
-        {"difficulty": "Giddu-galeessaa", "question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B"},
-        {"difficulty": "Giddu-galeessaa", "question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A"},
-        {"difficulty": "Cimaa", "question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A"},
-        {"difficulty": "Cimaa", "question": "100. Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A"}
+        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
+        {"question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
+        {"question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B"},
+        {"question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A"},
+        {"question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A"},
+        {"question": "Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A"}
     ]
     
     default_math = [
-        {"difficulty": "Salphaa", "question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
-        {"difficulty": "Salphaa", "question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A"},
-        {"difficulty": "Giddu-galeessaa", "question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C"},
-        {"difficulty": "Giddu-galeessaa", "question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B"},
-        {"difficulty": "Cimaa", "question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"},
-        {"difficulty": "Cimaa", "question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A"}
+        {"question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
+        {"question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A"},
+        {"question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C"},
+        {"question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B"},
+        {"question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"},
+        {"question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A"}
     ]
 
     default_eng = [
-        {"difficulty": "Salphaa", "question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
-        {"difficulty": "Salphaa", "question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B"},
-        {"difficulty": "Giddu-galeessaa", "question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A"},
-        {"difficulty": "Giddu-galeessaa", "question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C"},
-        {"difficulty": "Cimaa", "question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"},
-        {"difficulty": "Cimaa", "question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B"}
+        {"question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
+        {"question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B"},
+        {"question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A"},
+        {"question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C"},
+        {"question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"},
+        {"question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B"}
     ]
 
     ao_pool = fetch_questions(ao_file, default_ao)
     math_pool = fetch_questions(math_file, default_math)
     eng_pool = fetch_questions(eng_file, default_eng)
 
-    def select_6_questions(pool):
-        # Akka gaaffileen hundi walitti qabamanii wal-keessaa gaaffii 6 ta'an filataman godhuuf
-        selected = []
-        # Jalqaba irraa hanga 6 jiran fudhachuuf ykn random gochuuf
+    def select_6_random_questions(pool):
         if len(pool) >= 6:
-            selected = random.sample(pool, 6)
+            return random.sample(pool, 6)
         else:
             selected = pool[:]
             while len(selected) < 6 and pool:
                 selected.append(random.choice(pool))
-        return selected
+            return selected
 
     return {
-        "afaan_oromoo": select_6_questions(ao_pool),
-        "math": select_6_questions(math_pool),
-        "english": select_6_questions(eng_pool)
+        "afaan_oromoo": select_6_random_questions(ao_pool),
+        "math": select_6_random_questions(math_pool),
+        "english": select_6_random_questions(eng_pool)
     }
 
 
@@ -388,13 +376,24 @@ def afaan_oromoo_screen():
         return
 
     q = questions[idx]
-    diff_label = q.get("difficulty", "Gaaffii")
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)} [Sadarkaa: {diff_label}]**")
+    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
     c2.markdown(f"**Qabxii: {str_app.session_state.ao_score}**")
 
-    str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
+    # Handle reading passage if provided in JSON row
+    passage_text = q.get("paragraph", q.get("text", ""))
+    if passage_text and len(passage_text.strip()) > 0 and passage_text != q.get("question", ""):
+        str_app.markdown(
+            f"""
+            <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
+                <b>📚 Qajeelfama / Dubbisa:</b><br>{passage_text}
+            </div>
+        """,
+            unsafe_allow_html=True,
+        )
+
+    str_app.markdown(f"### {q.get('question', '')}")
     if "options" in q:
         for opt in q["options"]:
             str_app.write(opt)
@@ -421,7 +420,7 @@ def afaan_oromoo_screen():
                     is_correct = True
 
             if is_correct:
-                str_app.session_state.ao_score += 5  # Gaaffii 6 f qabxii waliigalaa 30 akka ta'uuf tokkoon tokkoon isaanii qabxii 5 qabu
+                str_app.session_state.ao_score += 5
                 str_app.success("🎉 Sirriitti deebiste!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
@@ -429,7 +428,7 @@ def afaan_oromoo_screen():
                 if rem > 0:
                     str_app.warning(f"❌ Dogoggora! Carraan hafe: {rem}")
                 else:
-                    str_app.error("❌ Carraan 3ffaan xumurameera.")
+                    str_app.error(f"❌ Carraan 3ffaan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
         else:
             str_app.info("Barataan carraa 3 guutee xumureera.")
 
@@ -482,11 +481,21 @@ def math_screen():
         return
 
     q = questions[idx]
-    diff_label = q.get("difficulty", "Gaaffii")
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)} [Sadarkaa: {diff_label}]**")
+    c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)}**")
     c2.markdown(f"**Qabxii: {str_app.session_state.m_score}**")
+
+    passage_text = q.get("paragraph", q.get("text", ""))
+    if passage_text and len(passage_text.strip()) > 0 and passage_text != q.get("question", ""):
+        str_app.markdown(
+            f"""
+            <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
+                <b>📚 Qajeelfama / Hubachiisa:</b><br>{passage_text}
+            </div>
+        """,
+            unsafe_allow_html=True,
+        )
 
     str_app.markdown(f"### {q.get('question', '')}")
     if "options" in q:
@@ -574,13 +583,23 @@ def english_screen():
         return
 
     q = questions[idx]
-    diff_label = q.get("difficulty", "Question")
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Question {idx + 1} / {len(questions)} [Level: {diff_label}]**")
+    c1.markdown(f"**Question {idx + 1} / {len(questions)}**")
     c2.markdown(f"**Score: {str_app.session_state.e_score}**")
 
-    str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
+    passage_text = q.get("paragraph", q.get("text", ""))
+    if passage_text and len(passage_text.strip()) > 0 and passage_text != q.get("question", ""):
+        str_app.markdown(
+            f"""
+            <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
+                <b>📚 Reading Passage / Context:</b><br>{passage_text}
+            </div>
+        """,
+            unsafe_allow_html=True,
+        )
+
+    str_app.markdown(f"### {q.get('question', '')}")
     if "options" in q:
         for opt in q["options"]:
             str_app.write(opt)
