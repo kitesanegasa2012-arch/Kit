@@ -143,10 +143,89 @@ if "student_random_questions" not in str_app.session_state:
     str_app.session_state.student_random_questions = {}
 
 
+# IN-MEMORY SECRET QUESTION BANKS (Kutaa Kutaan Kuusaa Dhoksaa Barsiisaa Jala Jiru)
+SECRET_MASTER_QUESTION_BANKS = {
+    "Kutaa 1": {
+        "afaan_oromoo": [
+            {"question": "Qubee jalqabaa qubee Afaan Oromoo maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
+            {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq"},
+            {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu/Gabatee", "D) Waaciya/Qodaa"], "answer": "D", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq"},
+            {"question": "3 - 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 0"], "answer": "B", "type": "mcq"},
+            {"question": "Lakkoofsi 5 irra caalu kami?", "options": ["A) 4", "B) 3", "C) 6", "D) 2"], "answer": "C", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "What letter comes after 'A'?", "options": ["A) B", "B) C", "C) D", "D) E"], "answer": "A", "type": "mcq"},
+            {"question": "Choose the color of the sky:", "options": ["A) Red", "B) Blue", "C) Green", "D) Yellow"], "answer": "B", "type": "mcq"},
+            {"question": "How many fingers on one hand?", "options": ["A) 3", "B) 4", "C) 5", "D) 10"], "answer": "C", "type": "mcq"}
+        ]
+    },
+    "Kutaa 2": {
+        "afaan_oromoo": [
+            {"question": "Jechi 'Nama' jedhu hiika maali qaba?", "options": ["A) Lubbu qabeessa", "B) Mukaa", "C) Bishaan", "D) Dhagaa"], "answer": "A", "type": "mcq"},
+            {"question": "Quboonni sagaleessoo (vowels) Afaan Oromoo meeqa?", "options": ["A) 5", "B) 22", "C) 27", "D) 30"], "answer": "A", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "10 + 10 hammami?", "options": ["A) 15", "B) 20", "C) 25", "D) 30"], "answer": "B", "type": "mcq"},
+            {"question": "5 x 2 hammami?", "options": ["A) 7", "B) 10", "C) 12", "D) 8"], "answer": "B", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "What is the plural of 'Cat'?", "options": ["A) Cat", "B) Cats", "C) Cates", "D) Caties"], "answer": "B", "type": "mcq"},
+            {"question": "Choose the animal that barks:", "options": ["A) Cat", "B) Dog", "C) Cow", "D) Bird"], "answer": "B", "type": "mcq"}
+        ]
+    },
+    "Kutaa 3": {
+        "afaan_oromoo": [
+            {"question": "Fookloorii jechuun maali?", "options": ["A) Aadaa fi duudhaa", "B) Herrega", "C) Kompiitara", "D) Farmaasii"], "answer": "A", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "50 - 25 hammami?", "options": ["A) 20", "B) 25", "C) 30", "D) 15"], "answer": "B", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "Opposite of 'Big' is:", "options": ["A) Small", "B) Tall", "C) Fast", "D) Heavy"], "answer": "A", "type": "mcq"}
+        ]
+    },
+    "Kutaa 4": {
+        "afaan_oromoo": [
+            {"question": "Akkaataan itti walaloo barreessan keessaa inni ijoo maali?", "options": ["A) Rurkee fi wal-fakkeenya sagalee", "B) Lakkoofsa qofa", "C) Fakkii kaasuu", "D) Herreguu"], "answer": "A", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "144 / 12 hammami?", "options": ["A) 10", "B) 11", "C) 12", "D) 14"], "answer": "C", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "Past tense of 'Run' is:", "options": ["A) Running", "B) Ran", "C) Runed", "D) Runs"], "answer": "B", "type": "mcq"}
+        ]
+    },
+    "Kutaa 5": {
+        "afaan_oromoo": [
+            {"question": "Seenaa Oromoo keessatti Gadaan sirna akkamii ti?", "options": ["A) Sirna dimokraasii fi bulchiinsaa", "B) Sirna daldala qofa", "C) Sirna waraanaa qofa", "D) Sirna barumsaa ammayyaa"], "answer": "A", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "Hanga harka 3/4 kan 100 meeqa?", "options": ["A) 50", "B) 75", "C) 25", "D) 100"], "answer": "B", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "Choose the correct preposition: 'The book is ___ the table.'", "options": ["A) on", "B) in", "C) at", "D) under"], "answer": "A", "type": "mcq"}
+        ]
+    },
+    "Kutaa 6": {
+        "afaan_oromoo": [
+            {"question": "Jecha 'Goota' jedhuuf hiika tokko filadhu:", "options": ["A) Sodaa", "B) Jajjabaa/Namicha hojii guddaa hojjete", "C) Dadhabaa", "D) Dhukkubsataa"], "answer": "B", "type": "mcq"}
+        ],
+        "math": [
+            {"question": "Herrega shallaggaa: 25 + (5 * 2) =", "options": ["A) 60", "B) 35", "C) 30", "D) 50"], "answer": "B", "type": "mcq"}
+        ],
+        "english": [
+            {"question": "Identify the adjective in the sentence: 'She has a fast car.'", "options": ["A) She", "B) has", "C) fast", "D) car"], "answer": "C", "type": "mcq"}
+        ]
+    }
+}
+
+
 def load_databases_for_grade(grade_str, gosa_str=""):
     grade_num = grade_str.replace("Kutaa ", "").strip()
     
-    # Foldarii 'kit/' keessatti maqaan faayilii akka sirriitti wal simatu taasifameera
     ao_file = f"kit/ao_kutaa{grade_num}.json"
     math_file = f"kit/math_kutaa{grade_num}.json"
     eng_file = f"kit/eng_kutaa{grade_num}.json"
@@ -166,170 +245,29 @@ def load_databases_for_grade(grade_str, gosa_str=""):
                 return default_pool
         except (FileNotFoundError, json.JSONDecodeError):
             return default_pool
-import random
-import streamlit as st
 
-st.set_page_config(
-    page_title="Manni Barumsaa - Qormaata fi Gaaffiiwwan",
-    page_icon="📚",
-    layout="centered",
-)
+    # Secret Bank irraa deeggarsa fudhachuu yoo faayiliin dhabame
+    secret_grade_bank = SECRET_MASTER_QUESTION_BANKS.get(grade_str, SECRET_MASTER_QUESTION_BANKS["Kutaa 6"])
 
-st.title("Manni Barumsaa - Qormaata fi Gaaffiiwwan")
+    ao_pool = fetch_questions(ao_file, secret_grade_bank["afaan_oromoo"])
+    math_pool = fetch_questions(math_file, secret_grade_bank["math"])
+    eng_pool = fetch_questions(eng_file, secret_grade_bank["english"])
 
-# 1. KUUSAA GAAFFIIEWWAN KALLATTIIDHAAN KODII KEESSATTI QOPHEEFFAME (IN-MEMORY DATABASE)
-DATABASE = {
-    "Kutaa 1": {
-        "Afaan Oromoo": [
-            {
-                "question": (
-                    "Qubee Afaan Oromoo keessatti qubeen jalqabaa maali?"
-                ),
-                "options": ["A) A", "B) B", "C) C", "D) D"],
-                "answer": "A",
-                "type": "mcq",
-            },
-            {
-                "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?",
-                "options": ["A) Fayyaa", "B) Gadda", "C) Beela", "D) Loluu"],
-                "answer": "A",
-                "type": "mcq",
-            },
-        ],
-        "Herrega (Math)": [
-            {
-                "question": "Kutaa 1 - Herrega: 2 + 3 hammami?",
-                "options": ["A) 4", "B) 5", "C) 6", "D) 7"],
-                "answer": "B",
-                "type": "mcq",
-            }
-        ],
-        "English": [
-            {
-                "question": "What is the capital letter of 'a'?",
-                "options": ["A) A", "B) B", "C) C", "D) D"],
-                "answer": "A",
-                "type": "mcq",
-            }
-        ],
-    },
-    "Kutaa 2": {
-        "Afaan Oromoo": [
-            {
-                "question": "Aadaa Oromoo keessatti irreecha jechuun maali?",
-                "options": [
-                    "A) Ayyaana galateeffannaa",
-                    "B) Lola",
-                    "C) Beela",
-                    "D) Hirriba",
-                ],
-                "answer": "A",
-                "type": "mcq",
-            }
-        ],
-        "Herrega (Math)": [
-            {
-                "question": "10 - 4 hammami?",
-                "options": ["A) 5", "B) 6", "C) 7", "D) 8"],
-                "answer": "B",
-                "type": "mcq",
-            }
-        ],
-        "English": [
-            {
-                "question": "Choose the correct article: 'This is ___ apple.'",
-                "options": ["A) a", "B) an", "C) the", "D) on"],
-                "answer": "B",
-                "type": "mcq",
-            }
-        ],
-    },
-    # Kutaa 3 hanga 6 asitti dabaluu dandeessa...
-}
+    def select_6_random_questions(pool):
+        if len(pool) >= 6:
+            return random.sample(pool, 6)
+        else:
+            selected = pool[:]
+            while len(selected) < 6 and pool:
+                selected.append(random.choice(pool))
+            return selected
 
-# Kutaa fi Gosa Barnootaa filachiisuu
-col1, col2 = st.columns(2)
+    return {
+        "afaan_oromoo": select_6_random_questions(ao_pool),
+        "math": select_6_random_questions(math_pool),
+        "english": select_6_random_questions(eng_pool)
+    }
 
-with col1:
-    kutaa = st.selectbox(
-        "Kutaa Filadhu:",
-        [
-            "Kutaa 1",
-            "Kutaa 2",
-            "Kutaa 3",
-            "Kutaa 4",
-            "Kutaa 5",
-            "Kutaa 6",
-        ],
-    )
-
-with col2:
-    gosa = st.selectbox(
-        "Gosa Barnootaa:", ["Afaan Oromoo", "Herrega (Math)", "English"]
-    )
-
-
-# Gaaffilee DATABASE keessaa kutaa fi gosa filatameen baasuu
-def load_questions_from_memory(selected_kutaa, selected_gosa):
-    if (
-        selected_kutaa in DATABASE
-        and selected_gosa in DATABASE[selected_kutaa]
-    ):
-        return DATABASE[selected_kutaa][selected_gosa]
-    return []  # Yoo gaaffiin hin jirre faayilii duwwaa deebisa
-
-
-questions = load_questions_from_memory(kutata := kutaa, gosa)
-
-if not questions:
-    st.warning(
-        f"Gaaffiin {kutaa} fi {gosa}af qophaa'e ammayyuu kuusaa keessatti hin"
-        " jiru. Maaloo itti dabali."
-    )
-else:
-    # Session state qopheessuu gaaffii jijjiiruuf
-    session_key = f"{kutaa}_{gosa}"
-    if (
-        "current_session_key" not in st.session_state
-        or st.session_state.current_session_key != session_key
-    ):
-        st.session_state.current_session_key = session_key
-        st.session_state.current_q = random.choice(questions)
-        st.session_state.show_answer = False
-
-    q = st.session_state.current_q
-
-    st.divider()
-    st.subheader(f"Qormaata: {gosa} ({kutaa})")
-
-    if "text" in q and q["text"]:
-        st.info(q["text"])
-
-    question_text = q.get("question") or q.get("text")
-    st.write(f"**{question_text}**")
-
-    user_answer = None
-
-    if q.get("type") == "mcq" and "options" in q:
-        user_answer = st.radio(
-            "Filannoo kee filadhu:", q["options"], key=f"mcq_{session_key}"
-        )
-
-    if st.button("Deebii Ilaali"):
-        st.session_state.show_answer = True
-
-    if st.session_state.show_answer:
-        if q.get("type") == "mcq":
-            correct = q.get("answer")
-            if user_answer and user_answer.startswith(correct):
-                st.success(f"Sirriidha! Deebiin: {correct}")
-            else:
-                st.error(f"Dogoggora. Deebiin sirrii: {correct}")
-
-    if st.button("Gaaffii Biraa Fiduu"):
-        st.session_state.current_q = random.choice(questions)
-        st.session_state.show_answer = False
-        st.rerun()
 
 def role_selection_screen():
     str_app.markdown(
@@ -791,45 +729,63 @@ def english_screen():
 
 
 def teacher_dashboard_screen():
-    str_app.subheader("🎓 Gabaasa Barsiisaa - Kutaa Barsiisaa (Teacher Report)")
-    str_app.markdown("**Qabxii Barattootaa, Parsantii (%) fi Cuunfaa Gabaasaa**")
+    str_app.subheader("🎓 Gabaasa Barsiisaa & Kuusaa Gaaffii Dhoksaa (Teacher Dashboard)")
+    
+    tab1, tab2 = str_app.tabs(["📊 Qabxii Barattootaa (Reports)", "🔒 Kuusaa Gaaffii Kutaa Kutaan (Secret Banks Viewer)"])
 
-    students = str_app.session_state.global_students
-    str_app.write(f"**Baay'inni barattoota galmaa'an:** {len(students)}")
+    with tab1:
+        str_app.markdown("**Qabxii Barattootaa, Parsantii (%) fi Cuunfaa Gabaasaa**")
+        students = str_app.session_state.global_students
+        str_app.write(f"**Baay'inni barattoota galmaa'an:** {len(students)}")
 
-    if not students:
-        str_app.info("Ammaaf barataan galmaa'e hin jiru.")
-    else:
-        max_total_score = 90  # Gaaffii 6 x 5 (Gosa tokkoof qabxii 30, gosa 3 waliigala 90)
-        table_data = []
-        csv_data = "Maqaa Barataa,Kutaa,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%),Cuunfaa\n"
+        if not students:
+            str_app.info("Ammaaf barataan galmaa'e hin jiru.")
+        else:
+            max_total_score = 90
+            table_data = []
+            csv_data = "Maqaa Barataa,Kutaa,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%),Cuunfaa\n"
 
-        for name, data in students.items():
-            ao = data["afaanOromoo"]
-            math = data["math"]
-            eng = data["english"]
-            total = ao + math + eng
-            percentage = (total / max_total_score) * 100
+            for name, data in students.items():
+                ao = data["afaanOromoo"]
+                math = data["math"]
+                eng = data["english"]
+                total = ao + math + eng
+                percentage = (total / max_total_score) * 100
 
-            table_data.append({
-                "Maqaa Barataa": name,
-                "Kutaa": data["grade"],
-                "Afaan Oromoo": f"{ao}/30",
-                "Herrega": f"{math}/30",
-                "Ingliffaa": f"{eng}/30",
-                "Waliigala": f"{total}/90",
-                "Parsantii (%)": f"{percentage:.1f}%",
-            })
+                table_data.append({
+                    "Maqaa Barataa": name,
+                    "Kutaa": data["grade"],
+                    "Afaan Oromoo": f"{ao}/30",
+                    "Herrega": f"{math}/30",
+                    "Ingliffaa": f"{eng}/30",
+                    "Waliigala": f"{total}/90",
+                    "Parsantii (%)": f"{percentage:.1f}%",
+                })
 
-            csv_data += f"{name},{data['grade']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
+                csv_data += f"{name},{data['grade']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
 
-        str_app.dataframe(table_data, use_container_width=True)
-        str_app.download_button(
-            label="📥 Download Excel Report (CSV)",
-            data=csv_data,
-            file_name="HiikaWay_Student_Report.csv",
-            mime="text/csv",
-        )
+            str_app.dataframe(table_data, use_container_width=True)
+            str_app.download_button(
+                label="📥 Download Excel Report (CSV)",
+                data=csv_data,
+                file_name="HiikaWay_Student_Report.csv",
+                mime="text/csv",
+            )
+
+    with tab2:
+        str_app.markdown("### 🔒 Kuusaa Gaaffii Dhoksaan Qophaa'e (In-Memory Question Banks)")
+        str_app.write("As irratti gaaffiwwan kutaa 1 hanga 6 jiran gosa barnootaan qoodamanii iccitiidhaan kuusaa keessatti argamu:")
+        
+        selected_secret_grade = str_app.selectbox("Kutaa Filadhu (Secret View)", list(SECRET_MASTER_QUESTION_BANKS.keys()), key="sec_grade")
+        grade_banks = SECRET_MASTER_QUESTION_BANKS[selected_secret_grade]
+
+        for subject_name, q_list in grade_banks.items():
+            str_app.markdown(f"#### 📖 Gosa Barnootaa: {subject_name.upper()}")
+            for i, q_item in enumerate(q_list, 1):
+                str_app.markdown(f"**Gaaffii {i}:** {q_item.get('question')}")
+                str_app.write(f"Filannoowwan: {q_item.get('options', [])}")
+                str_app.success(f"Deebii Sirrii: {q_item.get('answer')}")
+                str_app.markdown("---")
 
     str_app.write("")
     if str_app.button("⬅️ Gara Furtuu Hojii Deebi'i"):
