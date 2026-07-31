@@ -1,0 +1,38 @@
+[
+    {
+        "type": "mcq",
+        "title": "Herrega Kutaa 1 - Lakkoofsa Dabaluu",
+        "text": "Fakkkeenyaaf: 2 + 3 meeqa ta'a? Deebii sirrii filadhu.",
+        "options": [
+            "A) 4",
+            "B) 5",
+            "C) 6",
+            "D) 7"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Kutaa 1 - Hirisuu",
+        "text": "5 - 2 = ?",
+        "options": [
+            "A) 2",
+            "B) 3",
+            "C) 4",
+            "D) 1"
+        ],
+        "answer": "B"
+    },
+    {
+        "type": "mcq",
+        "title": "Herrega Kutaa 1 - Lakkoofsa Lakkaa'uu",
+        "text": "Lakkoofsi 'Sadii' mallattoodhaan akkamitti barreeffama?",
+        "options": [
+            "A) 1",
+            "B) 2",
+            "C) 3",
+            "D) 4"
+        ],
+        "answer": "C"
+    }
+]
