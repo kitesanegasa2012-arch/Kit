@@ -210,6 +210,7 @@ def load_databases_for_grade(grade_str):
         "english": select_6_random_questions(eng_pool)
     }
 import json
+import os
 import random
 import streamlit as st
 
@@ -246,23 +247,32 @@ gosa_code = {
 file_name = f"{gosa_code}_kutaa{kutaa_num}.json"
 
 
-# Faayilii fe'uuf
-@st.cache_data
+# Faayilii fe'uuf ykn yoo dhabame ofumaan uumuuf
 def load_questions(file_path):
+  if not os.path.exists(file_path):
+    default_data = [
+        {
+            "type": "mcq",
+            "title": f"Gaaffii Qormaataa {file_name}",
+            "text": "Kun gaaffii fakkeenyaati. Maaloo gaaffii sirrii galchaa.",
+            "options": ["A) Sirrii", "B) Dogoggora", "C) Tokkollee", "D) Hunda"],
+            "answer": "A",
+        }
+    ]
+    with open(file_path, "w", encoding="utf-8") as f:
+      json.dump(default_data, f, ensure_ascii=False, indent=4)
+
   try:
     with open(file_path, "r", encoding="utf-8") as f:
       return json.load(f)
-  except FileNotFoundError:
+  except Exception as e:
     return None
 
 
 questions = load_questions(file_name)
 
 if not questions:
-  st.warning(
-      f"Faayiliin '{file_name}' jedhamu ammaaf hin argamne. Maaloo faayilii"
-      " kana bakka dizaayinii pirojektii keetti dabali!"
-  )
+  st.error(f"Faayilii '{file_name}' dubbisuu irratti rakkoon uumame.")
 else:
   # Session state qopheessuu
   if (
