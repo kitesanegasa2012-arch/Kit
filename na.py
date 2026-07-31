@@ -247,21 +247,10 @@ gosa_code = {
 file_name = f"{gosa_code}_kutaa{kutaa_num}.json"
 
 
-# Faayilii fe'uuf ykn yoo dhabame ofumaan uumuuf
+# Faayilii fe'uuf
 def load_questions(file_path):
   if not os.path.exists(file_path):
-    default_data = [
-        {
-            "type": "mcq",
-            "title": f"Gaaffii Qormaataa {file_name}",
-            "text": "Kun gaaffii fakkeenyaati. Maaloo gaaffii sirrii galchaa.",
-            "options": ["A) Sirrii", "B) Dogoggora", "C) Tokkollee", "D) Hunda"],
-            "answer": "A",
-        }
-    ]
-    with open(file_path, "w", encoding="utf-8") as f:
-      json.dump(default_data, f, ensure_ascii=False, indent=4)
-
+    return None
   try:
     with open(file_path, "r", encoding="utf-8") as f:
       return json.load(f)
@@ -272,9 +261,12 @@ def load_questions(file_path):
 questions = load_questions(file_name)
 
 if not questions:
-  st.error(f"Faayilii '{file_name}' dubbisuu irratti rakkoon uumame.")
+  st.error(
+      f"Faayiliin '{file_name}' hin argamne! Maaloo faayilii kana gaaffiiwwan"
+      " guuttee folderi kee keessatti kaa'uu kee mirkaneessi."
+  )
 else:
-  # Session state qopheessuu
+  # Session state qopheessuu gaaffii jijjiiruuf
   if (
       "current_file" not in st.session_state
       or st.session_state.current_file != file_name
@@ -323,7 +315,6 @@ else:
     st.session_state.current_q = random.choice(questions)
     st.session_state.show_answer = False
     st.rerun()
-
 def role_selection_screen():
     str_app.markdown(
         """
