@@ -143,13 +143,19 @@ if "student_random_questions" not in str_app.session_state:
     str_app.session_state.student_random_questions = {}
 
 
-def load_databases_for_grade(grade_str):
+def load_databases_for_grade(grade_str, gosa_str=""):
     grade_num = grade_str.replace("Kutaa ", "").strip()
     
+    gosa_code_map = {
+        "Afaan Oromoo": "ao",
+        "Herrega (Math)": "math",
+        "English": "eng"
+    }
+    
     # Foldarii 'kit/' keessatti maqaan faayilii akka sirriitti wal simatu taasifameera
-    ao_file = f"kit/ao_Kutaa{grade_num}.json"
-    math_file = f"kit/math_Kutaa{grade_num}.json"
-    eng_file = f"kit/eng_Kutaa{grade_num}.json"
+    ao_file = f"kit/ao_kutaa{grade_num}.json"
+    math_file = f"kit/math_kutaa{grade_num}.json"
+    eng_file = f"kit/eng_kutaa{grade_num}.json"
 
     def fetch_questions(filename, default_pool):
         if not os.path.exists(filename):
@@ -169,30 +175,30 @@ def load_databases_for_grade(grade_str):
 
     # Fallback pools if JSON files are missing
     default_ao = [
-        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
-        {"question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
-        {"question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B"},
-        {"question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A"},
-        {"question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A"},
-        {"question": "Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A"}
+        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A", "type": "mcq"},
+        {"question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A", "type": "mcq"},
+        {"question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B", "type": "mcq"},
+        {"question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A", "type": "mcq"},
+        {"question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A", "type": "mcq"},
+        {"question": "Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A", "type": "mcq"}
     ]
     
     default_math = [
-        {"question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
-        {"question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A"},
-        {"question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C"},
-        {"question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B"},
-        {"question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"},
-        {"question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A"}
+        {"question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B", "type": "mcq"},
+        {"question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A", "type": "mcq"},
+        {"question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C", "type": "mcq"},
+        {"question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B", "type": "mcq"},
+        {"question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B", "type": "mcq"},
+        {"question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A", "type": "mcq"}
     ]
 
     default_eng = [
-        {"question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
-        {"question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B"},
-        {"question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A"},
-        {"question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C"},
-        {"question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"},
-        {"question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B"}
+        {"question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
+        {"question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B", "type": "mcq"},
+        {"question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A", "type": "mcq"},
+        {"question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C", "type": "mcq"},
+        {"question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C", "type": "mcq"},
+        {"question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B", "type": "mcq"}
     ]
 
     ao_pool = fetch_questions(ao_file, default_ao)
@@ -397,9 +403,13 @@ def afaan_oromoo_screen():
         )
 
     str_app.markdown(f"### {q.get('question', '')}")
-    if "options" in q:
-        for opt in q["options"]:
-            str_app.write(opt)
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Filannoo kee filadhu:", q["options"], key=f"ao_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"ao_ans_{student}_{idx}")
 
     attempt_key = ("afaan_oromoo", student, idx)
     if attempt_key not in str_app.session_state.attempts:
@@ -408,23 +418,22 @@ def afaan_oromoo_screen():
     current_attempts = str_app.session_state.attempts[attempt_key]
     str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
 
-    ans = str_app.text_input("Deebii kee asitti barreessi:", key=f"ao_ans_{student}_{idx}")
-
     if str_app.button("Mirkaneessi Afaan Oromoo"):
         if current_attempts < 3:
             str_app.session_state.attempts[attempt_key] += 1
             is_correct = False
 
             if "answer" in q:
-                if ans.strip().upper() == str(q["answer"]).upper() or ans.strip().lower() == str(q["answer"]).lower():
+                correct = str(q["answer"])
+                if user_answer and (user_answer.strip().upper() == correct.upper() or user_answer.strip().startswith(correct)):
                     is_correct = True
             elif "expected" in q:
-                if any(exp.lower() in ans.strip().lower() for exp in q["expected"]):
+                if user_answer and any(exp.lower() in user_answer.strip().lower() for exp in q["expected"]):
                     is_correct = True
 
             if is_correct:
                 str_app.session_state.ao_score += 5
-                str_app.success("🎉 Sirriitti deebiste!")
+                str_app.success("🎉 Sirriidha!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
                 rem = 3 - str_app.session_state.attempts[attempt_key]
@@ -501,9 +510,13 @@ def math_screen():
         )
 
     str_app.markdown(f"### {q.get('question', '')}")
-    if "options" in q:
-        for opt in q["options"]:
-            str_app.write(opt)
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Filannoo kee filadhu:", q["options"], key=f"m_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"m_ans_{student}_{idx}")
 
     attempt_key = ("math", student, idx)
     if attempt_key not in str_app.session_state.attempts:
@@ -512,21 +525,20 @@ def math_screen():
     current_attempts = str_app.session_state.attempts[attempt_key]
     str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
 
-    m_ans = str_app.text_input("Deebii kee asitti barreessi:", key=f"m_ans_{student}_{idx}")
-
     if str_app.button("Mirkaneessi Herregaa"):
         if current_attempts < 3:
             str_app.session_state.attempts[attempt_key] += 1
             is_correct = False
-            cleaned_ans = m_ans.strip().upper()
             correct_ans = str(q.get("answer", "")).upper()
 
-            if cleaned_ans == correct_ans or (correct_ans and cleaned_ans == correct_ans[0]):
-                is_correct = True
+            if user_answer:
+                cleaned_ans = user_answer.strip().upper()
+                if cleaned_ans == correct_ans or (correct_ans and cleaned_ans.startswith(correct_ans[0])):
+                    is_correct = True
 
             if is_correct:
                 str_app.session_state.m_score += 5
-                str_app.success("🎉 Sirriitti deebiste!")
+                str_app.success("🎉 Sirriidha!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
                 rem = 3 - str_app.session_state.attempts[attempt_key]
@@ -603,9 +615,13 @@ def english_screen():
         )
 
     str_app.markdown(f"### {q.get('question', '')}")
-    if "options" in q:
-        for opt in q["options"]:
-            str_app.write(opt)
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Choose your option:", q["options"], key=f"e_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Type your answer here:", key=f"e_ans_{student}_{idx}")
 
     attempt_key = ("english", student, idx)
     if attempt_key not in str_app.session_state.attempts:
@@ -614,25 +630,24 @@ def english_screen():
     current_attempts = str_app.session_state.attempts[attempt_key]
     str_app.write(f"⚠️ Attempt count: **{current_attempts} / 3**")
 
-    e_ans = str_app.text_input("Type your answer here:", key=f"e_ans_{student}_{idx}")
-
     if str_app.button("Check Answer"):
         if current_attempts < 3:
             str_app.session_state.attempts[attempt_key] += 1
             is_correct = False
-            cleaned_ans = e_ans.strip().lower()
 
             if "answer" in q:
                 ans_str = str(q["answer"]).lower()
-                if cleaned_ans == ans_str or (ans_str and cleaned_ans == ans_str[0]):
-                    is_correct = True
+                if user_answer:
+                    cleaned_ans = user_answer.strip().lower()
+                    if cleaned_ans == ans_str or cleaned_ans.startswith(ans_str[0]):
+                        is_correct = True
             elif "expected" in q:
-                if any(exp.lower() in cleaned_ans for exp in q["expected"]):
+                if user_answer and any(exp.lower() in user_answer.strip().lower() for exp in q["expected"]):
                     is_correct = True
 
             if is_correct:
                 str_app.session_state.e_score += 5
-                str_app.success("🎉 Sirriitti deebiste!")
+                str_app.success("🎉 Correct!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
                 rem = 3 - str_app.session_state.attempts[attempt_key]
