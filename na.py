@@ -163,6 +163,10 @@ def load_databases_for_grade(grade_str):
             with open(filename, "r", encoding="utf-8") as f:
                 return json.load(f)
         except FileNotFoundError:
+            str_app.warning(f"Faayiliin {filename} hin argamne.")
+            return []
+        except json.JSONDecodeError:
+            str_app.error(f"Dogoggorri caaseffamaa (JSON Syntax Error) faayilii {filename} keessa jira. Meecaasii ilaali!")
             return []
 
     ao_pool = fetch_questions(ao_file)
@@ -193,7 +197,6 @@ def load_databases_for_grade(grade_str):
         "math": select_3_levels(math_pool),
         "english": select_3_levels(eng_pool)
     }
-
 
 def role_selection_screen():
     str_app.markdown(
