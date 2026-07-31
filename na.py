@@ -308,7 +308,6 @@ def load_databases_for_grade(grade_str):
     bank = str_app.session_state.SECRET_MASTER_QUESTION_BANKS.get(grade_str, str_app.session_state.SECRET_MASTER_QUESTION_BANKS["Kutaa 6"])
 
     def select_unique_random_questions(pool):
-        # Gaaffiin akka walirra hin buuneef fi tokkoon tokkoon barataaf randomly akka filatamu
         if len(pool) >= 6:
             return random.sample(pool, 6)
         else:
@@ -399,7 +398,6 @@ def teacher_login_screen():
     col1, col2 = str_app.columns(2)
     with col1:
         if str_app.button("Mirkaneessi Seeni"):
-            # Paasworii sirrii (Fkn: 'admin123' ykn kan barbaaddan gochuu dandeessu)
             if pwd == "admin123":
                 str_app.session_state.teacher_auth = True
                 str_app.session_state.current_page = "teacher_dashboard"
@@ -416,14 +414,16 @@ def name_input_screen():
     str_app.markdown(
         """
         <div class="hero-box">
-            <h2>Galmee Maqaa & Kutaa Barataa</h2>
-            <p>Maaloo maqaa kee guutuu fi kutaa kee filadhu</p>
+            <h2>Galmee Maqaa, Korniyaa & Lakk. Daree Barataa</h2>
+            <p>Maaloo odeeffannoo guutuu kee as irratti galchi</p>
         </div>
     """,
         unsafe_allow_html=True,
     )
 
-    name = str_app.text_input("Maqaa Kee", placeholder="Maqaa kee guutuu barreessi...")
+    name = str_app.text_input("Maqaa Guutuu", placeholder="Maqaa kee guutuu barreessi...")
+    gender = str_app.selectbox("Korniyaa (Gender)", ["Dhiira", "Dhalaa"])
+    section = str_app.text_input("Lakk. Daree (Section / Room)", placeholder="Fkn: Kutaa 6A ykn Daree 2")
     grade = str_app.selectbox(
         "Kutaa Barumsaa (Grade 1 - 6)",
         ["Kutaa 1", "Kutaa 2", "Kutaa 3", "Kutaa 4", "Kutaa 5", "Kutaa 6"],
@@ -432,7 +432,7 @@ def name_input_screen():
     col1, col2 = str_app.columns(2)
     with col1:
         if str_app.button("Gara Appiitti Darbi"):
-            if name.strip():
+            if name.strip() and section.strip():
                 clean_name = name.strip()
                 str_app.session_state.current_student = clean_name
                 str_app.session_state.current_grade = grade
@@ -440,19 +440,20 @@ def name_input_screen():
                 if clean_name not in str_app.session_state.global_students:
                     str_app.session_state.global_students[clean_name] = {
                         "grade": grade,
+                        "gender": gender,
+                        "section": section.strip(),
                         "afaanOromoo": 0,
                         "math": 0,
                         "english": 0,
                     }
 
-                # Barataan yeroo seenu gaaffiin tokkoon tokkoon isaaniif adda ta'ee (randomly) akka baasu godhama
                 selected_qs = load_databases_for_grade(grade)
                 str_app.session_state.student_random_questions[clean_name] = selected_qs
 
                 str_app.session_state.current_page = "home"
                 str_app.rerun()
             else:
-                str_app.warning("Mee dura maqaa kee barreessi!")
+                str_app.warning("Maaloo Maqaa guutuu fi Lakk. Daree kee guuti!")
     with col2:
         if str_app.button("⬅️ Duubatti"):
             str_app.session_state.current_page = "role_selection"
@@ -775,7 +776,6 @@ def english_screen():
 
 
 def teacher_dashboard_screen():
-    # Yoo barsiisaan iccitii hin galchin deebi'uu barbaade
     if not str_app.session_state.teacher_auth:
         str_app.warning("Maaloo dura paasworii galchaa!")
         str_app.session_state.current_page = "teacher_login"
@@ -785,22 +785,32 @@ def teacher_dashboard_screen():
     str_app.subheader("🎓 Gabaasa Barsiisaa & Kuusaa Gaaffii (Teacher Dashboard)")
     
     tab1, tab2, tab3 = str_app.tabs([
-        "📊 Qabxii Barattootaa (Reports)", 
+        "📊 Qabxii & Gabaasa Qinda'aa (Reports)", 
         "🔒 Kuusaa Gaaffii Kutaa Kutaan (Secret Banks)", 
         "➕ Gaaffii Haaraa Dabaluu (Add Question)"
     ])
 
     with tab1:
-        str_app.markdown("**Qabxii Barattootaa, Parsantii (%) fi Cuunfaa Gabaasaa**")
+        str_app.markdown("**Gabaasa Yeroo, Madaallii fi Tarreeffama Barattootaa (Kutaa 1)**")
         students = str_app.session_state.global_students
         str_app.write(f"**Baay'inni barattoota galmaa'an:** {len(students)}")
 
         if not students:
             str_app.info("Ammaaf barataan galmaa'e hin jiru.")
         else:
+            max_subject_score = 30  # Gosa barnootaa tokkoon tokkoon isaaniif gaaffii 6 * 5 = 30
             max_total_score = 90
+
+            # Gosa barnootaa tokkoon tokkoon isaaniif madaallii kennaa qooduu (Afaan Oromoo, Math, English)
+            subjects_map = {
+                "afaanOromoo": "📖 Afaan Oromoo",
+                "math": "🔢 Herrega (Mathematics)",
+                "english": "🔤 Ingliffaa (English)"
+            }
+
+            # Waliigala gabaasa cuunfaa table
             table_data = []
-            csv_data = "Maqaa Barataa,Kutaa,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%),Cuunfaa\n"
+            csv_data = "Maqaa Barataa,Kutaa,Korniyaa,Lakk Daree,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%)\n"
 
             for name, data in students.items():
                 ao = data["afaanOromoo"]
@@ -812,6 +822,8 @@ def teacher_dashboard_screen():
                 table_data.append({
                     "Maqaa Barataa": name,
                     "Kutaa": data["grade"],
+                    "Korniyaa": data["gender"],
+                    "Lakk. Daree": data["section"],
                     "Afaan Oromoo": f"{ao}/30",
                     "Herrega": f"{math}/30",
                     "Ingliffaa": f"{eng}/30",
@@ -819,8 +831,9 @@ def teacher_dashboard_screen():
                     "Parsantii (%)": f"{percentage:.1f}%",
                 })
 
-                csv_data += f"{name},{data['grade']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
+                csv_data += f"{name},{data['grade']},{data['gender']},{data['section']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
 
+            str_app.markdown("### 📋 Cuunfaa Waliigala Barattootaa Hunda")
             str_app.dataframe(table_data, use_container_width=True)
             str_app.download_button(
                 label="📥 Download Excel Report (CSV)",
@@ -828,6 +841,55 @@ def teacher_dashboard_screen():
                 file_name="HiikaWay_Student_Report.csv",
                 mime="text/csv",
             )
+
+            str_app.markdown("---")
+            str_app.markdown("### 📌 Gabaasa Qinda'aa fi Yaada Madaallii (Kutaa 1: Gosa Barnootaan)")
+
+            for subj_key, subj_title in subjects_map.items():
+                str_app.markdown(f"#### ❖ {subj_title}")
+                
+                sirritti_list = []
+                foyyee_list = []
+                hubanne_list = []
+
+                for name, data in students.items():
+                    subj_score = data[subj_key]
+                    subj_pct = (subj_score / max_subject_score) * 100
+
+                    # Madaallii fi yaada kennuu
+                    if subj_pct >= 80:
+                        eval_msg = "Sirritti deebiseera (80%-100%)"
+                        sirritti_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+                    elif subj_pct >= 60:
+                        eval_msg = "Foyyee qaba (60%-79.9%)"
+                        foyyee_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+                    else:
+                        eval_msg = "Hin hubanne (<59.9%)"
+                        hubanne_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+
+                col_a, col_b, col_c = str_app.columns(3)
+                with col_a:
+                    str_app.markdown("**🟢 Sirritti Deebisan (80%-100%)**")
+                    if sirritti_list:
+                        str_app.dataframe(sirritti_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                with col_b:
+                    str_app.markdown("**🟡 Foyyee Qaban (60%-79.9%)**")
+                    if foyyee_list:
+                        str_app.dataframe(foyyee_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                with col_c:
+                    str_app.markdown("**🔴 Hin Hubanne (<59.9%)**")
+                    if hubanne_list:
+                        str_app.dataframe(hubanne_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                str_app.markdown("---")
 
     with tab2:
         str_app.markdown("### 🔒 Kuusaa Gaaffii Barattoonni Gaafataman (Master Question Banks)")
@@ -868,7 +930,6 @@ def teacher_dashboard_screen():
                     "answer": new_answer,
                     "type": "mcq"
                 }
-                # Gaaffii haaraa kuusaa keessatti dabalutti fida
                 str_app.session_state.SECRET_MASTER_QUESTION_BANKS[add_grade][add_subject].append(new_question_dict)
                 str_app.success("🎉 Gaaffiin haaraan kuusaa keessatti milkaa'inaan dabalamateera!")
             else:
