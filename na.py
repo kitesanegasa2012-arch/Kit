@@ -170,54 +170,56 @@ def load_databases_for_grade(grade_str):
                             return data[key]
                 return default_pool
         except (FileNotFoundError, json.JSONDecodeError) as e:
-            str_app.sidebar.warning(f"Faayiliin {filename} argamuu dhiisuu danda'ee jira: {e}")
             return default_pool
 
+    # Default pools updated to contain at least 6 questions per subject tailored to grades
     default_ao = [
-        {"difficulty": "Salphaa", "question": "Qubee qubeessuu keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
-        {"difficulty": "Giddu-galeessaa", "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
-        {"difficulty": "Cimaa", "question": "Leencaan eessa jiraata?", "text": "Leencaan bosona keessa jiraata. Inni foon nyaata.", "expected": ["bosona"]}
+        {"difficulty": "Salphaa", "question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
+        {"difficulty": "Salphaa", "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
+        {"difficulty": "Giddu-galeessaa", "question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B"},
+        {"difficulty": "Giddu-galeessaa", "question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A"},
+        {"difficulty": "Cimaa", "question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A"},
+        {"difficulty": "Cimaa", "question": "100. Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A"}
     ]
     
     default_math = [
-        {"difficulty": "Salphaa", "question": "10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
+        {"difficulty": "Salphaa", "question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
+        {"difficulty": "Salphaa", "question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A"},
         {"difficulty": "Giddu-galeessaa", "question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C"},
-        {"difficulty": "Cimaa", "question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"}
+        {"difficulty": "Giddu-galeessaa", "question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B"},
+        {"difficulty": "Cimaa", "question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"},
+        {"difficulty": "Cimaa", "question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A"}
     ]
 
     default_eng = [
-        {"difficulty": "Salphaa", "question": "What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
-        {"difficulty": "Giddu-galeessaa", "question": "Choose the correct pronoun: '___ is a boy.'", "options": ["A) She", "B) He", "C) It", "D) They"], "answer": "B"},
-        {"difficulty": "Cimaa", "question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"}
+        {"difficulty": "Salphaa", "question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
+        {"difficulty": "Salphaa", "question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B"},
+        {"difficulty": "Giddu-galeessaa", "question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A"},
+        {"difficulty": "Giddu-galeessaa", "question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C"},
+        {"difficulty": "Cimaa", "question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"},
+        {"difficulty": "Cimaa", "question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B"}
     ]
 
     ao_pool = fetch_questions(ao_file, default_ao)
     math_pool = fetch_questions(math_file, default_math)
     eng_pool = fetch_questions(eng_file, default_eng)
 
-    def select_3_levels(pool):
+    def select_6_questions(pool):
+        # Akka gaaffileen hundi walitti qabamanii wal-keessaa gaaffii 6 ta'an filataman godhuuf
         selected = []
-        for level_name in ["Salphaa", "Giddu-galeessaa", "Cimaa"]:
-            sub_pool = filter_by_difficulty(pool, level_name)
-            if sub_pool:
-                selected.append(random.choice(sub_pool))
-            else:
-                if pool:
-                    rem_pool = [p for p in pool if p not in selected]
-                    if rem_pool:
-                        selected.append(random.choice(rem_pool))
-        while len(selected) < 3 and pool:
-            rem_pool = [p for p in pool if p not in selected]
-            if rem_pool:
-                selected.append(random.choice(rem_pool))
-            else:
-                break
+        # Jalqaba irraa hanga 6 jiran fudhachuuf ykn random gochuuf
+        if len(pool) >= 6:
+            selected = random.sample(pool, 6)
+        else:
+            selected = pool[:]
+            while len(selected) < 6 and pool:
+                selected.append(random.choice(pool))
         return selected
 
     return {
-        "afaan_oromoo": select_3_levels(ao_pool),
-        "math": select_3_levels(math_pool),
-        "english": select_3_levels(eng_pool)
+        "afaan_oromoo": select_6_questions(ao_pool),
+        "math": select_6_questions(math_pool),
+        "english": select_6_questions(eng_pool)
     }
 
 
@@ -331,7 +333,7 @@ def home_screen():
         f"""
         <div class="hero-box">
             <h2>Baga nagaan dhuftte, {str_app.session_state.current_student} ({str_app.session_state.current_grade})!</h2>
-            <p>Gosa barnootaa barachuu barbaaddu filadhu (Gaaffii 3 Salphaa, Giddu-galeessaa fi Cimaa qaba)</p>
+            <p>Gosa barnootaa barachuu barbaaddu filadhu (Gosa tokkoon tokkoon isaaniif Gaaffii 6 qaba)</p>
         </div>
     """,
         unsafe_allow_html=True,
@@ -392,16 +394,6 @@ def afaan_oromoo_screen():
     c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)} [Sadarkaa: {diff_label}]**")
     c2.markdown(f"**Qabxii: {str_app.session_state.ao_score}**")
 
-    if q.get("type") == "reading" and "text" in q:
-        str_app.markdown(
-            f"""
-            <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
-                <b>📚 Qajeelfama Dubbisuu:</b><br>{q['text']}
-            </div>
-        """,
-            unsafe_allow_html=True,
-        )
-
     str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
     if "options" in q:
         for opt in q["options"]:
@@ -429,7 +421,7 @@ def afaan_oromoo_screen():
                     is_correct = True
 
             if is_correct:
-                str_app.session_state.ao_score += 10
+                str_app.session_state.ao_score += 5  # Gaaffii 6 f qabxii waliigalaa 30 akka ta'uuf tokkoon tokkoon isaanii qabxii 5 qabu
                 str_app.success("🎉 Sirriitti deebiste!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
@@ -491,6 +483,7 @@ def math_screen():
 
     q = questions[idx]
     diff_label = q.get("difficulty", "Gaaffii")
+    str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
     c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)} [Sadarkaa: {diff_label}]**")
     c2.markdown(f"**Qabxii: {str_app.session_state.m_score}**")
@@ -520,7 +513,7 @@ def math_screen():
                 is_correct = True
 
             if is_correct:
-                str_app.session_state.m_score += 10
+                str_app.session_state.m_score += 5
                 str_app.success("🎉 Sirriitti deebiste!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
@@ -587,16 +580,6 @@ def english_screen():
     c1.markdown(f"**Question {idx + 1} / {len(questions)} [Level: {diff_label}]**")
     c2.markdown(f"**Score: {str_app.session_state.e_score}**")
 
-    if q.get("type") == "reading" and "text" in q:
-        str_app.markdown(
-            f"""
-            <div style="background-color: #f1f8e9; padding: 15px; border-radius: 10px; border-left: 5px solid #2e7d32; margin-bottom: 15px;">
-                <b>📚 Reading Passage:</b><br>{q['text']}
-            </div>
-        """,
-            unsafe_allow_html=True,
-        )
-
     str_app.markdown(f"### {q.get('question', q.get('text', ''))}")
     if "options" in q:
         for opt in q["options"]:
@@ -626,7 +609,7 @@ def english_screen():
                     is_correct = True
 
             if is_correct:
-                str_app.session_state.e_score += 10
+                str_app.session_state.e_score += 5
                 str_app.success("🎉 Sirriitti deebiste!")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
@@ -670,7 +653,7 @@ def teacher_dashboard_screen():
     if not students:
         str_app.info("Ammaaf barataan galmaa'e hin jiru.")
     else:
-        max_total_score = 90  # Gaaffii 3 x 30 (Afaan Oromoo, Herrega, Ingliffaa gosa tokkoof 30)
+        max_total_score = 90  # Gaaffii 6 x 5 (Gosa tokkoof qabxii 30, gosa 3 waliigala 90)
         table_data = []
         csv_data = "Maqaa Barataa,Kutaa,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%),Cuunfaa\n"
 
