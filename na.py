@@ -1,4 +1,5 @@
 import json
+import os
 import random
 import streamlit as str_app
 
@@ -145,11 +146,14 @@ if "student_random_questions" not in str_app.session_state:
 def load_databases_for_grade(grade_str):
     grade_num = grade_str.replace("Kutaa ", "").strip()
     
-    ao_file = f"ao_kutaa{grade_num}.json"
-    math_file = f"math_kutaa{grade_num}.json"
-    eng_file = f"eng_kutaa{grade_num}.json"
+    # Foldarii 'kit/' keessatti maqaan faayilii akka sirriitti wal simatu taasifameera
+    ao_file = f"kit/ao_Kutaa{grade_num}.json"
+    math_file = f"kit/math_Kutaa{grade_num}.json"
+    eng_file = f"kit/eng_Kutaa{grade_num}.json"
 
     def fetch_questions(filename, default_pool):
+        if not os.path.exists(filename):
+            return default_pool
         try:
             with open(filename, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -209,113 +213,8 @@ def load_databases_for_grade(grade_str):
         "math": select_6_random_questions(math_pool),
         "english": select_6_random_questions(eng_pool)
     }
-import json
-import os
-import random
-import streamlit as st
-
-st.set_page_config(
-    page_title="Manni Barumsaa - Qormaata fi Gaaffiiwwan",
-    page_icon="📚",
-    layout="centered",
-)
-
-st.title("Manni Barumsaa - Qormaata fi Gaaffiiwwan")
-
-# Kutaa fi Gosa Barnootaa filachiisuu
-col1, col2 = st.columns(2)
-
-with col1:
-  kutaa = st.selectbox(
-      "Kutaa Filadhu:",
-      ["Kutaa 1", "Kutaa 2", "Kutaa 3", "Kutaa 4", "Kutaa 5", "Kutaa 6"],
-  )
-
-with col2:
-  gosa = st.selectbox(
-      "Gosa Barnootaa:", ["Afaan Oromoo", "Herrega (Math)", "English"]
-  )
-
-# Maqaa faayilii fi foldarii kit/ walitti qindeessuu
-kutaa_num = kutaa.split()[1]
-gosa_code = {
-    "Afaan Oromoo": "ao",
-    "Herrega (Math)": "math",
-    "English": "eng",
-}[gosa]
-
-# As irratti folderi 'kit/' dabalameera
-file_name = f"kit/{gosa_code}_kutaa{kutaa_num}.json"
 
 
-# Faayilii fe'uuf
-def load_questions(file_path):
-  if not os.path.exists(file_path):
-    return None
-  try:
-    with open(file_path, "r", encoding="utf-8") as f:
-      return json.load(f)
-  except Exception as e:
-    return None
-
-
-questions = load_questions(file_name)
-
-if not questions:
-  st.error(
-      f"Faayiliin '{file_name}' hin argamne! Maaloo faayilii kana folderi"
-      " 'kit' keessatti qabaachuu kee mirkaneessi."
-  )
-else:
-  # Session state qopheessuu gaaffii jijjiiruuf
-  if (
-      "current_file" not in st.session_state
-      or st.session_state.current_file != file_name
-  ):
-    st.session_state.current_file = file_name
-    st.session_state.current_q = random.choice(questions)
-    st.session_state.show_answer = False
-
-  q = st.session_state.current_q
-
-  st.divider()
-  st.subheader(q.get("title", f"Gaaffii {gosa} {kutaa}"))
-
-  if "text" in q and q["text"]:
-    st.info(q["text"])
-
-  question_text = q.get("question") or q.get("text")
-  st.write(f"**{question_text}**")
-
-  user_answer = None
-
-  if q.get("type") == "mcq" and "options" in q:
-    user_answer = st.radio(
-        "Filannoo kee filadhu:", q["options"], key=f"mcq_{file_name}"
-    )
-  elif q.get("type") == "reading":
-    user_answer = st.text_input(
-        "Deebii kee as barreessi:", key=f"txt_{file_name}"
-    )
-
-  if st.button("Deebii Ilaali"):
-    st.session_state.show_answer = True
-
-  if st.session_state.show_answer:
-    if q.get("type") == "mcq":
-      correct = q.get("answer")
-      if user_answer and user_answer.startswith(correct):
-        st.success(f"Sirriidha! Deebiin: {correct}")
-      else:
-        st.error(f"Dogoggora. Deebiin sirrii: {correct}")
-    elif q.get("type") == "reading":
-      expected = q.get("expected", [])
-      st.info(f"Deebiiwwan eegaman: {', '.join(expected)}")
-
-  if st.button("Gaaffii Biraa Fiduu"):
-    st.session_state.current_q = random.choice(questions)
-    st.session_state.show_answer = False
-    st.rerun()
 def role_selection_screen():
     str_app.markdown(
         """
@@ -486,7 +385,6 @@ def afaan_oromoo_screen():
     c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
     c2.markdown(f"**Qabxii: {str_app.session_state.ao_score}**")
 
-    # Handle reading passage if provided in JSON row
     passage_text = q.get("paragraph", q.get("text", ""))
     if passage_text and len(passage_text.strip()) > 0 and passage_text != q.get("question", ""):
         str_app.markdown(
