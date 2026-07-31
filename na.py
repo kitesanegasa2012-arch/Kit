@@ -236,7 +236,7 @@ with col2:
       "Gosa Barnootaa:", ["Afaan Oromoo", "Herrega (Math)", "English"]
   )
 
-# Maqaa faayilii (File name) karoorsuu
+# Maqaa faayilii fi foldarii kit/ walitti qindeessuu
 kutaa_num = kutaa.split()[1]
 gosa_code = {
     "Afaan Oromoo": "ao",
@@ -244,7 +244,8 @@ gosa_code = {
     "English": "eng",
 }[gosa]
 
-file_name = f"{gosa_code}_kutaa{kutaa_num}.json"
+# As irratti folderi 'kit/' dabalameera
+file_name = f"kit/{gosa_code}_kutaa{kutaa_num}.json"
 
 
 # Faayilii fe'uuf
@@ -262,8 +263,8 @@ questions = load_questions(file_name)
 
 if not questions:
   st.error(
-      f"Faayiliin '{file_name}' hin argamne! Maaloo faayilii kana gaaffiiwwan"
-      " guuttee folderi kee keessatti kaa'uu kee mirkaneessi."
+      f"Faayiliin '{file_name}' hin argamne! Maaloo faayilii kana folderi"
+      " 'kit' keessatti qabaachuu kee mirkaneessi."
   )
 else:
   # Session state qopheessuu gaaffii jijjiiruuf
