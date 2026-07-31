@@ -166,54 +166,170 @@ def load_databases_for_grade(grade_str, gosa_str=""):
                 return default_pool
         except (FileNotFoundError, json.JSONDecodeError):
             return default_pool
+import random
+import streamlit as st
 
-    # Fallback pools if JSON files are missing
-    default_ao = [
-        {"question": f"Qubee qubeessuu Kutaa {grade_num} keessatti qubeen jalqabaa maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
-        {"question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A", "type": "mcq"},
-        {"question": "Gaarummaan maaliif barbaachisa?", "options": ["A) Walitti bu'iinsaaf", "B) Jaalala uumuuf", "C) Jibbaaf", "D) Wal dorgomuuf"], "answer": "B", "type": "mcq"},
-        {"question": "Seenaa Oromoo keessatti Gadaan maal ibsa?", "options": ["A) Sirna bulchiinsaa", "B) Faaruu qofa", "C) Beela", "D) Imala"], "answer": "A", "type": "mcq"},
-        {"question": "Fookloorii jechuun maal jechuudha?", "options": ["A) Aadaa fi duudhaa uummataa", "B) Herrega walxaxaa", "C) Teknooloojii ammayyaa", "D) Qilleensa qorachuuf"], "answer": "A", "type": "mcq"},
-        {"question": "Caqasa dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu", "B) Sagalee dhaggeeffachuu", "C) Gadda", "D) Deemuu"], "answer": "A", "type": "mcq"}
-    ]
-    
-    default_math = [
-        {"question": f"Kutaa {grade_num} - Herrega: 10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B", "type": "mcq"},
-        {"question": "20 - 7 hammami?", "options": ["A) 13", "B) 14", "C) 12", "D) 10"], "answer": "A", "type": "mcq"},
-        {"question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C", "type": "mcq"},
-        {"question": "6 x 5 hammami?", "options": ["A) 25", "B) 30", "C) 35", "D) 20"], "answer": "B", "type": "mcq"},
-        {"question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B", "type": "mcq"},
-        {"question": "Rakkoo shallaggii: 100 irraa 45 hir'isi, deebiin meeqa?", "options": ["A) 55", "B) 45", "C) 65", "D) 50"], "answer": "A", "type": "mcq"}
-    ]
+st.set_page_config(
+    page_title="Manni Barumsaa - Qormaata fi Gaaffiiwwan",
+    page_icon="📚",
+    layout="centered",
+)
 
-    default_eng = [
-        {"question": f"Grade {grade_num} English: What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
-        {"question": "Choose the correct article: 'This is ___ apple.'", "options": ["A) a", "B) an", "C) the", "D) on"], "answer": "B", "type": "mcq"},
-        {"question": "Choose the correct pronoun: '___ is a good student.'", "options": ["A) She", "B) Table", "C) It", "D) Ball"], "answer": "A", "type": "mcq"},
-        {"question": "What is the past tense of 'go'?", "options": ["A) Goes", "B) Gone", "C) Went", "D) Going"], "answer": "C", "type": "mcq"},
-        {"question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C", "type": "mcq"},
-        {"question": "Identify the correct plural form of 'Child':", "options": ["A) Childs", "B) Children", "C) Childes", "D) Child"], "answer": "B", "type": "mcq"}
-    ]
+st.title("Manni Barumsaa - Qormaata fi Gaaffiiwwan")
 
-    ao_pool = fetch_questions(ao_file, default_ao)
-    math_pool = fetch_questions(math_file, default_math)
-    eng_pool = fetch_questions(eng_file, default_eng)
+# 1. KUUSAA GAAFFIIEWWAN KALLATTIIDHAAN KODII KEESSATTI QOPHEEFFAME (IN-MEMORY DATABASE)
+DATABASE = {
+    "Kutaa 1": {
+        "Afaan Oromoo": [
+            {
+                "question": (
+                    "Qubee Afaan Oromoo keessatti qubeen jalqabaa maali?"
+                ),
+                "options": ["A) A", "B) B", "C) C", "D) D"],
+                "answer": "A",
+                "type": "mcq",
+            },
+            {
+                "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?",
+                "options": ["A) Fayyaa", "B) Gadda", "C) Beela", "D) Loluu"],
+                "answer": "A",
+                "type": "mcq",
+            },
+        ],
+        "Herrega (Math)": [
+            {
+                "question": "Kutaa 1 - Herrega: 2 + 3 hammami?",
+                "options": ["A) 4", "B) 5", "C) 6", "D) 7"],
+                "answer": "B",
+                "type": "mcq",
+            }
+        ],
+        "English": [
+            {
+                "question": "What is the capital letter of 'a'?",
+                "options": ["A) A", "B) B", "C) C", "D) D"],
+                "answer": "A",
+                "type": "mcq",
+            }
+        ],
+    },
+    "Kutaa 2": {
+        "Afaan Oromoo": [
+            {
+                "question": "Aadaa Oromoo keessatti irreecha jechuun maali?",
+                "options": [
+                    "A) Ayyaana galateeffannaa",
+                    "B) Lola",
+                    "C) Beela",
+                    "D) Hirriba",
+                ],
+                "answer": "A",
+                "type": "mcq",
+            }
+        ],
+        "Herrega (Math)": [
+            {
+                "question": "10 - 4 hammami?",
+                "options": ["A) 5", "B) 6", "C) 7", "D) 8"],
+                "answer": "B",
+                "type": "mcq",
+            }
+        ],
+        "English": [
+            {
+                "question": "Choose the correct article: 'This is ___ apple.'",
+                "options": ["A) a", "B) an", "C) the", "D) on"],
+                "answer": "B",
+                "type": "mcq",
+            }
+        ],
+    },
+    # Kutaa 3 hanga 6 asitti dabaluu dandeessa...
+}
 
-    def select_6_random_questions(pool):
-        if len(pool) >= 6:
-            return random.sample(pool, 6)
-        else:
-            selected = pool[:]
-            while len(selected) < 6 and pool:
-                selected.append(random.choice(pool))
-            return selected
+# Kutaa fi Gosa Barnootaa filachiisuu
+col1, col2 = st.columns(2)
 
-    return {
-        "afaan_oromoo": select_6_random_questions(ao_pool),
-        "math": select_6_random_questions(math_pool),
-        "english": select_6_random_questions(eng_pool)
-    }
+with col1:
+    kutaa = st.selectbox(
+        "Kutaa Filadhu:",
+        [
+            "Kutaa 1",
+            "Kutaa 2",
+            "Kutaa 3",
+            "Kutaa 4",
+            "Kutaa 5",
+            "Kutaa 6",
+        ],
+    )
 
+with col2:
+    gosa = st.selectbox(
+        "Gosa Barnootaa:", ["Afaan Oromoo", "Herrega (Math)", "English"]
+    )
+
+
+# Gaaffilee DATABASE keessaa kutaa fi gosa filatameen baasuu
+def load_questions_from_memory(selected_kutaa, selected_gosa):
+    if (
+        selected_kutaa in DATABASE
+        and selected_gosa in DATABASE[selected_kutaa]
+    ):
+        return DATABASE[selected_kutaa][selected_gosa]
+    return []  # Yoo gaaffiin hin jirre faayilii duwwaa deebisa
+
+
+questions = load_questions_from_memory(kutata := kutaa, gosa)
+
+if not questions:
+    st.warning(
+        f"Gaaffiin {kutaa} fi {gosa}af qophaa'e ammayyuu kuusaa keessatti hin"
+        " jiru. Maaloo itti dabali."
+    )
+else:
+    # Session state qopheessuu gaaffii jijjiiruuf
+    session_key = f"{kutaa}_{gosa}"
+    if (
+        "current_session_key" not in st.session_state
+        or st.session_state.current_session_key != session_key
+    ):
+        st.session_state.current_session_key = session_key
+        st.session_state.current_q = random.choice(questions)
+        st.session_state.show_answer = False
+
+    q = st.session_state.current_q
+
+    st.divider()
+    st.subheader(f"Qormaata: {gosa} ({kutaa})")
+
+    if "text" in q and q["text"]:
+        st.info(q["text"])
+
+    question_text = q.get("question") or q.get("text")
+    st.write(f"**{question_text}**")
+
+    user_answer = None
+
+    if q.get("type") == "mcq" and "options" in q:
+        user_answer = st.radio(
+            "Filannoo kee filadhu:", q["options"], key=f"mcq_{session_key}"
+        )
+
+    if st.button("Deebii Ilaali"):
+        st.session_state.show_answer = True
+
+    if st.session_state.show_answer:
+        if q.get("type") == "mcq":
+            correct = q.get("answer")
+            if user_answer and user_answer.startswith(correct):
+                st.success(f"Sirriidha! Deebiin: {correct}")
+            else:
+                st.error(f"Dogoggora. Deebiin sirrii: {correct}")
+
+    if st.button("Gaaffii Biraa Fiduu"):
+        st.session_state.current_q = random.choice(questions)
+        st.session_state.show_answer = False
+        st.rerun()
 
 def role_selection_screen():
     str_app.markdown(
