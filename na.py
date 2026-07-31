@@ -158,20 +158,35 @@ def load_databases_for_grade(grade_str):
     math_file = f"math_kutaa{grade_num}.json"
     eng_file = f"eng_kutaa{grade_num}.json"
 
-    def fetch_questions(filename):
+    def fetch_questions(filename, default_pool):
         try:
             with open(filename, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except FileNotFoundError:
-            str_app.warning(f"Faayiliin {filename} hin argamne.")
-            return []
-        except json.JSONDecodeError:
-            str_app.error(f"Dogoggorri caaseffamaa (JSON Syntax Error) faayilii {filename} keessa jira. Meecaasii ilaali!")
-            return []
+        except (FileNotFoundError, json.JSONDecodeError):
+            return default_pool
 
-    ao_pool = fetch_questions(ao_file)
-    math_pool = fetch_questions(math_file)
-    eng_pool = fetch_questions(eng_file)
+    # Gaaffiiwwan bu'uuraa yoo faayiliin dhabame tajaajilan (Fallback questions)
+    default_ao = [
+        {"difficulty": "Salphaa", "question": "Qubee qubeessuu keessatti qubeen jalqabaa maali?", "options": ["A", "B", "C", "D"], "answer": "A"},
+        {"difficulty": "Giddu-galeessaa", "question": "Jechi 'Nagaa' jedhu hiika akkamii qaba?", "options": ["A) Fayyaa", "B) Du'a", "C) Gadda", "D) Beela"], "answer": "A"},
+        {"difficulty": "Cimaa", "question": "Caqasa gabaabaa dubbisuudhaan gaaffii deebisi.", "text": "Leencaan bosona keessa jiraata. Inni foon nyaata.", "question_text": "Leencaan eessa jiraata?", "expected": ["bosona"]}
+    ]
+    
+    default_math = [
+        {"difficulty": "Salphaa", "question": "10 + 5 hammami?", "options": ["A) 12", "B) 15", "C) 20", "D) 25"], "answer": "B"},
+        {"difficulty": "Giddu-galeessaa", "question": "24 / 4 hammami?", "options": ["A) 4", "B) 5", "C) 6", "D) 8"], "answer": "C"},
+        {"difficulty": "Cimaa", "question": "Herrega shallaggaa hiiki: (5 * 3) + 2 =", "options": ["A) 15", "B) 17", "C) 20", "D) 10"], "answer": "B"}
+    ]
+
+    default_eng = [
+        {"difficulty": "Salphaa", "question": "What is the capital letter of 'a'?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A"},
+        {"difficulty": "Giddu-galeessaa", "question": "Choose the correct pronoun: '___ is a boy.'", "options": ["A) She", "B) He", "C) It", "D) They"], "answer": "B"},
+        {"difficulty": "Cimaa", "question": "Complete the sentence: The sun rises in the ___.", "options": ["A) West", "B) North", "C) East", "D) South"], "answer": "C"}
+    ]
+
+    ao_pool = fetch_questions(ao_file, default_ao)
+    math_pool = fetch_questions(math_file, default_math)
+    eng_pool = fetch_questions(eng_file, default_eng)
 
     def select_3_levels(pool):
         selected = []
@@ -197,7 +212,6 @@ def load_databases_for_grade(grade_str):
         "math": select_3_levels(math_pool),
         "english": select_3_levels(eng_pool)
     }
-
 def role_selection_screen():
     str_app.markdown(
         """
