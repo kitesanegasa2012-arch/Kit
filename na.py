@@ -2,16 +2,10 @@ import json
 import random
 import streamlit as str_app
 
-# PAGE CONFIGURATION
-str_app.set_page_config(import json
-import random
-import streamlit as str_app
-
-# PAGE CONFIGURATION
+# PAGE CONFIGURATION (Kun kooddii keessatti jalqaba irratti qofti ta'uu qaba)
 str_app.set_page_config(
     page_title="HIKA WAY (HW) App", page_icon="📖", layout="centered"
 )
-
 # CUSTOM STYLING (Background, Border, and Cover Page UI Enhancements)
 str_app.markdown(
     """
