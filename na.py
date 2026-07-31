@@ -209,7 +209,110 @@ def load_databases_for_grade(grade_str):
         "math": select_6_random_questions(math_pool),
         "english": select_6_random_questions(eng_pool)
     }
+import json
+import random
+import streamlit as st
 
+st.set_page_config(
+    page_title="Manni Barumsaa - Qormaata fi Gaaffiiwwan",
+    page_icon="📚",
+    layout="centered",
+)
+
+st.title("Manni Barumsaa - Qormaata fi Gaaffiiwwan")
+
+# Kutaa fi Gosa Barnootaa filachiisuu
+col1, col2 = st.columns(2)
+
+with col1:
+  kutaa = st.selectbox(
+      "Kutaa Filadhu:",
+      ["Kutaa 1", "Kutaa 2", "Kutaa 3", "Kutaa 4", "Kutaa 5", "Kutaa 6"],
+  )
+
+with col2:
+  gosa = st.selectbox(
+      "Gosa Barnootaa:", ["Afaan Oromoo", "Herrega (Math)", "English"]
+  )
+
+# Maqaa faayilii (File name) karoorsuu
+kutaa_num = kutaa.split()[1]
+gosa_code = {
+    "Afaan Oromoo": "ao",
+    "Herrega (Math)": "math",
+    "English": "eng",
+}[gosa]
+
+file_name = f"{gosa_code}_kutaa{kutaa_num}.json"
+
+
+# Faayilii fe'uuf
+@st.cache_data
+def load_questions(file_path):
+  try:
+    with open(file_path, "r", encoding="utf-8") as f:
+      return json.load(f)
+  except FileNotFoundError:
+    return None
+
+
+questions = load_questions(file_name)
+
+if not questions:
+  st.warning(
+      f"Faayiliin '{file_name}' jedhamu ammaaf hin argamne. Maaloo faayilii"
+      " kana bakka dizaayinii pirojektii keetti dabali!"
+  )
+else:
+  # Session state qopheessuu
+  if (
+      "current_file" not in st.session_state
+      or st.session_state.current_file != file_name
+  ):
+    st.session_state.current_file = file_name
+    st.session_state.current_q = random.choice(questions)
+    st.session_state.show_answer = False
+
+  q = st.session_state.current_q
+
+  st.divider()
+  st.subheader(q.get("title", f"Gaaffii {gosa} {kutaa}"))
+
+  if "text" in q and q["text"]:
+    st.info(q["text"])
+
+  question_text = q.get("question") or q.get("text")
+  st.write(f"**{question_text}**")
+
+  user_answer = None
+
+  if q.get("type") == "mcq" and "options" in q:
+    user_answer = st.radio(
+        "Filannoo kee filadhu:", q["options"], key=f"mcq_{file_name}"
+    )
+  elif q.get("type") == "reading":
+    user_answer = st.text_input(
+        "Deebii kee as barreessi:", key=f"txt_{file_name}"
+    )
+
+  if st.button("Deebii Ilaali"):
+    st.session_state.show_answer = True
+
+  if st.session_state.show_answer:
+    if q.get("type") == "mcq":
+      correct = q.get("answer")
+      if user_answer and user_answer.startswith(correct):
+        st.success(f"Sirriidha! Deebiin: {correct}")
+      else:
+        st.error(f"Dogoggora. Deebiin sirrii: {correct}")
+    elif q.get("type") == "reading":
+      expected = q.get("expected", [])
+      st.info(f"Deebiiwwan eegaman: {', '.join(expected)}")
+
+  if st.button("Gaaffii Biraa Fiduu"):
+    st.session_state.current_q = random.choice(questions)
+    st.session_state.show_answer = False
+    st.rerun()
 
 def role_selection_screen():
     str_app.markdown(
