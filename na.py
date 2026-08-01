@@ -212,12 +212,16 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
     str_app.session_state.SECRET_MASTER_QUESTION_BANKS = {
         "Kutaa 1": {
             "afaan_oromoo": [
-                {"question": "Qubee jalqabaa qubee Afaan Oromoo maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
+                {"question": "Qubeen jalqabaa  Afaan Oromoo kami?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
                 {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq"},
                 {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu", "D) Qodaa"], "answer": "D", "type": "mcq"},
                 {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq"},
                 {"question": "Mana barumsaa maaliif deemna?", "options": ["A) Barachuuf", "B) Rafuuf", "C) Taphachuuf qofa", "D) Maseenuuf"], "answer": "A", "type": "mcq"},
                 {"question": "Qubee 'B'n jecha kam jalqaba?", "options": ["A) Balleessaa", "B) Adaamaa", "C) Caalaa", "D) Dhagaa"], "answer": "A", "type": "mcq"}
+                 {"question": "Jecha Lafaa Kan ta'e kami?", "options": ["A) Tulluu", "B) Kubbaa", "C) Mana", "D) Madda"], "answer": "C", "type": "mcq"}
+                 {"question": "Horii Manaa Kan ta'e kami?", "options": ["A) Qamalee", "B) Jaldeessa", "C) Leenca", "D) Hoolaa"], "answer": "D", "type": "mcq"}
+                 {"question": "Jecha Dheeraa Kan ta'e kami?", "options": ["A) Laafaa", "B) laga", "C) mala", "D) nama"], "answer": "A", "type": "mcq"}
+                 {"question": "Qubee Afaan oromoo keessaa Dachaa kan ta'e kami?", "options": ["A) A", "B) B", "C) Ch", "D) x"], "answer": "C", "type": "mcq"}
             ],
             "math": [
                 {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq"},
