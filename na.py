@@ -1,7 +1,5 @@
 import random
 import streamlit as str_app
-from gtts import gTTS
-import os
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
@@ -943,14 +941,21 @@ def audio_dictation_screen():
     str_app.markdown(f"**Gaaffii Sagalee {idx + 1} / {len(dict_list)}**")
     str_app.markdown(f"💡 **Qajeelfama:** {hint}")
 
-    # Giraamarri gTTS fayyadamuun sagalee Afaan Oromootiin suuta qopheessuu
-    try:
-        tts = gTTS(text=target_word, lang='om', slow=True)
-        audio_file = f"temp_audio_{idx}.mp3"
-        tts.save(audio_file)
-        str_app.audio(audio_file, format='audio/mp3')
-    except Exception as e:
-        str_app.error(f"Sagaleen uumamuu hin danda'amne: {e}")
+    # Browser Speech Synthesis (JavaScript) - Error hin fidu, saffisaan hojjeta
+    speech_js = f"""
+    <script>
+    function playAudioWord() {{
+        const utterance = new SpeechSynthesisUtterance("{target_word}");
+        utterance.lang = 'om-ET';
+        utterance.rate = 0.8;
+        window.speechSynthesis.speak(utterance);
+    }}
+    </script>
+    <button onclick="playAudioWord()" style="background-color: #00796B; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
+        🔊 Sagalee Dhaggeeffadhu (Play Audio)
+    </button>
+    """
+    str_app.components.v1.html(speech_js, height=70)
 
     user_typed_word = str_app.text_input("Jecha sagaleen jedhame asitti barreessi:", key=f"aud_input_{student}_{idx}")
 
@@ -1000,7 +1005,6 @@ def audio_dictation_screen():
                 str_app.session_state.aud_score = 0
                 str_app.session_state.current_page = "home"
                 str_app.rerun()
-
 
 def teacher_dashboard_screen():
     if not str_app.session_state.teacher_auth:
