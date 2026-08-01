@@ -135,168 +135,170 @@ if "current_student" not in str_app.session_state:
     str_app.session_state.current_student = ""
 if "current_grade" not in str_app.session_state:
     str_app.session_state.current_grade = "Kutaa 6"
+if "attempts" not in str_app.session_state:
+    str_app.session_state.attempts = {}
 if "student_random_questions" not in str_app.session_state:
     str_app.session_state.student_random_questions = {}
 if "teacher_auth" not in str_app.session_state:
     str_app.session_state.teacher_auth = False
 
-# MASTER QUESTION BANK KAJFA (Fakkii fi Sagalee of keessaa qaba)
+# MASTER QUESTION BANK KAJFA (SESSION STATE KEESSATTI QABAMUU ISAA KAN FAYYADAMU GAAFII HAARAA ITTI DABALUUF)
 if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
     str_app.session_state.SECRET_MASTER_QUESTION_BANKS = {
         "Kutaa 1": {
             "afaan_oromoo": [
-                {"question": "Qubee jalqabaa qubee Afaan Oromoo maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu", "D) Qodaa"], "answer": "D", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Mana barumsaa maaliif deemna?", "options": ["A) Barachuuf", "B) Rafuuf", "C) Taphachuuf qofa", "D) Maseenuuf"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Qubee 'B'n jecha kam jalqaba?", "options": ["A) Balleessaa", "B) Adaamaa", "C) Caalaa", "D) Dhagaa"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Qubee jalqabaa qubee Afaan Oromoo maali?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
+                {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq"},
+                {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu", "D) Qodaa"], "answer": "D", "type": "mcq"},
+                {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq"},
+                {"question": "Mana barumsaa maaliif deemna?", "options": ["A) Barachuuf", "B) Rafuuf", "C) Taphachuuf qofa", "D) Maseenuuf"], "answer": "A", "type": "mcq"},
+                {"question": "Qubee 'B'n jecha kam jalqaba?", "options": ["A) Balleessaa", "B) Adaamaa", "C) Caalaa", "D) Dhagaa"], "answer": "A", "type": "mcq"}
             ],
             "math": [
-                {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "3 - 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 0"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Lakkoofsi 5 irra caalu kami?", "options": ["A) 4", "B) 3", "C) 6", "D) 2"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "2 + 3 hammami?", "options": ["A) 5", "B) 4", "C) 6", "D) 7"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "10 - 5 hammami?", "options": ["A) 2", "B) 5", "C) 4", "D) 3"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Lakkoofsa 0 booda maaltu dhufa?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq"},
+                {"question": "3 - 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 0"], "answer": "B", "type": "mcq"},
+                {"question": "Lakkoofsi 5 irra caalu kami?", "options": ["A) 4", "B) 3", "C) 6", "D) 2"], "answer": "C", "type": "mcq"},
+                {"question": "2 + 3 hammami?", "options": ["A) 5", "B) 4", "C) 6", "D) 7"], "answer": "A", "type": "mcq"},
+                {"question": "10 - 5 hammami?", "options": ["A) 2", "B) 5", "C) 4", "D) 3"], "answer": "B", "type": "mcq"},
+                {"question": "Lakkoofsa 0 booda maaltu dhufa?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "What letter comes after 'A'?", "options": ["A) B", "B) C", "C) D", "D) E"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the color of the sky:", "options": ["A) Red", "B) Blue", "C) Green", "D) Yellow"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "How many fingers on one hand?", "options": ["A) 3", "B) 4", "C) 5", "D) 10"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "Select the correct capital letter for 'g':", "options": ["A) G", "B) H", "C) F", "D) J"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "What do we use to see?", "options": ["A) Ears", "B) Eyes", "C) Nose", "D) Hands"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Complete: 'A for ___'", "options": ["A) Apple", "B) Ball", "C) Cat", "D) Dog"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "What letter comes after 'A'?", "options": ["A) B", "B) C", "C) D", "D) E"], "answer": "A", "type": "mcq"},
+                {"question": "Choose the color of the sky:", "options": ["A) Red", "B) Blue", "C) Green", "D) Yellow"], "answer": "B", "type": "mcq"},
+                {"question": "How many fingers on one hand?", "options": ["A) 3", "B) 4", "C) 5", "D) 10"], "answer": "C", "type": "mcq"},
+                {"question": "Select the correct capital letter for 'g':", "options": ["A) G", "B) H", "C) F", "D) J"], "answer": "A", "type": "mcq"},
+                {"question": "What do we use to see?", "options": ["A) Ears", "B) Eyes", "C) Nose", "D) Hands"], "answer": "B", "type": "mcq"},
+                {"question": "Complete: 'A for ___'", "options": ["A) Apple", "B) Ball", "C) Cat", "D) Dog"], "answer": "A", "type": "mcq"}
             ]
         },
         "Kutaa 2": {
             "afaan_oromoo": [
-                {"question": "Jechi 'Nama' jedhu hiika maali qaba?", "options": ["A) Lubbu qabeessa", "B) Mukaa", "C) Bishaan", "D) Dhagaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Quboonni sagaleessoo (vowels) Afaan Oromoo meeqa?", "options": ["A) 5", "B) 22", "C) 27", "D) 30"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jecha 'Fira' jedhuuf faallaan isaa maali?", "options": ["A) Diina", "B) Jaalallee", "C) Obboleessa", "D) Hiriyaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Dirmammuu yeroo jedhamu maal ibsa?", "options": ["A) Gadaa", "B) Guyyaa", "C) Halkan", "D) Boru"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Nagaan bultaniifi deebiin isaa maali?", "options": ["A) Fayyaa bulle", "B) Raffee", "C) Deeme", "D) Dhufe"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Afaan Oromoo keessatti qubeen 'Ch'n qubee akkamiiti?", "options": ["A) Qubee dachaa", "B) Qubee dubbachiiftuu", "C) Qubee salphaa", "D) Qubee gabaabaa"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Jechi 'Nama' jedhu hiika maali qaba?", "options": ["A) Lubbu qabeessa", "B) Mukaa", "C) Bishaan", "D) Dhagaa"], "answer": "A", "type": "mcq"},
+                {"question": "Quboonni sagaleessoo (vowels) Afaan Oromoo meeqa?", "options": ["A) 5", "B) 22", "C) 27", "D) 30"], "answer": "A", "type": "mcq"},
+                {"question": "Jecha 'Fira' jedhuuf faallaan isaa maali?", "options": ["A) Diina", "B) Jaalallee", "C) Obboleessa", "D) Hiriyaa"], "answer": "A", "type": "mcq"},
+                {"question": "Dirmammuu yeroo jedhamu maal ibsa?", "options": ["A) Gadaa", "B) Guyyaa", "C) Halkan", "D) Boru"], "answer": "B", "type": "mcq"},
+                {"question": "Nagaan bultaniifi deebiin isaa maali?", "options": ["A) Fayyaa bulle", "B) Raffee", "C) Deeme", "D) Dhufe"], "answer": "A", "type": "mcq"},
+                {"question": "Afaan Oromoo keessatti qubeen 'Ch'n qubee akkamiiti?", "options": ["A) Qubee dachaa", "B) Qubee dubbachiiftuu", "C) Qubee salphaa", "D) Qubee gabaabaa"], "answer": "A", "type": "mcq"}
             ],
             "math": [
-                {"question": "10 + 10 hammami?", "options": ["A) 15", "B) 20", "C) 25", "D) 30"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "5 x 2 hammami?", "options": ["A) 7", "B) 10", "C) 12", "D) 8"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "15 - 7 hammami?", "options": ["A) 8", "B) 7", "C) 9", "D) 6"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "8 + 6 hammami?", "options": ["A) 12", "B) 13", "C) 14", "D) 15"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "4 x 3 hammami?", "options": ["A) 12", "B) 10", "C) 14", "D) 16"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Lakkoofsi 20 hir'uu ykn guutuu?", "options": ["A) Guutuu", "B) Hir'uu", "C) Lamaanuu miti", "D) Walii gala"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "10 + 10 hammami?", "options": ["A) 15", "B) 20", "C) 25", "D) 30"], "answer": "B", "type": "mcq"},
+                {"question": "5 x 2 hammami?", "options": ["A) 7", "B) 10", "C) 12", "D) 8"], "answer": "B", "type": "mcq"},
+                {"question": "15 - 7 hammami?", "options": ["A) 8", "B) 7", "C) 9", "D) 6"], "answer": "A", "type": "mcq"},
+                {"question": "8 + 6 hammami?", "options": ["A) 12", "B) 13", "C) 14", "D) 15"], "answer": "C", "type": "mcq"},
+                {"question": "4 x 3 hammami?", "options": ["A) 12", "B) 10", "C) 14", "D) 16"], "answer": "A", "type": "mcq"},
+                {"question": "Lakkoofsi 20 hir'uu ykn guutuu?", "options": ["A) Guutuu", "B) Hir'uu", "C) Lamaanuu miti", "D) Walii gala"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "What is the plural of 'Cat'?", "options": ["A) Cat", "B) Cats", "C) Cates", "D) Caties"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the animal that barks:", "options": ["A) Cat", "B) Dog", "C) Cow", "D) Bird"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Opposite of 'Hot' is:", "options": ["A) Warm", "B) Cold", "C) Ice", "D) Sun"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Complete: 'I ___ a student.'", "options": ["A) am", "B) is", "C) are", "D) be"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Which one is a fruit?", "options": ["A) Potato", "B) Mango", "C) Carrot", "D) Onion"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "How many days are in a week?", "options": ["A) 5", "B) 6", "C) 7", "D) 8"], "answer": "C", "type": "mcq", "image": None, "audio": None}
+                {"question": "What is the plural of 'Cat'?", "options": ["A) Cat", "B) Cats", "C) Cates", "D) Caties"], "answer": "B", "type": "mcq"},
+                {"question": "Choose the animal that barks:", "options": ["A) Cat", "B) Dog", "C) Cow", "D) Bird"], "answer": "B", "type": "mcq"},
+                {"question": "Opposite of 'Hot' is:", "options": ["A) Warm", "B) Cold", "C) Ice", "D) Sun"], "answer": "B", "type": "mcq"},
+                {"question": "Complete: 'I ___ a student.'", "options": ["A) am", "B) is", "C) are", "D) be"], "answer": "A", "type": "mcq"},
+                {"question": "Which one is a fruit?", "options": ["A) Potato", "B) Mango", "C) Carrot", "D) Onion"], "answer": "B", "type": "mcq"},
+                {"question": "How many days are in a week?", "options": ["A) 5", "B) 6", "C) 7", "D) 8"], "answer": "C", "type": "mcq"}
             ]
         },
         "Kutaa 3": {
             "afaan_oromoo": [
-                {"question": "Fookloorii jechuun maali?", "options": ["A) Aadaa fi duudhaa", "B) Herrega", "C) Kompiitara", "D) Farmaasii"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Mamaaksa 'Odoo beekanuu...' maaliin xumurama?", "options": ["A) Boolla seenu", "B) Gammoojjitti hafu", "C) Bishaan dhugu", "D) Rafu"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Afaan Oromoo keessatti hudhaan ( ' ) maal godha?", "options": ["A) Sagalee cisaa godha", "B) Sagalee cittuu godha", "C) Dheeressa", "D) Jabessa"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jechoota hammamtaa ibsan keessaa kami?", "options": ["A) Baay'ee", "B) Gurraacha", "C) Dheeraa", "D) Deemaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Hiika jecha 'Arjooma':", "options": ["A) Arjaamu/Lootuu", "B) Jibbiinsa", "C) Qorqalbii", "D) Walitti bu'iinsa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Dhaabbanni barumsaa maal fa'i qaba?", "options": ["A) Barattoota fi Barsiisota", "B) Bineensota qofa", "C) Konkolaataa qofa", "D) Xiyyaara"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Fookloorii jechuun maali?", "options": ["A) Aadaa fi duudhaa", "B) Herrega", "C) Kompiitara", "D) Farmaasii"], "answer": "A", "type": "mcq"},
+                {"question": "Mamaaksa 'Odoo beekanuu...' maaliin xumurama?", "options": ["A) Boolla seenu", "B) Gammoojjitti hafu", "C) Bishaan dhugu", "D) Rafu"], "answer": "A", "type": "mcq"},
+                {"question": "Afaan Oromoo keessatti hudhaan ( ' ) maal godha?", "options": ["A) Sagalee cisaa godha", "B) Sagalee cittuu godha", "C) Dheeressa", "D) Jabessa"], "answer": "B", "type": "mcq"},
+                {"question": "Jechoota hammamtaa ibsan keessaa kami?", "options": ["A) Baay'ee", "B) Gurraacha", "C) Dheeraa", "D) Deemaa"], "answer": "A", "type": "mcq"},
+                {"question": "Hiika jecha 'Arjooma':", "options": ["A) Arjaamu/Lootuu", "B) Jibbiinsa", "C) Qorqalbii", "D) Walitti bu'iinsa"], "answer": "A", "type": "mcq"},
+                {"question": "Dhaabbanni barumsaa maal fa'i qaba?", "options": ["A) Barattoota fi Barsiisota", "B) Bineensota qofa", "C) Konkolaataa qofa", "D) Xiyyaara"], "answer": "A", "type": "mcq"}
             ],
             "math": [
-                {"question": "50 - 25 hammami?", "options": ["A) 20", "B) 25", "C) 30", "D) 15"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "6 x 4 hammami?", "options": ["A) 20", "B) 24", "C) 28", "D) 22"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "100 / 10 hammami?", "options": ["A) 5", "B) 10", "C) 15", "D) 20"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "30 + 45 hammami?", "options": ["A) 75", "B) 70", "C) 80", "D) 65"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Herrega: (2 x 5) + 3 =", "options": ["A) 13", "B) 10", "C) 15", "D) 12"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Garaagarummaa 50 fi 20 meeqa?", "options": ["A) 30", "B) 20", "C) 40", "D) 10"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "50 - 25 hammami?", "options": ["A) 20", "B) 25", "C) 30", "D) 15"], "answer": "B", "type": "mcq"},
+                {"question": "6 x 4 hammami?", "options": ["A) 20", "B) 24", "C) 28", "D) 22"], "answer": "B", "type": "mcq"},
+                {"question": "100 / 10 hammami?", "options": ["A) 5", "B) 10", "C) 15", "D) 20"], "answer": "B", "type": "mcq"},
+                {"question": "30 + 45 hammami?", "options": ["A) 75", "B) 70", "C) 80", "D) 65"], "answer": "A", "type": "mcq"},
+                {"question": "Herrega: (2 x 5) + 3 =", "options": ["A) 13", "B) 10", "C) 15", "D) 12"], "answer": "A", "type": "mcq"},
+                {"question": "Garaagarummaa 50 fi 20 meeqa?", "options": ["A) 30", "B) 20", "C) 40", "D) 10"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "Opposite of 'Big' is:", "options": ["A) Small", "B) Tall", "C) Fast", "D) Heavy"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the verb: 'She sings a song.'", "options": ["A) She", "B) sings", "C) a", "D) song"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Plural of 'Box':", "options": ["A) Boxs", "B) Boxes", "C) Boxen", "D) Boxies"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Past form of 'Eat':", "options": ["A) Eats", "B) Ate", "C) Eaten", "D) Eating"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "What is the capital of Ethiopia?", "options": ["A) Addis Ababa", "B) Hawassa", "C) Adama", "D) Jimma"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "A person who teaches in a school is a:", "options": ["A) Doctor", "B) Teacher", "C) Driver", "D) Farmer"], "answer": "B", "type": "mcq", "image": None, "audio": None}
+                {"question": "Opposite of 'Big' is:", "options": ["A) Small", "B) Tall", "C) Fast", "D) Heavy"], "answer": "A", "type": "mcq"},
+                {"question": "Choose the verb: 'She sings a song.'", "options": ["A) She", "B) sings", "C) a", "D) song"], "answer": "B", "type": "mcq"},
+                {"question": "Plural of 'Box':", "options": ["A) Boxs", "B) Boxes", "C) Boxen", "D) Boxies"], "answer": "B", "type": "mcq"},
+                {"question": "Past form of 'Eat':", "options": ["A) Eats", "B) Ate", "C) Eaten", "D) Eating"], "answer": "B", "type": "mcq"},
+                {"question": "What is the capital of Ethiopia?", "options": ["A) Addis Ababa", "B) Hawassa", "C) Adama", "D) Jimma"], "answer": "A", "type": "mcq"},
+                {"question": "A person who teaches in a school is a:", "options": ["A) Doctor", "B) Teacher", "C) Driver", "D) Farmer"], "answer": "B", "type": "mcq"}
             ]
         },
         "Kutaa 4": {
             "afaan_oromoo": [
-                {"question": "Akkaataan itti walaloo barreessan keessaa inni ijoo maali?", "options": ["A) Rurkee fi wal-fakkeenya sagalee", "B) Lakkoofsa qofa", "C) Fakkii kaasuu", "D) Herreguu"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jechoota Gochibsa (Adverb) ta'an filadhu:", "options": ["A) Suuta", "B) Muka", "C) Gurraacha", "D) Inni"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Bara durii ergaa waliif dabarsuuf maaliin fayyadamu ture?", "options": ["A) Ergaa afaanii fi Sagalee fardaa/moraa", "B) Bilbila harkaatiin", "C) Imeeliidhaan", "D) Interneetiin"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jecha 'Gabaabaa' jedhuuf faallaan isaa maali?", "options": ["A) Dheeraa", "B) Furdaa", "C) Xiqqaatamaa", "D) Ulfaataa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Seenaa fi Aadaa keenya kunuunsun maaliif barbaachisa?", "options": ["A) Dhalootatti dabarsuuf", "B) Dagachuuf", "C) Gatachuuf", "D) Dhabamsiisuuf"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Afaan Oromoo keessatti qubooni jabaatan yoo barreeffaman:", "options": ["A) Qubee dachaa ta'u", "B) Qubee fardii ta'u", "C) Qubee dubbachiiftuu lamaan barreeffamu", "D) Qubee dubbisaa lamaan barreeffamu"], "answer": "D", "type": "mcq", "image": None, "audio": None}
+                {"question": "Akkaataan itti walaloo barreessan keessaa inni ijoo maali?", "options": ["A) Rurkee fi wal-fakkeenya sagalee", "B) Lakkoofsa qofa", "C) Fakkii kaasuu", "D) Herreguu"], "answer": "A", "type": "mcq"},
+                {"question": "Jechoota Gochibsa (Adverb) ta'an filadhu:", "options": ["A) Suuta", "B) Muka", "C) Gurraacha", "D) Inni"], "answer": "A", "type": "mcq"},
+                {"question": "Bara durii ergaa waliif dabarsuuf maaliin fayyadamu ture?", "options": ["A) Ergaa afaanii fi Sagalee fardaa/moraa", "B) Bilbila harkaatiin", "C) Imeeliidhaan", "D) Interneetiin"], "answer": "A", "type": "mcq"},
+                {"question": "Jecha 'Gabaabaa' jedhuuf faallaan isaa maali?", "options": ["A) Dheeraa", "B) Furdaa", "C) Xiqqaatamaa", "D) Ulfaataa"], "answer": "A", "type": "mcq"},
+                {"question": "Seenaa fi Aadaa keenya kunuunsun maaliif barbaachisa?", "options": ["A) Dhalootatti dabarsuuf", "B) Dagachuuf", "C) Gatachuuf", "D) Dhabamsiisuuf"], "answer": "A", "type": "mcq"},
+                {"question": "Afaan Oromoo keessatti qubooni jabaatan yoo barreeffaman:", "options": ["A) Qubee dachaa ta'u", "B) Qubee fardii ta'u", "C) Qubee dubbachiiftuu lamaan barreeffamu", "D) Qubee dubbisaa lamaan barreeffamu"], "answer": "D", "type": "mcq"}
             ],
             "math": [
-                {"question": "144 / 12 hammami?", "options": ["A) 10", "B) 11", "C) 12", "D) 14"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "25 x 4 hammami?", "options": ["A) 80", "B) 90", "C) 100", "D) 110"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "Kopee birrii 200 ta'e irraa 150 yoo kaffalle rezaaltiin meeqa?", "options": ["A) 50", "B) 40", "C) 60", "D) 30"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "1/2 fi 1/2 yoo walitti ida'an meeqa ta'a?", "options": ["A) 1", "B) 1/4", "C) 2", "D) 0"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Pemetaa skweerii loolli isaa 5cm ta'ee meeqa?", "options": ["A) 20cm", "B) 25cm", "C) 15cm", "D) 10cm"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Shallaggaa: 8 x 8 - 4 =", "options": ["A) 60", "B) 64", "C) 58", "D) 62"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "144 / 12 hammami?", "options": ["A) 10", "B) 11", "C) 12", "D) 14"], "answer": "C", "type": "mcq"},
+                {"question": "25 x 4 hammami?", "options": ["A) 80", "B) 90", "C) 100", "D) 110"], "answer": "C", "type": "mcq"},
+                {"question": "Kopee birrii 200 ta'e irraa 150 yoo kaffalle rezaaltiin meeqa?", "options": ["A) 50", "B) 40", "C) 60", "D) 30"], "answer": "A", "type": "mcq"},
+                {"question": "1/2 fi 1/2 yoo walitti ida'an meeqa ta'a?", "options": ["A) 1", "B) 1/4", "C) 2", "D) 0"], "answer": "A", "type": "mcq"},
+                {"question": "Pemetaa skweerii loolli isaa 5cm ta'ee meeqa?", "options": ["A) 20cm", "B) 25cm", "C) 15cm", "D) 10cm"], "answer": "A", "type": "mcq"},
+                {"question": "Shallaggaa: 8 x 8 - 4 =", "options": ["A) 60", "B) 64", "C) 58", "D) 62"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "Past tense of 'Run' is:", "options": ["A) Running", "B) Ran", "C) Runed", "D) Runs"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Identify the pronoun: 'They are playing football.'", "options": ["A) They", "B) are", "C) playing", "D) football"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the correct spelling:", "options": ["A) Beautifull", "B) Beautiful", "C) Beutiful", "D) Beautifyl"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "A place where we read books is a:", "options": ["A) Hospital", "B) Library", "C) Bank", "D) Market"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "What is the synonym of 'Happy'?", "options": ["A) Sad", "B) Joyful", "C) Angry", "D) Tired"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Complete: 'She ___ her homework yesterday.'", "options": ["A) do", "B) did", "C) does", "D) doing"], "answer": "B", "type": "mcq", "image": None, "audio": None}
+                {"question": "Past tense of 'Run' is:", "options": ["A) Running", "B) Ran", "C) Runed", "D) Runs"], "answer": "B", "type": "mcq"},
+                {"question": "Identify the pronoun: 'They are playing football.'", "options": ["A) They", "B) are", "C) playing", "D) football"], "answer": "A", "type": "mcq"},
+                {"question": "Choose the correct spelling:", "options": ["A) Beautifull", "B) Beautiful", "C) Beutiful", "D) Beautifyl"], "answer": "B", "type": "mcq"},
+                {"question": "A place where we read books is a:", "options": ["A) Hospital", "B) Library", "C) Bank", "D) Market"], "answer": "B", "type": "mcq"},
+                {"question": "What is the synonym of 'Happy'?", "options": ["A) Sad", "B) Joyful", "C) Angry", "D) Tired"], "answer": "B", "type": "mcq"},
+                {"question": "Complete: 'She ___ her homework yesterday.'", "options": ["A) do", "B) did", "C) does", "D) doing"], "answer": "B", "type": "mcq"}
             ]
         },
         "Kutaa 5": {
             "afaan_oromoo": [
-                {"question": "Seenaa Oromoo keessatti Gadaan sirna akkamii ti?", "options": ["A) Sirna dimokraasii fi bulchiinsaa", "B) Sirna daldala qofa", "C) Sirna waraanaa qofa", "D) Sirna barumsaa ammayyaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Dhaamsa Caqasaa fi Dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu fi hubannoo gabbifachuu", "B) Wawwaachuu", "C) Sagalee ol kaasuu", "D) Aarsuu"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Mormii fi Miti-mormii walaloo keessatti maaltu uuma?", "options": ["A) Miira fi Yada walxaxaa", "B) Lakkoofsa", "C) Fakkii", "D) Herrega"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Dookumentaroonni aadaa fi seenaa maaliif fayyadu?", "options": ["A) Ragaa seenaa kaa'uuf", "B) Taphaaf qofa", "C) Fiilmii sobaa uumuuf", "D) Dagachiisuuf"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Afaan Oromoo keessatti Maqibsa (Adjective) ta'u kan danda'u kami?", "options": ["A) Bareedaa", "B) Deeme", "C) Inni", "D) Mana"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Ogbarruu afaaniin kan dhihaatan keessaa kami?", "options": ["A) Mamaaksa fi Eebba", "B) Kitaaba barataa", "C) Qorannoo saayinsii", "D) Gaazexaa"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Seenaa Oromoo keessatti Gadaan sirna akkamii ti?", "options": ["A) Sirna dimokraasii fi bulchiinsaa", "B) Sirna daldala qofa", "C) Sirna waraanaa qofa", "D) Sirna barumsaa ammayyaa"], "answer": "A", "type": "mcq"},
+                {"question": "Dhaamsa Caqasaa fi Dubbisaa keessaa yaanni ijoo maali?", "options": ["A) Beekkumsa horachuu fi hubannoo gabbifachuu", "B) Wawwaachuu", "C) Sagalee ol kaasuu", "D) Aarsuu"], "answer": "A", "type": "mcq"},
+                {"question": "Mormii fi Miti-mormii walaloo keessatti maaltu uuma?", "options": ["A) Miira fi Yada walxaxaa", "B) Lakkoofsa", "C) Fakkii", "D) Herrega"], "answer": "A", "type": "mcq"},
+                {"question": "Dookumentaroonni aadaa fi seenaa maaliif fayyadu?", "options": ["A) Ragaa seenaa kaa'uuf", "B) Taphaaf qofa", "C) Fiilmii sobaa uumuuf", "D) Dagachiisuuf"], "answer": "A", "type": "mcq"},
+                {"question": "Afaan Oromoo keessatti Maqibsa (Adjective) ta'u kan danda'u kami?", "options": ["A) Bareedaa", "B) Deeme", "C) Inni", "D) Mana"], "answer": "A", "type": "mcq"},
+                {"question": "Ogbarruu afaaniin kan dhihaatan keessaa kami?", "options": ["A) Mamaaksa fi Eebba", "B) Kitaaba barataa", "C) Qorannoo saayinsii", "D) Gaazexaa"], "answer": "A", "type": "mcq"}
             ],
             "math": [
-                {"question": "Hanga harka 3/4 kan 100 meeqa?", "options": ["A) 50", "B) 75", "C) 25", "D) 100"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Avireejii (Mean) lakkoofsota 10, 20 fi 30 meeqa?", "options": ["A) 20", "B) 15", "C) 25", "D) 30"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Dhibbeentaa (%): 20% kan 200 meeqa?", "options": ["A) 20", "B) 40", "C) 50", "D) 60"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Skweer ruutii (Sqrt) kan 81 meeqa?", "options": ["A) 7", "B) 8", "C) 9", "D) 10"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "15 x 15 hammami?", "options": ["A) 200", "B) 225", "C) 250", "D) 215"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Shallaggaa: 3^2 + 4^2 =", "options": ["A) 25", "B) 12", "C) 14", "D) 20"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Hanga harka 3/4 kan 100 meeqa?", "options": ["A) 50", "B) 75", "C) 25", "D) 100"], "answer": "B", "type": "mcq"},
+                {"question": "Avireejii (Mean) lakkoofsota 10, 20 fi 30 meeqa?", "options": ["A) 20", "B) 15", "C) 25", "D) 30"], "answer": "A", "type": "mcq"},
+                {"question": "Dhibbeentaa (%): 20% kan 200 meeqa?", "options": ["A) 20", "B) 40", "C) 50", "D) 60"], "answer": "B", "type": "mcq"},
+                {"question": "Skweer ruutii (Sqrt) kan 81 meeqa?", "options": ["A) 7", "B) 8", "C) 9", "D) 10"], "answer": "C", "type": "mcq"},
+                {"question": "15 x 15 hammami?", "options": ["A) 200", "B) 225", "C) 250", "D) 215"], "answer": "B", "type": "mcq"},
+                {"question": "Shallaggaa: 3^2 + 4^2 =", "options": ["A) 25", "B) 12", "C) 14", "D) 20"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "Choose the correct preposition: 'The book is ___ the table.'", "options": ["A) on", "B) in", "C) at", "D) under"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Opposite of 'Ancient' is:", "options": ["A) Old", "B) Modern", "C) Historic", "D) Past"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the correct conjunction: 'He failed ___ he did not study.'", "options": ["A) because", "B) but", "C) or", "D) so"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "What is the comparative form of 'Good'?", "options": ["A) Gooder", "B) Better", "C) Best", "D) More good"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Identify the passive voice: 'The ball was kicked by Ali.'", "options": ["A) Ali kicked the ball", "B) The ball was kicked by Ali", "C) Ali is kicking", "D) Kicking ball Ali"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "A person who flies an airplane is a:", "options": ["A) Sailor", "B) Pilot", "C) Driver", "D) Astronaut"], "answer": "B", "type": "mcq", "image": None, "audio": None}
+                {"question": "Choose the correct preposition: 'The book is ___ the table.'", "options": ["A) on", "B) in", "C) at", "D) under"], "answer": "A", "type": "mcq"},
+                {"question": "Opposite of 'Ancient' is:", "options": ["A) Old", "B) Modern", "C) Historic", "D) Past"], "answer": "B", "type": "mcq"},
+                {"question": "Choose the correct conjunction: 'He failed ___ he did not study.'", "options": ["A) because", "B) but", "C) or", "D) so"], "answer": "A", "type": "mcq"},
+                {"question": "What is the comparative form of 'Good'?", "options": ["A) Gooder", "B) Better", "C) Best", "D) More good"], "answer": "B", "type": "mcq"},
+                {"question": "Identify the passive voice: 'The ball was kicked by Ali.'", "options": ["A) Ali kicked the ball", "B) The ball was kicked by Ali", "C) Ali is kicking", "D) Kicking ball Ali"], "answer": "B", "type": "mcq"},
+                {"question": "A person who flies an airplane is a:", "options": ["A) Sailor", "B) Pilot", "C) Driver", "D) Astronaut"], "answer": "B", "type": "mcq"}
             ]
         },
         "Kutaa 6": {
             "afaan_oromoo": [
-                {"question": "Jecha 'Goota' jedhuuf hiika tokko filadhu:", "options": ["A) Sodaa", "B) Jajjabaa/Namicha hojii guddaa hojjete", "C) Dadhabaa", "D) Dhukkubsataa"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Hiika ciigoo: 'Morma irraa qaba' jechuun maali?", "options": ["A) Morma qabaachuu", "B) Miti-deeggaru / Mormuu", "C) Dhiiga morma", "D) Muka morma"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Ijaarsa Chasa Caaslugaa keessatti 'Fiixee'n maal ibsa?", "options": ["A) Kutaa barruu", "B) Xumura jechaa ykn jechamaa", "C) Jalqaba fuulaa", "D) Qaama midhaanii"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Hojii Qorannoo Afaanii keessatti fiilmgirafiin maal agarsiisa?", "options": ["A) Ragaalee suuraa fi sagaleetiin kaafaman", "B) Kitaaba gabaabaa", "C) Walaloo", "D) Seenaa kaleessaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Ciroo Yeroo jechuun maal ibsa?", "options": ["A) Yeroo gochi tokko itti raawwatame", "B) Bakka gochi itti raawwatame", "C) Akkaataa gochaa", "D) Sababa gochaa"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Jechi 'Furtuu' jedhu yeroo mammaaksatti fayyadamnu:", "options": ["A) Cufiinsa fi banaa ibsa", "B) Herrega ibsa", "C) Nyata ibsa", "D) Taphachuu ibsa"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Jecha 'Goota' jedhuuf hiika tokko filadhu:", "options": ["A) Sodaa", "B) Jajjabaa/Namicha hojii guddaa hojjete", "C) Dadhabaa", "D) Dhukkubsataa"], "answer": "B", "type": "mcq"},
+                {"question": "Hiika ciigoo: 'Morma irraa qaba' jechuun maali?", "options": ["A) Morma qabaachuu", "B) Miti-deeggaru / Mormuu", "C) Dhiiga morma", "D) Muka morma"], "answer": "B", "type": "mcq"},
+                {"question": "Ijaarsa Chasa Caaslugaa keessatti 'Fiixee'n maal ibsa?", "options": ["A) Kutaa barruu", "B) Xumura jechaa ykn jechamaa", "C) Jalqaba fuulaa", "D) Qaama midhaanii"], "answer": "B", "type": "mcq"},
+                {"question": "Hojii Qorannoo Afaanii keessatti fiilmgirafiin maal agarsiisa?", "options": ["A) Ragaalee suuraa fi sagaleetiin kaafaman", "B) Kitaaba gabaabaa", "C) Walaloo", "D) Seenaa kaleessaa"], "answer": "A", "type": "mcq"},
+                {"question": "Ciroo Yeroo jechuun maal ibsa?", "options": ["A) Yeroo gochi tokko itti raawwatame", "B) Bakka gochi itti raawwatame", "C) Akkaataa gochaa", "D) Sababa gochaa"], "answer": "A", "type": "mcq"},
+                {"question": "Jechi 'Furtuu' jedhu yeroo mammaaksatti fayyadamnu:", "options": ["A) Cufiinsa fi banaa ibsa", "B) Herrega ibsa", "C) Nyata ibsa", "D) Taphachuu ibsa"], "answer": "A", "type": "mcq"}
             ],
             "math": [
-                {"question": "Herrega shallaggaa: 25 + (5 * 2) =", "options": ["A) 60", "B) 35", "C) 30", "D) 50"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Equation hiiki: 2x + 10 = 20, x meeqa?", "options": ["A) 5", "B) 10", "C) 2", "D) 4"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Radiyaasiin sarboolii (Circle) 7cm ta'nan, Diiyaameetriin meeqa?", "options": ["A) 14cm", "B) 21cm", "C) 49cm", "D) 10cm"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "2^4 (2 raised to 4) hammami?", "options": ["A) 8", "B) 16", "C) 12", "D) 32"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Yoo x = 3 fi y = 4 ta'e, x^2 + y^2 meeqa?", "options": ["A) 25", "B) 12", "C) 49", "D) 14"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Ratio 3:5 kan 80 meeqa qooda?", "options": ["A) 30 fi 50", "B) 20 fi 60", "C) 40 fi 40", "D) 10 fi 70"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Herrega shallaggaa: 25 + (5 * 2) =", "options": ["A) 60", "B) 35", "C) 30", "D) 50"], "answer": "B", "type": "mcq"},
+                {"question": "Equation hiiki: 2x + 10 = 20, x meeqa?", "options": ["A) 5", "B) 10", "C) 2", "D) 4"], "answer": "A", "type": "mcq"},
+                {"question": "Radiyaasiin sarboolii (Circle) 7cm ta'nan, Diiyaameetriin meeqa?", "options": ["A) 14cm", "B) 21cm", "C) 49cm", "D) 10cm"], "answer": "A", "type": "mcq"},
+                {"question": "2^4 (2 raised to 4) hammami?", "options": ["A) 8", "B) 16", "C) 12", "D) 32"], "answer": "B", "type": "mcq"},
+                {"question": "Yoo x = 3 fi y = 4 ta'e, x^2 + y^2 meeqa?", "options": ["A) 25", "B) 12", "C) 49", "D) 14"], "answer": "A", "type": "mcq"},
+                {"question": "Ratio 3:5 kan 80 meeqa qooda?", "options": ["A) 30 fi 50", "B) 20 fi 60", "C) 40 fi 40", "D) 10 fi 70"], "answer": "A", "type": "mcq"}
             ],
             "english": [
-                {"question": "Identify the adjective in the sentence: 'She has a fast car.'", "options": ["A) She", "B) has", "C) fast", "D) car"], "answer": "C", "type": "mcq", "image": None, "audio": None},
-                {"question": "Select the correct conditional: 'If it rains, we ___ at home.'", "options": ["A) will stay", "B) stayed", "C) stays", "D) staying"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "What is the superlative form of 'Expensive'?", "options": ["A) Most expensive", "B) More expensive", "C) Expensivest", "D) Expensiver"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Choose the synonym for 'Huge':", "options": ["A) Small", "B) Enormous", "C) Tiny", "D) Short"], "answer": "B", "type": "mcq", "image": None, "audio": None},
-                {"question": "Complete with relative pronoun: 'The boy ___ won the match is my brother.'", "options": ["A) who", "B) which", "C) where", "D) whose"], "answer": "A", "type": "mcq", "image": None, "audio": None},
-                {"question": "Identify the noun: 'Honesty is the best policy.'", "options": ["A) Honesty", "B) is", "C) best", "D) the"], "answer": "A", "type": "mcq", "image": None, "audio": None}
+                {"question": "Identify the adjective in the sentence: 'She has a fast car.'", "options": ["A) She", "B) has", "C) fast", "D) car"], "answer": "C", "type": "mcq"},
+                {"question": "Select the correct conditional: 'If it rains, we ___ at home.'", "options": ["A) will stay", "B) stayed", "C) stays", "D) staying"], "answer": "A", "type": "mcq"},
+                {"question": "What is the superlative form of 'Expensive'?", "options": ["A) Most expensive", "B) More expensive", "C) Expensivest", "D) Expensiver"], "answer": "A", "type": "mcq"},
+                {"question": "Choose the synonym for 'Huge':", "options": ["A) Small", "B) Enormous", "C) Tiny", "D) Short"], "answer": "B", "type": "mcq"},
+                {"question": "Complete with relative pronoun: 'The boy ___ won the match is my brother.'", "options": ["A) who", "B) which", "C) where", "D) whose"], "answer": "A", "type": "mcq"},
+                {"question": "Identify the noun: 'Honesty is the best policy.'", "options": ["A) Honesty", "B) is", "C) best", "D) the"], "answer": "A", "type": "mcq"}
             ]
         }
     }
@@ -408,74 +410,6 @@ def teacher_login_screen():
             str_app.rerun()
 
 
-def teacher_dashboard_screen():
-    str_app.markdown(
-        """
-        <div class="hero-box">
-            <h2>🎓 Daashboordii Barsiisaa & Kuusaa Gaaffii</h2>
-            <p>Qabxii barattootaa ilaaluu fi gaaffii haaraa fakkii/sagalee wajjin dabaluu</p>
-        </div>
-    """,
-        unsafe_allow_html=True,
-    )
-
-    tab1, tab2 = str_app.tabs(["📊 Qabxii Barattootaa", "➕ Gaaffii Haaraa Dabaluu (Audio/Image)"])
-
-    with tab1:
-        str_app.subheader("Gabaasa Qabxii Barattoota Galmaa'an")
-        students = str_app.session_state.global_students
-        if not students:
-            str_app.info("Hanga ammaatti barataan galmaa'e hin jiru.")
-        else:
-            for s_name, data in students.items():
-                str_app.markdown(
-                    f"**Maqaa:** {s_name} | **Kutaa:** {data['grade']} | **Daree:** {data['section']} | **Korniyaa:** {data['gender']}"
-                )
-                str_app.write(
-                    f"Qabxii - Afaan Oromoo: {data['afaanOromoo']}/6 | Herrega: {data['math']}/6 | Ingliffaa: {data['english']}/6"
-                )
-                str_app.markdown("---")
-
-    with tab2:
-        str_app.subheader("Gaaffii Haaraa Kuusaa Keessatti Dabaluu")
-        t_grade = str_app.selectbox("Kutaa Filadhu", ["Kutaa 1", "Kutaa 2", "Kutaa 3", "Kutaa 4", "Kutaa 5", "Kutaa 6"], key="t_grade_sel")
-        t_subject = str_app.selectbox("Gosa Barnootaa", ["afaan_oromoo", "math", "english"], key="t_subj_sel")
-        
-        new_q = str_app.text_area("Gaaffii Barreeffama")
-        opt_a = str_app.text_input("Filannoo A")
-        opt_b = str_app.text_input("Filannoo B")
-        opt_c = str_app.text_input("Filannoo C")
-        opt_d = str_app.text_input("Filannoo D")
-        correct_ans = str_app.selectbox("Deebii Sirrii", ["A", "B", "C", "D"])
-        
-        # Multimedia inputs
-        img_url = str_app.text_input("Fakkii (Image URL ykn Path - Optional)", placeholder="Fkn: https://example.com/image.png")
-        audio_url = str_app.text_input("Sagalee (Audio URL ykn Path - Optional)", placeholder="Fkn: https://example.com/audio.mp3")
-
-        if str_app.button("Gaaffii Kuusaa Keessatti Galchi"):
-            if new_q and opt_a and opt_b:
-                question_dict = {
-                    "question": new_q,
-                    "options": [f"A) {opt_a}", f"B) {opt_b}", f"C) {opt_c}" if opt_c else "", f"D) {opt_d}" if opt_d else ""],
-                    "answer": correct_ans,
-                    "type": "mcq",
-                    "image": img_url if img_url else None,
-                    "audio": audio_url if audio_url else None
-                }
-                # Clean empty options if any
-                question_dict["options"] = [opt for opt in question_dict["options"] if not opt.startswith("C) ") or opt != "C) "]
-                
-                str_app.session_state.SECRET_MASTER_QUESTION_BANKS[t_grade][t_subject].append(question_dict)
-                str_app.success("🎉 Gaaffiin fakkii fi sagalee waliin milkaa'inaan kuusaa keessatti dabalameera!")
-            else:
-                str_app.warning("Maaloo gaaffii fi filannoowwan barbaachisoo guuti!")
-
-    str_app.write("")
-    if str_app.button("⬅️ Gara Fuula Jalqabaatti Deebi'i"):
-        str_app.session_state.current_page = "role_selection"
-        str_app.rerun()
-
-
 def name_input_screen():
     str_app.markdown(
         """
@@ -515,11 +449,6 @@ def name_input_screen():
 
                 selected_qs = load_databases_for_grade(grade)
                 str_app.session_state.student_random_questions[clean_name] = selected_qs
-
-                # Reset indexes
-                str_app.session_state.ao_index = 0
-                str_app.session_state.math_index = 0
-                str_app.session_state.eng_index = 0
 
                 str_app.session_state.current_page = "home"
                 str_app.rerun()
@@ -578,11 +507,14 @@ def afaan_oromoo_screen():
 
     if "ao_index" not in str_app.session_state:
         str_app.session_state.ao_index = 0
+        str_app.session_state.ao_score = 0
 
     idx = str_app.session_state.ao_index
     if idx >= len(questions):
-        str_app.success(f"🎉 Gaaffiin Afaan Oromoo xumurameera! Qabxii kee: {str_app.session_state.global_students[student]['afaanOromoo']}/6")
+        str_app.success("Gaaffiin Afaan Oromoo xumurameera! Gara manayeessaatti deebi'aa.")
         if str_app.button("🏠 Gara Manayeessaa"):
+            str_app.session_state.ao_index = 0
+            str_app.session_state.ao_score = 0
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
@@ -591,45 +523,73 @@ def afaan_oromoo_screen():
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
     c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
-    c2.markdown(f"**Qabxii: {str_app.session_state.global_students[student]['afaanOromoo']}**")
+    c2.markdown(f"**Qabxii: {str_app.session_state.ao_score}**")
 
     str_app.markdown(f"### {q.get('question', '')}")
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Filannoo kee filadhu:", q["options"], key=f"ao_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"ao_ans_{student}_{idx}")
 
-    # Display image if available
-    if q.get("image"):
-        try:
-            str_app.image(q["image"], use_column_width=True)
-        except Exception:
-            str_app.info("🖼️ (Fakkii fe'uu irratti rakkoon uumame)")
+    attempt_key = ("afaan_oromoo", student, idx)
+    if attempt_key not in str_app.session_state.attempts:
+        str_app.session_state.attempts[attempt_key] = 0
 
-    # Display audio if available
-    if q.get("audio"):
-        try:
-            str_app.audio(q["audio"])
-        except Exception:
-            str_app.info("🔊 (Sagalee dhaggeeffachuu irratti rakkoon uumame)")
+    current_attempts = str_app.session_state.attempts[attempt_key]
+    str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
 
-    user_answer = str_app.radio(
-        "Filannoo kee filadhu:", q["options"], key=f"ao_radio_{student}_{idx}"
-    )
+    if str_app.button("Mirkaneessi Afaan Oromoo"):
+        if current_attempts < 3:
+            str_app.session_state.attempts[attempt_key] += 1
+            is_correct = False
 
-    if str_app.button("Deebii Mirkaneessi", key=f"ao_btn_{student}_{idx}"):
-        correct = q.get("answer", "")
-        if user_answer and user_answer.startswith(correct):
-            str_app.success("🎉 Sirrii dha!")
-            str_app.session_state.global_students[student]['afaanOromoo'] += 1
+            if "answer" in q:
+                correct = str(q["answer"])
+                if user_answer and (user_answer.strip().upper() == correct.upper() or user_answer.strip().startswith(correct)):
+                    is_correct = True
+
+            if is_correct:
+                str_app.session_state.ao_score += 5
+                str_app.success("🎉 Sirriidha!")
+                str_app.session_state.attempts[attempt_key] = 3
+            else:
+                rem = 3 - str_app.session_state.attempts[attempt_key]
+                if rem > 0:
+                    str_app.warning(f"❌ Dogoggora! Carraan hafe: {rem}")
+                else:
+                    str_app.error(f"❌ Carraan 3ffaan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
         else:
-            str_app.error(f"❌ Dogoggora! Deebiin sirrii: {correct}")
-        
-        str_app.session_state.ao_index += 1
-        str_app.rerun()
+            str_app.info("Barataan carraa 3 guutee xumureera.")
+
+    str_app.markdown("---")
+    b1, b2 = str_app.columns(2)
+    with b1:
+        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="ao_prev"):
+            str_app.session_state.ao_index -= 1
+            str_app.rerun()
+    with b2:
+        if idx < len(questions) - 1:
+            if str_app.button("Fuuldharatti (Next) ➡️", key="ao_next"):
+                str_app.session_state.ao_index += 1
+                str_app.rerun()
+        else:
+            if str_app.button("Xumuruu & Galchuu", key="ao_finish"):
+                str_app.session_state.global_students[student]["afaanOromoo"] = str_app.session_state.ao_score
+                str_app.success("Qabxiin Afaan Oromoo guutuu galmeeffameera!")
+                str_app.session_state.ao_index = 0
+                str_app.session_state.ao_score = 0
+                str_app.session_state.current_page = "home"
+                str_app.rerun()
 
 
 def math_screen():
     student = str_app.session_state.current_student
     questions = str_app.session_state.student_random_questions.get(student, {}).get("math", [])
 
-    str_app.subheader(f"Herrega - Mathematics - {str_app.session_state.current_grade} ({student})")
+    str_app.subheader(f"Herrega - {str_app.session_state.current_grade} ({student})")
 
     if not questions:
         str_app.warning("Gaaffiin Herregaa hin argamne.")
@@ -638,13 +598,16 @@ def math_screen():
             str_app.rerun()
         return
 
-    if "math_index" not in str_app.session_state:
-        str_app.session_state.math_index = 0
+    if "m_index" not in str_app.session_state:
+        str_app.session_state.m_index = 0
+        str_app.session_state.m_score = 0
 
-    idx = str_app.session_state.math_index
+    idx = str_app.session_state.m_index
     if idx >= len(questions):
-        str_app.success(f"🎉 Gaaffiin Herregaa xumurameera! Qabxii kee: {str_app.session_state.global_students[student]['math']}/6")
+        str_app.success("Gaaffiin Herregaa xumurameera! Gara manayeessaatti deebi'aa.")
         if str_app.button("🏠 Gara Manayeessaa"):
+            str_app.session_state.m_index = 0
+            str_app.session_state.m_score = 0
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
@@ -652,59 +615,93 @@ def math_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
-    c2.markdown(f"**Qabxii: {str_app.session_state.global_students[student]['math']}**")
+    c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)}**")
+    c2.markdown(f"**Qabxii: {str_app.session_state.m_score}**")
 
     str_app.markdown(f"### {q.get('question', '')}")
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Filannoo kee filadhu:", q["options"], key=f"m_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"m_ans_{student}_{idx}")
 
-    if q.get("image"):
-        try:
-            str_app.image(q["image"], use_column_width=True)
-        except Exception:
-            pass
+    attempt_key = ("math", student, idx)
+    if attempt_key not in str_app.session_state.attempts:
+        str_app.session_state.attempts[attempt_key] = 0
 
-    if q.get("audio"):
-        try:
-            str_app.audio(q["audio"])
-        except Exception:
-            pass
+    current_attempts = str_app.session_state.attempts[attempt_key]
+    str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
 
-    user_answer = str_app.radio(
-        "Filannoo kee filadhu:", q["options"], key=f"math_radio_{student}_{idx}"
-    )
+    if str_app.button("Mirkaneessi Herregaa"):
+        if current_attempts < 3:
+            str_app.session_state.attempts[attempt_key] += 1
+            is_correct = False
+            correct_ans = str(q.get("answer", "")).upper()
 
-    if str_app.button("Deebii Mirkaneessi", key=f"math_btn_{student}_{idx}"):
-        correct = q.get("answer", "")
-        if user_answer and user_answer.startswith(correct):
-            str_app.success("🎉 Sirrii dha!")
-            str_app.session_state.global_students[student]['math'] += 1
+            if user_answer:
+                cleaned_ans = user_answer.strip().upper()
+                if cleaned_ans == correct_ans or (correct_ans and cleaned_ans.startswith(correct_ans[0])):
+                    is_correct = True
+
+            if is_correct:
+                str_app.session_state.m_score += 5
+                str_app.success("🎉 Sirriidha!")
+                str_app.session_state.attempts[attempt_key] = 3
+            else:
+                rem = 3 - str_app.session_state.attempts[attempt_key]
+                if rem > 0:
+                    str_app.warning(f"❌ Dogoggora qaba! Carraan hafe: {rem}")
+                else:
+                    str_app.error(f"❌ Carraan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
         else:
-            str_app.error(f"❌ Dogoggora! Deebiin sirrii: {correct}")
-        
-        str_app.session_state.math_index += 1
-        str_app.rerun()
+            str_app.info("Barataan carraa 3 guutee xumureera.")
+
+    str_app.markdown("---")
+    b1, b2 = str_app.columns(2)
+    with b1:
+        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="m_prev"):
+            str_app.session_state.m_index -= 1
+            str_app.rerun()
+    with b2:
+        if idx < len(questions) - 1:
+            if str_app.button("Fuuldharatti (Next) ➡️", key="m_next"):
+                str_app.session_state.m_index += 1
+                str_app.rerun()
+        else:
+            if str_app.button("Xumuruu & Deebi'i", key="m_finish"):
+                str_app.session_state.global_students[student]["math"] = str_app.session_state.m_score
+                str_app.success(f"Galatoomi! Qabxii Herregaa: {str_app.session_state.m_score}")
+                str_app.session_state.m_index = 0
+                str_app.session_state.m_score = 0
+                str_app.session_state.current_page = "home"
+                str_app.rerun()
 
 
 def english_screen():
     student = str_app.session_state.current_student
     questions = str_app.session_state.student_random_questions.get(student, {}).get("english", [])
 
-    str_app.subheader(f"English - Ingliffaa - {str_app.session_state.current_grade} ({student})")
+    str_app.subheader(f"English - {str_app.session_state.current_grade} ({student})")
 
     if not questions:
-        str_app.warning("Gaaffiin Ingliffaa hin argamne.")
-        if str_app.button("🏠 Gara Manayeessaa"):
+        str_app.warning("English questions not found.")
+        if str_app.button("🏠 Home"):
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
 
-    if "eng_index" not in str_app.session_state:
-        str_app.session_state.eng_index = 0
+    if "e_index" not in str_app.session_state:
+        str_app.session_state.e_index = 0
+        str_app.session_state.e_score = 0
 
-    idx = str_app.session_state.eng_index
+    idx = str_app.session_state.e_index
     if idx >= len(questions):
-        str_app.success(f"🎉 Gaaffiin Ingliffaa xumurameera! Qabxii kee: {str_app.session_state.global_students[student]['english']}/6")
-        if str_app.button("🏠 Gara Manayeessaa"):
+        str_app.success("English questions completed! Return to home.")
+        if str_app.button("🏠 Home"):
+            str_app.session_state.e_index = 0
+            str_app.session_state.e_score = 0
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
@@ -712,46 +709,244 @@ def english_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
-    c2.markdown(f"**Qabxii: {str_app.session_state.global_students[student]['english']}**")
+    c1.markdown(f"**Question {idx + 1} / {len(questions)}**")
+    c2.markdown(f"**Score: {str_app.session_state.e_score}**")
 
     str_app.markdown(f"### {q.get('question', '')}")
+    user_answer = None
+    if q.get("type", "mcq") == "mcq" and "options" in q:
+        user_answer = str_app.radio(
+            "Choose your option:", q["options"], key=f"e_radio_{student}_{idx}"
+        )
+    else:
+        user_answer = str_app.text_input("Type your answer here:", key=f"e_ans_{student}_{idx}")
 
-    if q.get("image"):
-        try:
-            str_app.image(q["image"], use_column_width=True)
-        except Exception:
-            pass
+    attempt_key = ("english", student, idx)
+    if attempt_key not in str_app.session_state.attempts:
+        str_app.session_state.attempts[attempt_key] = 0
 
-    if q.get("audio"):
-        try:
-            str_app.audio(q["audio"])
-        except Exception:
-            pass
+    current_attempts = str_app.session_state.attempts[attempt_key]
+    str_app.write(f"⚠️ Attempt count: **{current_attempts} / 3**")
 
-    user_answer = str_app.radio(
-        "Filannoo kee filadhu:", q["options"], key=f"eng_radio_{student}_{idx}"
-    )
+    if str_app.button("Check Answer"):
+        if current_attempts < 3:
+            str_app.session_state.attempts[attempt_key] += 1
+            is_correct = False
 
-    if str_app.button("Deebii Mirkaneessi", key=f"eng_btn_{student}_{idx}"):
-        correct = q.get("answer", "")
-        if user_answer and user_answer.startswith(correct):
-            str_app.success("🎉 Sirrii dha!")
-            str_app.session_state.global_students[student]['english'] += 1
+            if "answer" in q:
+                ans_str = str(q["answer"]).lower()
+                if user_answer:
+                    cleaned_ans = user_answer.strip().lower()
+                    if cleaned_ans == ans_str or cleaned_ans.startswith(ans_str[0]):
+                        is_correct = True
+
+            if is_correct:
+                str_app.session_state.e_score += 5
+                str_app.success("🎉 Correct!")
+                str_app.session_state.attempts[attempt_key] = 3
+            else:
+                rem = 3 - str_app.session_state.attempts[attempt_key]
+                if rem > 0:
+                    str_app.warning(f"❌ Incorrect! Remaining attempts: {rem}")
+                else:
+                    ans_text = q.get("answer", "")
+                    str_app.error(f"❌ Maximum attempts reached. Correct answer: {ans_text}")
         else:
-            str_app.error(f"❌ Dogoggora! Deebiin sirrii: {correct}")
+            str_app.info("Maximum attempts completed for this question.")
+
+    str_app.markdown("---")
+    b1, b2 = str_app.columns(2)
+    with b1:
+        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="e_prev"):
+            str_app.session_state.e_index -= 1
+            str_app.rerun()
+    with b2:
+        if idx < len(questions) - 1:
+            if str_app.button("Fuuldharatti (Next) ➡️", key="e_next"):
+                str_app.session_state.e_index += 1
+                str_app.rerun()
+        else:
+            if str_app.button("Finish & Return", key="e_finish"):
+                str_app.session_state.global_students[student]["english"] = str_app.session_state.e_score
+                str_app.success(f"Well done! Total English Score: {str_app.session_state.e_score}")
+                str_app.session_state.e_index = 0
+                str_app.session_state.e_score = 0
+                str_app.session_state.current_page = "home"
+                str_app.rerun()
+
+
+def teacher_dashboard_screen():
+    if not str_app.session_state.teacher_auth:
+        str_app.warning("Maaloo dura paasworii galchaa!")
+        str_app.session_state.current_page = "teacher_login"
+        str_app.rerun()
+        return
+
+    str_app.subheader("🎓 Gabaasa Barsiisaa & Kuusaa Gaaffii (Teacher Dashboard)")
+    
+    tab1, tab2, tab3 = str_app.tabs([
+        "📊 Qabxii & Gabaasa Qinda'aa (Reports)", 
+        "🔒 Kuusaa Gaaffii Kutaa Kutaan (Secret Banks)", 
+        "➕ Gaaffii Haaraa Dabaluu (Add Question)"
+    ])
+
+    with tab1:
+        str_app.markdown("**Gabaasa Yeroo, Madaallii fi Tarreeffama Barattootaa (Kutaa 1)**")
+        students = str_app.session_state.global_students
+        str_app.write(f"**Baay'inni barattoota galmaa'an:** {len(students)}")
+
+        if not students:
+            str_app.info("Ammaaf barataan galmaa'e hin jiru.")
+        else:
+            max_subject_score = 30  # Gosa barnootaa tokkoon tokkoon isaaniif gaaffii 6 * 5 = 30
+            max_total_score = 90
+
+            # Gosa barnootaa tokkoon tokkoon isaaniif madaallii kennaa qooduu (Afaan Oromoo, Math, English)
+            subjects_map = {
+                "afaanOromoo": "📖 Afaan Oromoo",
+                "math": "🔢 Herrega (Mathematics)",
+                "english": "🔤 Ingliffaa (English)"
+            }
+
+            # Waliigala gabaasa cuunfaa table
+            table_data = []
+            csv_data = "Maqaa Barataa,Kutaa,Korniyaa,Lakk Daree,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%)\n"
+
+            for name, data in students.items():
+                ao = data["afaanOromoo"]
+                math = data["math"]
+                eng = data["english"]
+                total = ao + math + eng
+                percentage = (total / max_total_score) * 100
+
+                table_data.append({
+                    "Maqaa Barataa": name,
+                    "Kutaa": data["grade"],
+                    "Korniyaa": data["gender"],
+                    "Lakk. Daree": data["section"],
+                    "Afaan Oromoo": f"{ao}/30",
+                    "Herrega": f"{math}/30",
+                    "Ingliffaa": f"{eng}/30",
+                    "Waliigala": f"{total}/90",
+                    "Parsantii (%)": f"{percentage:.1f}%",
+                })
+
+                csv_data += f"{name},{data['grade']},{data['gender']},{data['section']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
+
+            str_app.markdown("### 📋 Cuunfaa Waliigala Barattootaa Hunda")
+            str_app.dataframe(table_data, use_container_width=True)
+            str_app.download_button(
+                label="📥 Download Excel Report (CSV)",
+                data=csv_data,
+                file_name="HiikaWay_Student_Report.csv",
+                mime="text/csv",
+            )
+
+            str_app.markdown("---")
+            str_app.markdown("### 📌 Gabaasa Qinda'aa fi Yaada Madaallii (Kutaa 1: Gosa Barnootaan)")
+
+            for subj_key, subj_title in subjects_map.items():
+                str_app.markdown(f"#### ❖ {subj_title}")
+                
+                sirritti_list = []
+                foyyee_list = []
+                hubanne_list = []
+
+                for name, data in students.items():
+                    subj_score = data[subj_key]
+                    subj_pct = (subj_score / max_subject_score) * 100
+
+                    # Madaallii fi yaada kennuu
+                    if subj_pct >= 80:
+                        eval_msg = "Sirritti deebiseera (80%-100%)"
+                        sirritti_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+                    elif subj_pct >= 60:
+                        eval_msg = "Foyyee qaba (60%-79.9%)"
+                        foyyee_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+                    else:
+                        eval_msg = "Hin hubanne (<59.9%)"
+                        hubanne_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
+
+                col_a, col_b, col_c = str_app.columns(3)
+                with col_a:
+                    str_app.markdown("**🟢 Sirritti Deebisan (80%-100%)**")
+                    if sirritti_list:
+                        str_app.dataframe(sirritti_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                with col_b:
+                    str_app.markdown("**🟡 Foyyee Qaban (60%-79.9%)**")
+                    if foyyee_list:
+                        str_app.dataframe(foyyee_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                with col_c:
+                    str_app.markdown("**🔴 Hin Hubanne (<59.9%)**")
+                    if hubanne_list:
+                        str_app.dataframe(hubanne_list, use_container_width=True)
+                    else:
+                        str_app.info("Barataan hin jiru.")
+
+                str_app.markdown("---")
+
+    with tab2:
+        str_app.markdown("### 🔒 Kuusaa Gaaffii Barattoonni Gaafataman (Master Question Banks)")
+        str_app.write("As irratti gaaffiwwan barattoonni madaallii irratti gaafataman kutaa 1 hanga 6 jiran gosa barnootaan qoodamanii barsiisaaf mul'atu:")
         
-        str_app.session_state.eng_index += 1
+        selected_secret_grade = str_app.selectbox("Kutaa Filadhu (Secret View)", list(str_app.session_state.SECRET_MASTER_QUESTION_BANKS.keys()), key="sec_grade")
+        grade_banks = str_app.session_state.SECRET_MASTER_QUESTION_BANKS[selected_secret_grade]
+
+        for subject_name, q_list in grade_banks.items():
+            str_app.markdown(f"#### 📖 Gosa Barnootaa: {subject_name.upper()}")
+            for i, q_item in enumerate(q_list, 1):
+                str_app.markdown(f"**Gaaffii {i}:** {q_item.get('question')}")
+                str_app.write(f"Filannoowwan: {q_item.get('options', [])}")
+                str_app.success(f"Deebii Sirrii: {q_item.get('answer')}")
+                str_app.markdown("---")
+
+    with tab3:
+        str_app.markdown("### ➕ Kuusaa Gaaffii Irratti Gaaffii Haaraa Dabaluu")
+        str_app.write("Barsiisaan kutaa fi gosa barnootaa filachuudhaan gaaffii haaraa kuusaa keessatti dabaluu danda'a.")
+
+        add_grade = str_app.selectbox("Kutaa Filadhu", list(str_app.session_state.SECRET_MASTER_QUESTION_BANKS.keys()), key="add_q_grade")
+        add_subject = str_app.selectbox("Gosa Barnootaa Filadhu", ["afaan_oromoo", "math", "english"], key="add_q_subject")
+        
+        new_q_text = str_app.text_area("Gaaffii Barreessi:", placeholder="Fkn: Qubee...?")
+        
+        opt_a = str_app.text_input("Filannoo A", value="A) ")
+        opt_b = str_app.text_input("Filannoo B", value="B) ")
+        opt_c = str_app.text_input("Filannoo C", value="C) ")
+        opt_d = str_app.text_input("Filannoo D", value="D) ")
+        
+        new_answer = str_app.selectbox("Deebii Sirrii (Furtuu)", ["A", "B", "C", "D"])
+
+        if str_app.button("💾 Gaaffii Kuusaatti Dabali"):
+            if new_q_text.strip():
+                new_question_dict = {
+                    "question": new_q_text.strip(),
+                    "options": [opt_a, opt_b, opt_c, opt_d],
+                    "answer": new_answer,
+                    "type": "mcq"
+                }
+                str_app.session_state.SECRET_MASTER_QUESTION_BANKS[add_grade][add_subject].append(new_question_dict)
+                str_app.success("🎉 Gaaffiin haaraan kuusaa keessatti milkaa'inaan dabalamateera!")
+            else:
+                str_app.warning("Maaloo gaafficha guututti barreessi!")
+
+    str_app.write("")
+    if str_app.button("⬅️ Gara Furtuu Hojii Deebi'i"):
+        str_app.session_state.teacher_auth = False
+        str_app.session_state.current_page = "role_selection"
         str_app.rerun()
 
 
-# Page Routing Logic
+# ROUTE CONTROLLER
 if str_app.session_state.current_page == "role_selection":
     role_selection_screen()
 elif str_app.session_state.current_page == "teacher_login":
     teacher_login_screen()
-elif str_app.session_state.current_page == "teacher_dashboard":
-    teacher_dashboard_screen()
 elif str_app.session_state.current_page == "name_input":
     name_input_screen()
 elif str_app.session_state.current_page == "home":
@@ -762,3 +957,5 @@ elif str_app.session_state.current_page == "math":
     math_screen()
 elif str_app.session_state.current_page == "english":
     english_screen()
+elif str_app.session_state.current_page == "teacher_dashboard":
+    teacher_dashboard_screen()
