@@ -376,8 +376,10 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
 if "SECRET_AUDIO_DICTATION_BANKS" not in str_app.session_state:
     str_app.session_state.SECRET_AUDIO_DICTATION_BANKS = {
         "Kutaa 1": [
-            {"word": "mama", "hint": "Sagalee dhaggeeffadhuu barreessi (Fkn: ma-ma)"},
-            {"word": "bisha", "hint": "Sagalee dhaggeeffadhuu barreessi"}
+            {"word": "Laafaa", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii (Fkn: laa-faa)"},
+            {"word": "malaa", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii"},
+            {"word":"Tulluu","hint":"sagalee dhaggeeffadhuu barreessii"},
+            {"word": "Mana", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii"},
         ],
         "Kutaa 2": [
             {"word": "nama", "hint": "Jecha sagaleeffame barreessi"},
