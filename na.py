@@ -1,6 +1,6 @@
 import random
 import streamlit as str_app
-from gTTS import gTTS
+from gtts import gTTS
 import os
 
 # PAGE CONFIGURATION
