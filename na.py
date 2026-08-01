@@ -426,11 +426,13 @@ def load_databases_for_grade(grade_str):
     bank = str_app.session_state.SECRET_MASTER_QUESTION_BANKS.get(grade_str, str_app.session_state.SECRET_MASTER_QUESTION_BANKS["Kutaa 6"])
 
     def select_unique_random_questions(pool):
+        if not pool:
+            return []
         if len(pool) >= 6:
             return random.sample(pool, 6)
         else:
             selected = pool[:]
-            while len(selected) < 6 and pool:
+            while len(selected) < 6:
                 selected.append(random.choice(pool))
             return selected
 
@@ -439,7 +441,6 @@ def load_databases_for_grade(grade_str):
         "math": select_unique_random_questions(bank["math"]),
         "english": select_unique_random_questions(bank["english"])
     }
-
 
 def role_selection_screen():
     str_app.markdown(
