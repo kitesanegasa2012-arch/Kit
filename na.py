@@ -422,14 +422,21 @@ if "SECRET_AUDIO_DICTATION_BANKS" not in str_app.session_state:
         ]
     }
 
+import random
+
 def load_databases_for_grade(grade_str):
     bank = str_app.session_state.SECRET_MASTER_QUESTION_BANKS.get(grade_str, str_app.session_state.SECRET_MASTER_QUESTION_BANKS["Kutaa 6"])
 
     def select_unique_random_questions(pool):
         if not pool:
             return []
-        sample_size = min(len(pool), 6)
-        return random.sample(pool, sample_size)
+        
+        # Pool irraa random-aan baasuuf
+        items = list(pool)
+        random.shuffle(items)
+        
+        sample_size = min(len(items), 6)
+        return items[:sample_size]
 
     return {
         "afaan_oromoo": select_unique_random_questions(bank["afaan_oromoo"]),
