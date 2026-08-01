@@ -1,5 +1,7 @@
 import random
 import streamlit as str_app
+from gTTS import gTTS
+import os
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
@@ -941,30 +943,14 @@ def audio_dictation_screen():
     str_app.markdown(f"**Gaaffii Sagalee {idx + 1} / {len(dict_list)}**")
     str_app.markdown(f"💡 **Qajeelfama:** {hint}")
 
-    if item.get("image"):
-        img_c1, img_c2, img_c3 = str_app.columns([1, 2, 1])
-        with img_c2:
-            str_app.image(item["image"], use_container_width=True)
-
-    if item.get("audio_bytes"):
-        # Barsiisaan sagalee dhugaa (recorded/uploaded audio) yoo dabale, kanatu taphata
-        str_app.audio(item["audio_bytes"])
-    else:
-        # HTML5 Audio Web Speech API (Browser keessa dubbisuuf) - yoo sagaleen dhugaa hin jiraatin
-        speech_js = f"""
-        <script>
-        function playAudioWord() {{
-            const utterance = new SpeechSynthesisUtterance("{target_word}");
-            utterance.lang = 'om-ET'; // Afaan Oromoo / Oromo fallback
-            utterance.rate = 0.8; // Suuta akka jedhuuf
-            window.speechSynthesis.speak(utterance);
-        }}
-        </script>
-        <button onclick="playAudioWord()" style="background-color: #00796B; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
-            🔊 Sagalee Dhaggeeffadhu (Play Audio)
-        </button>
-        """
-        str_app.components.v1.html(speech_js, height=70)
+    # Giraamarri gTTS fayyadamuun sagalee Afaan Oromootiin suuta qopheessuu
+    try:
+        tts = gTTS(text=target_word, lang='om', slow=True)
+        audio_file = f"temp_audio_{idx}.mp3"
+        tts.save(audio_file)
+        str_app.audio(audio_file, format='audio/mp3')
+    except Exception as e:
+        str_app.error(f"Sagaleen uumamuu hin danda'amne: {e}")
 
     user_typed_word = str_app.text_input("Jecha sagaleen jedhame asitti barreessi:", key=f"aud_input_{student}_{idx}")
 
@@ -973,7 +959,7 @@ def audio_dictation_screen():
         str_app.session_state.attempts[attempt_key] = 0
 
     current_attempts = str_app.session_state.attempts[attempt_key]
-    str_app.markdown(f'<span class="attempt-pill">⚠️ Carraa yaalii: {current_attempts} / 3</span>', unsafe_allow_html=True)
+    str_app.write(f"⚠️ Carraa yaalii: **{current_attempts} / 3**")
 
     if str_app.button("Mirkaneessi Jecha Sagalee"):
         if current_attempts < 3:
