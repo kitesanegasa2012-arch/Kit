@@ -428,13 +428,8 @@ def load_databases_for_grade(grade_str):
     def select_unique_random_questions(pool):
         if not pool:
             return []
-        if len(pool) >= 6:
-            return random.sample(pool, 6)
-        else:
-            selected = pool[:]
-            while len(selected) < 6:
-                selected.append(random.choice(pool))
-            return selected
+        sample_size = min(len(pool), 6)
+        return random.sample(pool, sample_size)
 
     return {
         "afaan_oromoo": select_unique_random_questions(bank["afaan_oromoo"]),
