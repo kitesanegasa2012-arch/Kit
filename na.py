@@ -1,6 +1,25 @@
-import random
 import streamlit as str_app
+import json
+import os
 
+DATA_FILE = "students_data.json"
+
+def load_students():
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return {}
+    return {}
+
+def save_students_to_file(data):
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+# --- INITIALIZATION OF SESSION STATE ---
+if "global_students" not in str_app.session_state:
+    str_app.session_state.global_students = load_students()
 # PAGE CONFIGURATION
 str_app.set_page_config(
     page_title="HIKA WAY (HW) App", page_icon="📖", layout="centered"
@@ -547,6 +566,8 @@ def name_input_screen():
                         "english": 0,
                         "audioDictation": 0,
                     }
+                    # Dataan akka faayiliitti (students_data.json) akka save ta'u godha
+                    save_students_to_file(str_app.session_state.global_students)
 
                 selected_qs = load_databases_for_grade(grade)
                 str_app.session_state.student_random_questions[clean_name] = selected_qs
@@ -692,6 +713,7 @@ def afaan_oromoo_screen():
         else:
             if str_app.button("Xumuruu & Galchuu", key="ao_finish"):
                 str_app.session_state.global_students[student]["afaanOromoo"] = str_app.session_state.ao_score
+                save_students_to_file(str_app.session_state.global_students)
                 str_app.success("Qabxiin Afaan Oromoo guutuu galmeeffameera!")
                 str_app.session_state.ao_index = 0
                 str_app.session_state.ao_score = 0
@@ -794,6 +816,7 @@ def math_screen():
         else:
             if str_app.button("Xumuruu & Deebi'i", key="m_finish"):
                 str_app.session_state.global_students[student]["math"] = str_app.session_state.m_score
+                save_students_to_file(str_app.session_state.global_students)
                 str_app.success(f"Galatoomi! Qabxii Herregaa: {str_app.session_state.m_score}")
                 str_app.session_state.m_index = 0
                 str_app.session_state.m_score = 0
@@ -898,6 +921,7 @@ def english_screen():
         else:
             if str_app.button("Finish & Return", key="e_finish"):
                 str_app.session_state.global_students[student]["english"] = str_app.session_state.e_score
+                save_students_to_file(str_app.session_state.global_students)
                 str_app.success(f"Well done! Total English Score: {str_app.session_state.e_score}")
                 str_app.session_state.e_index = 0
                 str_app.session_state.e_score = 0
@@ -940,7 +964,6 @@ def audio_dictation_screen():
     str_app.markdown(f"**Gaaffii Sagalee {idx + 1} / {len(dict_list)}**")
     str_app.markdown(f"💡 **Qajeelfama:** {hint}")
 
-    # --- KANA BAKKA KANATTI GALCHITA ---
     speech_js = f"""
     <script>
     function playAudioWord() {{
@@ -955,7 +978,6 @@ def audio_dictation_screen():
     </button>
     """
     str_app.components.v1.html(speech_js, height=70)
-    # -----------------------------------
 
     user_typed_word = str_app.text_input("Jecha sagaleen jedhame asitti barreessi:", key=f"aud_input_{student}_{idx}")
 
@@ -1006,6 +1028,7 @@ def audio_dictation_screen():
                 if student not in str_app.session_state.global_students:
                     str_app.session_state.global_students[student] = {}
                 str_app.session_state.global_students[student]["audioDictation"] = str_app.session_state.aud_score
+                save_students_to_file(str_app.session_state.global_students)
                 str_app.success(f"Qabxii Qormaata Sagalee: {str_app.session_state.aud_score}")
                 str_app.session_state.aud_index = 0
                 str_app.session_state.aud_score = 0
@@ -1078,6 +1101,20 @@ def teacher_dashboard_screen():
                 file_name="HiikaWay_Student_Report.csv",
                 mime="text/csv",
             )
+
+            # --- Barattoota Galmaa'an Haquu (Delete Student Section) ---
+            str_app.markdown("---")
+            str_app.markdown("### 🗑️ Barattoota Galmaa'an Haquu (Delete Student)")
+            for s_name in list(students.keys()):
+                col_del1, col_del2 = str_app.columns([3, 1])
+                with col_del1:
+                    str_app.write(f"Maqaa: **{s_name}** | Kutaa: {students[s_name]['grade']} (Daree: {students[s_name]['section']})")
+                with col_del2:
+                    if str_app.button("🗑️ Haqi", key=f"del_stud_{s_name}"):
+                        del str_app.session_state.global_students[s_name]
+                        save_students_to_file(str_app.session_state.global_students)
+                        str_app.success(f"Barataan {s_name} haqameera!")
+                        str_app.rerun()
 
             str_app.markdown("---")
             str_app.markdown("### 📌 Gabaasa Qinda'aa fi Yaada Madaallii (Gosa Barnootaan)")
