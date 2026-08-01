@@ -904,7 +904,6 @@ def english_screen():
                 str_app.session_state.current_page = "home"
                 str_app.rerun()
 
-
 def audio_dictation_screen():
     student = str_app.session_state.current_student
     grade = str_app.session_state.current_grade
@@ -941,24 +940,27 @@ def audio_dictation_screen():
     str_app.markdown(f"**Gaaffii Sagalee {idx + 1} / {len(dict_list)}**")
     str_app.markdown(f"💡 **Qajeelfama:** {hint}")
 
-    # Browser Speech Synthesis (JavaScript) - Error hin fidu, saffisaan hojjeta
+    # --- KANA BAKKA KANATTI GALCHITA ---
     speech_js = f"""
     <script>
     function playAudioWord() {{
         const utterance = new SpeechSynthesisUtterance("{target_word}");
-        utterance.lang = 'om-ET';
-        utterance.rate = 0.8;
+        utterance.lang = 'sw-KE';
+        utterance.rate = 0.7;
         window.speechSynthesis.speak(utterance);
     }}
     </script>
     <button onclick="playAudioWord()" style="background-color: #00796B; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
-        🔊 Sagalee Dhaggeeffadhu (Play Audio)
+        🔊 Sagalee Suuta Dhaggeeffadhu (Play Audio)
     </button>
     """
     str_app.components.v1.html(speech_js, height=70)
+    # -----------------------------------
 
     user_typed_word = str_app.text_input("Jecha sagaleen jedhame asitti barreessi:", key=f"aud_input_{student}_{idx}")
 
+    if "attempts" not in str_app.session_state:
+        str_app.session_state.attempts = {}
     attempt_key = ("audio", student, idx)
     if attempt_key not in str_app.session_state.attempts:
         str_app.session_state.attempts[attempt_key] = 0
@@ -999,6 +1001,10 @@ def audio_dictation_screen():
                 str_app.rerun()
         else:
             if str_app.button("Xumuruu & Galchuu", key="aud_finish"):
+                if "global_students" not in str_app.session_state:
+                    str_app.session_state.global_students = {}
+                if student not in str_app.session_state.global_students:
+                    str_app.session_state.global_students[student] = {}
                 str_app.session_state.global_students[student]["audioDictation"] = str_app.session_state.aud_score
                 str_app.success(f"Qabxii Qormaata Sagalee: {str_app.session_state.aud_score}")
                 str_app.session_state.aud_index = 0
