@@ -1,5 +1,6 @@
 import random
 import streamlit as str_app
+import pandas as pd
 
 # PAGE CONFIGURATION
 str_app.set_page_config(
@@ -230,7 +231,7 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
                 {"question": "Bara durii ergaa waliif dabarsuuf maaliin fayyadamu ture?", "options": ["A) Ergaa afaanii fi Sagalee fardaa/moraa", "B) Bilbila harkaatiin", "C) Imeeliidhaan", "D) Interneetiin"], "answer": "A", "type": "mcq"},
                 {"question": "Jecha 'Gabaabaa' jedhuuf faallaan isaa maali?", "options": ["A) Dheeraa", "B) Furdaa", "C) Xiqqaatamaa", "D) Ulfaataa"], "answer": "A", "type": "mcq"},
                 {"question": "Seenaa fi Aadaa keenya kunuunsun maaliif barbaachisa?", "options": ["A) Dhalootatti dabarsuuf", "B) Dagachuuf", "C) Gatachuuf", "D) Dhabamsiisuuf"], "answer": "A", "type": "mcq"},
-                {"question": "Afaan Oromoo keessatti qubooni jabaatan yoo barreeffaman:", "options": ["A) Qubee dachaa ta'u", "B) Qubee fardii ta'u", "C) Qubee dubbachiiftuu lamaan barreeffamu", "D) Qubee dubbisaa lamaan barreeffamu"], "answer": "D", "type": "mcq"}
+                {"question": "Afaan Oromoo keessatti qubooni jabaatan yoo barreeffaman:", "options": ["A) Qubee dachaa ta'u", "B) Qubee fardii ta'u", "C) Qubee dubbachiiftuu kumaan barreeffamu", "D) Qubee dubbisaa lamaan barreeffamu"], "answer": "D", "type": "mcq"}
             ],
             "math": [
                 {"question": "144 / 12 hammami?", "options": ["A) 10", "B) 11", "C) 12", "D) 14"], "answer": "C", "type": "mcq"},
@@ -532,64 +533,40 @@ def afaan_oromoo_screen():
             "Filannoo kee filadhu:", q["options"], key=f"ao_radio_{student}_{idx}"
         )
     else:
-        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"ao_ans_{student}_{idx}")
+        user_answer = str_app.text_input("Deebii kee asitti barreessi", key=f"ao_input_{student}_{idx}")
 
-    attempt_key = ("afaan_oromoo", student, idx)
-    if attempt_key not in str_app.session_state.attempts:
-        str_app.session_state.attempts[attempt_key] = 0
-
-    current_attempts = str_app.session_state.attempts[attempt_key]
-    str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
-
-    if str_app.button("Mirkaneessi Afaan Oromoo"):
-        if current_attempts < 3:
-            str_app.session_state.attempts[attempt_key] += 1
-            is_correct = False
-
-            if "answer" in q:
-                correct = str(q["answer"])
-                if user_answer and (user_answer.strip().upper() == correct.upper() or user_answer.strip().startswith(correct)):
-                    is_correct = True
-
-            if is_correct:
-                str_app.session_state.ao_score += 5
-                str_app.success("🎉 Sirriidha!")
-                str_app.session_state.attempts[attempt_key] = 3
-            else:
-                rem = 3 - str_app.session_state.attempts[attempt_key]
-                if rem > 0:
-                    str_app.warning(f"❌ Dogoggora! Carraan hafe: {rem}")
-                else:
-                    str_app.error(f"❌ Carraan 3ffaan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
+    if str_app.button("Deebii Mirkaneessi", key=f"ao_btn_{student}_{idx}"):
+        correct_opt = q["answer"].strip().upper()
+        is_correct = False
+        if q.get("type", "mcq") == "mcq":
+            if user_answer and user_answer.strip().upper().startswith(correct_opt):
+                is_correct = True
         else:
-            str_app.info("Barataan carraa 3 guutee xumureera.")
+            if user_answer and user_answer.strip().upper() == correct_opt:
+                is_correct = True
 
-    str_app.markdown("---")
-    b1, b2 = str_app.columns(2)
-    with b1:
-        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="ao_prev"):
-            str_app.session_state.ao_index -= 1
-            str_app.rerun()
-    with b2:
-        if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="ao_next"):
-                str_app.session_state.ao_index += 1
-                str_app.rerun()
+        if is_correct:
+            str_app.success("🎉 Sirrii dha! (Correct!)")
+            str_app.session_state.ao_score += 1
         else:
-            if str_app.button("Xumuruu & Galchuu", key="ao_finish"):
-                str_app.session_state.global_students[student]["afaanOromoo"] = str_app.session_state.ao_score
-                str_app.success("Qabxiin Afaan Oromoo guutuu galmeeffameera!")
-                str_app.session_state.ao_index = 0
-                str_app.session_state.ao_score = 0
-                str_app.session_state.current_page = "home"
-                str_app.rerun()
+            str_app.error(f"❌ Dogoggora. Deebiin sirrii: {q['answer']}")
+        
+        if student in str_app.session_state.global_students:
+            str_app.session_state.global_students[student]["afaanOromoo"] = str_app.session_state.ao_score
+
+        str_app.session_state.ao_index += 1
+        str_app.rerun()
+
+    if str_app.button("⬅️ Gara Manayeessaatti Deebi'i", key=f"ao_back_{student}_{idx}"):
+        str_app.session_state.current_page = "home"
+        str_app.rerun()
 
 
 def math_screen():
     student = str_app.session_state.current_student
     questions = str_app.session_state.student_random_questions.get(student, {}).get("math", [])
 
-    str_app.subheader(f"Herrega - {str_app.session_state.current_grade} ({student})")
+    str_app.subheader(f"Herrega - Mathematics - {str_app.session_state.current_grade} ({student})")
 
     if not questions:
         str_app.warning("Gaaffiin Herregaa hin argamne.")
@@ -598,16 +575,16 @@ def math_screen():
             str_app.rerun()
         return
 
-    if "m_index" not in str_app.session_state:
-        str_app.session_state.m_index = 0
-        str_app.session_state.m_score = 0
+    if "math_index" not in str_app.session_state:
+        str_app.session_state.math_index = 0
+        str_app.session_state.math_score = 0
 
-    idx = str_app.session_state.m_index
+    idx = str_app.session_state.math_index
     if idx >= len(questions):
         str_app.success("Gaaffiin Herregaa xumurameera! Gara manayeessaatti deebi'aa.")
         if str_app.button("🏠 Gara Manayeessaa"):
-            str_app.session_state.m_index = 0
-            str_app.session_state.m_score = 0
+            str_app.session_state.math_index = 0
+            str_app.session_state.math_score = 0
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
@@ -615,93 +592,68 @@ def math_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Gaaffii Herregaa: {idx + 1} / {len(questions)}**")
-    c2.markdown(f"**Qabxii: {str_app.session_state.m_score}**")
+    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
+    c2.markdown(f"**Qabxii: {str_app.session_state.math_score}**")
 
     str_app.markdown(f"### {q.get('question', '')}")
     user_answer = None
     if q.get("type", "mcq") == "mcq" and "options" in q:
         user_answer = str_app.radio(
-            "Filannoo kee filadhu:", q["options"], key=f"m_radio_{student}_{idx}"
+            "Filannoo kee filadhu:", q["options"], key=f"math_radio_{student}_{idx}"
         )
     else:
-        user_answer = str_app.text_input("Deebii kee asitti barreessi:", key=f"m_ans_{student}_{idx}")
+        user_answer = str_app.text_input("Deebii kee asitti barreessi", key=f"math_input_{student}_{idx}")
 
-    attempt_key = ("math", student, idx)
-    if attempt_key not in str_app.session_state.attempts:
-        str_app.session_state.attempts[attempt_key] = 0
-
-    current_attempts = str_app.session_state.attempts[attempt_key]
-    str_app.write(f"⚠️ Carraa deebii yaaluu: **{current_attempts} / 3**")
-
-    if str_app.button("Mirkaneessi Herregaa"):
-        if current_attempts < 3:
-            str_app.session_state.attempts[attempt_key] += 1
-            is_correct = False
-            correct_ans = str(q.get("answer", "")).upper()
-
-            if user_answer:
-                cleaned_ans = user_answer.strip().upper()
-                if cleaned_ans == correct_ans or (correct_ans and cleaned_ans.startswith(correct_ans[0])):
-                    is_correct = True
-
-            if is_correct:
-                str_app.session_state.m_score += 5
-                str_app.success("🎉 Sirriidha!")
-                str_app.session_state.attempts[attempt_key] = 3
-            else:
-                rem = 3 - str_app.session_state.attempts[attempt_key]
-                if rem > 0:
-                    str_app.warning(f"❌ Dogoggora qaba! Carraan hafe: {rem}")
-                else:
-                    str_app.error(f"❌ Carraan xumurameera. Deebiin sirrii: {q.get('answer', '')}")
+    if str_app.button("Deebii Mirkaneessi", key=f"math_btn_{student}_{idx}"):
+        correct_opt = q["answer"].strip().upper()
+        is_correct = False
+        if q.get("type", "mcq") == "mcq":
+            if user_answer and user_answer.strip().upper().startswith(correct_opt):
+                is_correct = True
         else:
-            str_app.info("Barataan carraa 3 guutee xumureera.")
+            if user_answer and user_answer.strip().upper() == correct_opt:
+                is_correct = True
 
-    str_app.markdown("---")
-    b1, b2 = str_app.columns(2)
-    with b1:
-        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="m_prev"):
-            str_app.session_state.m_index -= 1
-            str_app.rerun()
-    with b2:
-        if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="m_next"):
-                str_app.session_state.m_index += 1
-                str_app.rerun()
+        if is_correct:
+            str_app.success("🎉 Sirrii dha! (Correct!)")
+            str_app.session_state.math_score += 1
         else:
-            if str_app.button("Xumuruu & Deebi'i", key="m_finish"):
-                str_app.session_state.global_students[student]["math"] = str_app.session_state.m_score
-                str_app.success(f"Galatoomi! Qabxii Herregaa: {str_app.session_state.m_score}")
-                str_app.session_state.m_index = 0
-                str_app.session_state.m_score = 0
-                str_app.session_state.current_page = "home"
-                str_app.rerun()
+            str_app.error(f"❌ Dogoggora. Deebiin sirrii: {q['answer']}")
+        
+        if student in str_app.session_state.global_students:
+            str_app.session_state.global_students[student]["math"] = str_app.session_state.math_score
+
+        str_app.session_state.math_index += 1
+        str_app.rerun()
+
+    if str_app.button("⬅️ Gara Manayeessaatti Deebi'i", key=f"math_back_{student}_{idx}"):
+        str_app.session_state.current_page = "home"
+        str_app.rerun()
 
 
 def english_screen():
     student = str_app.session_state.current_student
     questions = str_app.session_state.student_random_questions.get(student, {}).get("english", [])
 
-    str_app.subheader(f"English - {str_app.session_state.current_grade} ({student})")
+    str_app.subheader(f"Ingliffaa - English - {str_app.session_state.current_grade} ({student})")
 
     if not questions:
-        str_app.warning("English questions not found.")
-        if str_app.button("🏠 Home"):
+        str_app.warning("Gaaffiin Ingliffaa hin argamne.")
+        if str_app.button("🏠 Gara Manayeessaa"):
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
 
-    if "e_index" not in str_app.session_state:
-        str_app.session_state.e_index = 0
-        str_app.session_state.e_score = 0
+    if "eng_index" not in str_app.session_state:
+        str_app.session_state.eng_index = 0
+        str_app.session_state.eng_score = 0
 
-    idx = str_app.session_state.e_index
+    idx = str_app.session_state.eng_index
     if idx >= len(questions):
-        str_app.success("English questions completed! Return to home.")
-        if str_app.button("🏠 Home"):
-            str_app.session_state.e_index = 0
-            str_app.session_state.e_score = 0
+        str_app.success("Gaaffiin Ingliffaa xumurameera! Gara manayeessaatti deebi'aa.")
+        if str_app.button("🏠 Gara Manayeessaa"):
+            str_app.session_state.eng_index = 0
+            str_app.session_state.eng_score = 0
             str_app.session_state.current_page = "home"
             str_app.rerun()
         return
@@ -709,253 +661,126 @@ def english_screen():
     q = questions[idx]
     str_app.progress((idx + 1) / len(questions))
     c1, c2 = str_app.columns([3, 1])
-    c1.markdown(f"**Question {idx + 1} / {len(questions)}**")
-    c2.markdown(f"**Score: {str_app.session_state.e_score}**")
+    c1.markdown(f"**Gaaffii {idx + 1} / {len(questions)}**")
+    c2.markdown(f"**Qabxii: {str_app.session_state.eng_score}**")
 
     str_app.markdown(f"### {q.get('question', '')}")
     user_answer = None
     if q.get("type", "mcq") == "mcq" and "options" in q:
         user_answer = str_app.radio(
-            "Choose your option:", q["options"], key=f"e_radio_{student}_{idx}"
+            "Filannoo kee filadhu:", q["options"], key=f"eng_radio_{student}_{idx}"
         )
     else:
-        user_answer = str_app.text_input("Type your answer here:", key=f"e_ans_{student}_{idx}")
+        user_answer = str_app.text_input("Deebii kee asitti barreessi", key=f"eng_input_{student}_{idx}")
 
-    attempt_key = ("english", student, idx)
-    if attempt_key not in str_app.session_state.attempts:
-        str_app.session_state.attempts[attempt_key] = 0
-
-    current_attempts = str_app.session_state.attempts[attempt_key]
-    str_app.write(f"⚠️ Attempt count: **{current_attempts} / 3**")
-
-    if str_app.button("Check Answer"):
-        if current_attempts < 3:
-            str_app.session_state.attempts[attempt_key] += 1
-            is_correct = False
-
-            if "answer" in q:
-                ans_str = str(q["answer"]).lower()
-                if user_answer:
-                    cleaned_ans = user_answer.strip().lower()
-                    if cleaned_ans == ans_str or cleaned_ans.startswith(ans_str[0]):
-                        is_correct = True
-
-            if is_correct:
-                str_app.session_state.e_score += 5
-                str_app.success("🎉 Correct!")
-                str_app.session_state.attempts[attempt_key] = 3
-            else:
-                rem = 3 - str_app.session_state.attempts[attempt_key]
-                if rem > 0:
-                    str_app.warning(f"❌ Incorrect! Remaining attempts: {rem}")
-                else:
-                    ans_text = q.get("answer", "")
-                    str_app.error(f"❌ Maximum attempts reached. Correct answer: {ans_text}")
+    if str_app.button("Deebii Mirkaneessi", key=f"eng_btn_{student}_{idx}"):
+        correct_opt = q["answer"].strip().upper()
+        is_correct = False
+        if q.get("type", "mcq") == "mcq":
+            if user_answer and user_answer.strip().upper().startswith(correct_opt):
+                is_correct = True
         else:
-            str_app.info("Maximum attempts completed for this question.")
+            if user_answer and user_answer.strip().upper() == correct_opt:
+                is_correct = True
 
-    str_app.markdown("---")
-    b1, b2 = str_app.columns(2)
-    with b1:
-        if idx > 0 and str_app.button("⬅️ Duubatti (Previous)", key="e_prev"):
-            str_app.session_state.e_index -= 1
-            str_app.rerun()
-    with b2:
-        if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="e_next"):
-                str_app.session_state.e_index += 1
-                str_app.rerun()
+        if is_correct:
+            str_app.success("🎉 Sirrii dha! (Correct!)")
+            str_app.session_state.eng_score += 1
         else:
-            if str_app.button("Finish & Return", key="e_finish"):
-                str_app.session_state.global_students[student]["english"] = str_app.session_state.e_score
-                str_app.success(f"Well done! Total English Score: {str_app.session_state.e_score}")
-                str_app.session_state.e_index = 0
-                str_app.session_state.e_score = 0
-                str_app.session_state.current_page = "home"
-                str_app.rerun()
+            str_app.error(f"❌ Dogoggora. Deebiin sirrii: {q['answer']}")
+        
+        if student in str_app.session_state.global_students:
+            str_app.session_state.global_students[student]["english"] = str_app.session_state.eng_score
+
+        str_app.session_state.eng_index += 1
+        str_app.rerun()
+
+    if str_app.button("⬅️ Gara Manayeessaatti Deebi'i", key=f"eng_back_{student}_{idx}"):
+        str_app.session_state.current_page = "home"
+        str_app.rerun()
 
 
 def teacher_dashboard_screen():
-    if not str_app.session_state.teacher_auth:
-        str_app.warning("Maaloo dura paasworii galchaa!")
-        str_app.session_state.current_page = "teacher_login"
-        str_app.rerun()
-        return
+    str_app.markdown(
+        """
+        <div class="hero-box">
+            <h2>📊 Daashboordii Barsiisaa & Gabaasa Barattootaa</h2>
+            <p>Galmee barattootaa fi bu'aa madaallii isaanii hunda asirratti ilaaluu dandeessa.</p>
+        </div>
+    """,
+        unsafe_allow_html=True,
+    )
 
-    str_app.subheader("🎓 Gabaasa Barsiisaa & Kuusaa Gaaffii (Teacher Dashboard)")
-    
-    tab1, tab2, tab3 = str_app.tabs([
-        "📊 Qabxii & Gabaasa Qinda'aa (Reports)", 
-        "🔒 Kuusaa Gaaffii Kutaa Kutaan (Secret Banks)", 
-        "➕ Gaaffii Haaraa Dabaluu (Add Question)"
-    ])
+    students = str_app.session_state.global_students
+    if not students:
+        str_app.info("ℹ️ Ammatti barataan galmeeffame hin jiru.")
+    else:
+        data_list = []
+        for s_name, info in students.items():
+            data_list.append({
+                "Maqaa Guutuu": s_name,
+                "Kutaa": info.get("grade", ""),
+                "Korniyaa": info.get("gender", ""),
+                "Daree": info.get("section", ""),
+                "Afaan Oromoo": info.get("afaanOromoo", 0),
+                "Herrega": info.get("math", 0),
+                "Ingliffaa": info.get("english", 0),
+                "Waraallaa (Total)": info.get("afaanOromoo", 0) + info.get("math", 0) + info.get("english", 0)
+            })
+        df = pd.DataFrame(data_list)
+        str_app.dataframe(df, use_container_width=True)
 
-    with tab1:
-        str_app.markdown("**Gabaasa Yeroo, Madaallii fi Tarreeffama Barattootaa (Kutaa 1)**")
-        students = str_app.session_state.global_students
-        str_app.write(f"**Baay'inni barattoota galmaa'an:** {len(students)}")
-
-        if not students:
-            str_app.info("Ammaaf barataan galmaa'e hin jiru.")
-        else:
-            max_subject_score = 30  # Gosa barnootaa tokkoon tokkoon isaaniif gaaffii 6 * 5 = 30
-            max_total_score = 90
-
-            # Gosa barnootaa tokkoon tokkoon isaaniif madaallii kennaa qooduu (Afaan Oromoo, Math, English)
-            subjects_map = {
-                "afaanOromoo": "📖 Afaan Oromoo",
-                "math": "🔢 Herrega (Mathematics)",
-                "english": "🔤 Ingliffaa (English)"
-            }
-
-            # Waliigala gabaasa cuunfaa table
-            table_data = []
-            csv_data = "Maqaa Barataa,Kutaa,Korniyaa,Lakk Daree,Afaan Oromoo,Herrega,Ingliffaa,Waliigala,Parsantii (%)\n"
-
-            for name, data in students.items():
-                ao = data["afaanOromoo"]
-                math = data["math"]
-                eng = data["english"]
-                total = ao + math + eng
-                percentage = (total / max_total_score) * 100
-
-                table_data.append({
-                    "Maqaa Barataa": name,
-                    "Kutaa": data["grade"],
-                    "Korniyaa": data["gender"],
-                    "Lakk. Daree": data["section"],
-                    "Afaan Oromoo": f"{ao}/30",
-                    "Herrega": f"{math}/30",
-                    "Ingliffaa": f"{eng}/30",
-                    "Waliigala": f"{total}/90",
-                    "Parsantii (%)": f"{percentage:.1f}%",
-                })
-
-                csv_data += f"{name},{data['grade']},{data['gender']},{data['section']},{ao},{math},{eng},{total},{percentage:.1f}%\n"
-
-            str_app.markdown("### 📋 Cuunfaa Waliigala Barattootaa Hunda")
-            str_app.dataframe(table_data, use_container_width=True)
-            str_app.download_button(
-                label="📥 Download Excel Report (CSV)",
-                data=csv_data,
-                file_name="HiikaWay_Student_Report.csv",
-                mime="text/csv",
-            )
-
-            str_app.markdown("---")
-            str_app.markdown("### 📌 Gabaasa Qinda'aa fi Yaada Madaallii (Kutaa 1: Gosa Barnootaan)")
-
-            for subj_key, subj_title in subjects_map.items():
-                str_app.markdown(f"#### ❖ {subj_title}")
-                
-                sirritti_list = []
-                foyyee_list = []
-                hubanne_list = []
-
-                for name, data in students.items():
-                    subj_score = data[subj_key]
-                    subj_pct = (subj_score / max_subject_score) * 100
-
-                    # Madaallii fi yaada kennuu
-                    if subj_pct >= 80:
-                        eval_msg = "Sirritti deebiseera (80%-100%)"
-                        sirritti_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
-                    elif subj_pct >= 60:
-                        eval_msg = "Foyyee qaba (60%-79.9%)"
-                        foyyee_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
-                    else:
-                        eval_msg = "Hin hubanne (<59.9%)"
-                        hubanne_list.append({"Maqaa": name, "Kutaa": data["grade"], "Daree": data["section"], "Qabxii": f"{subj_score}/30", "Madaallii": eval_msg})
-
-                col_a, col_b, col_c = str_app.columns(3)
-                with col_a:
-                    str_app.markdown("**🟢 Sirritti Deebisan (80%-100%)**")
-                    if sirritti_list:
-                        str_app.dataframe(sirritti_list, use_container_width=True)
-                    else:
-                        str_app.info("Barataan hin jiru.")
-
-                with col_b:
-                    str_app.markdown("**🟡 Foyyee Qaban (60%-79.9%)**")
-                    if foyyee_list:
-                        str_app.dataframe(foyyee_list, use_container_width=True)
-                    else:
-                        str_app.info("Barataan hin jiru.")
-
-                with col_c:
-                    str_app.markdown("**🔴 Hin Hubanne (<59.9%)**")
-                    if hubanne_list:
-                        str_app.dataframe(hubanne_list, use_container_width=True)
-                    else:
-                        str_app.info("Barataan hin jiru.")
-
-                str_app.markdown("---")
-
-    with tab2:
-        str_app.markdown("### 🔒 Kuusaa Gaaffii Barattoonni Gaafataman (Master Question Banks)")
-        str_app.write("As irratti gaaffiwwan barattoonni madaallii irratti gaafataman kutaa 1 hanga 6 jiran gosa barnootaan qoodamanii barsiisaaf mul'atu:")
+        str_app.markdown("---")
+        str_app.subheader("➕ Gaaffii Haaroo Itti Dabaluu (Add New Question)")
         
-        selected_secret_grade = str_app.selectbox("Kutaa Filadhu (Secret View)", list(str_app.session_state.SECRET_MASTER_QUESTION_BANKS.keys()), key="sec_grade")
-        grade_banks = str_app.session_state.SECRET_MASTER_QUESTION_BANKS[selected_secret_grade]
+        with str_app.form("add_question_form"):
+            add_grade = str_app.selectbox("Kutaa filadhu", list(str_app.session_state.SECRET_MASTER_QUESTION_BANKS.keys()))
+            add_subject = str_app.selectbox("Gosa barnootaa filadhu", ["afaan_oromoo", "math", "english"])
+            new_q = str_app.text_input("Gaaffii haaraa barreessi")
+            opt_a = str_app.text_input("Filannoo A")
+            opt_b = str_app.text_input("Filannoo B")
+            opt_c = str_app.text_input("Filannoo C")
+            opt_d = str_app.text_input("Filannoo D")
+            correct_ans = str_app.selectbox("Deebii Sirrii", ["A", "B", "C", "D"])
+            
+            submitted = str_app.form_submit_button("Gaaffii Galchi")
+            if submitted:
+                if new_q and opt_a and opt_b and opt_c and opt_d:
+                    new_entry = {
+                        "question": new_q,
+                        "options": [f"A) {opt_a}", f"B) {opt_b}", f"C) {opt_c}", f"D) {opt_d}"],
+                        "answer": correct_ans,
+                        "type": "mcq"
+                    }
+                    str_app.session_state.SECRET_MASTER_QUESTION_BANKS[add_grade][add_subject].append(new_entry)
+                    str_app.success("✅ Gaaffiin haaraan milkaa'inaan itti dabalamera!")
+                else:
+                    str_app.warning("⚠️ Maaloo iddoowwan hunda guuti!")
 
-        for subject_name, q_list in grade_banks.items():
-            str_app.markdown(f"#### 📖 Gosa Barnootaa: {subject_name.upper()}")
-            for i, q_item in enumerate(q_list, 1):
-                str_app.markdown(f"**Gaaffii {i}:** {q_item.get('question')}")
-                str_app.write(f"Filannoowwan: {q_item.get('options', [])}")
-                str_app.success(f"Deebii Sirrii: {q_item.get('answer')}")
-                str_app.markdown("---")
-
-    with tab3:
-        str_app.markdown("### ➕ Kuusaa Gaaffii Irratti Gaaffii Haaraa Dabaluu")
-        str_app.write("Barsiisaan kutaa fi gosa barnootaa filachuudhaan gaaffii haaraa kuusaa keessatti dabaluu danda'a.")
-
-        add_grade = str_app.selectbox("Kutaa Filadhu", list(str_app.session_state.SECRET_MASTER_QUESTION_BANKS.keys()), key="add_q_grade")
-        add_subject = str_app.selectbox("Gosa Barnootaa Filadhu", ["afaan_oromoo", "math", "english"], key="add_q_subject")
-        
-        new_q_text = str_app.text_area("Gaaffii Barreessi:", placeholder="Fkn: Qubee...?")
-        
-        opt_a = str_app.text_input("Filannoo A", value="A) ")
-        opt_b = str_app.text_input("Filannoo B", value="B) ")
-        opt_c = str_app.text_input("Filannoo C", value="C) ")
-        opt_d = str_app.text_input("Filannoo D", value="D) ")
-        
-        new_answer = str_app.selectbox("Deebii Sirrii (Furtuu)", ["A", "B", "C", "D"])
-
-        if str_app.button("💾 Gaaffii Kuusaatti Dabali"):
-            if new_q_text.strip():
-                new_question_dict = {
-                    "question": new_q_text.strip(),
-                    "options": [opt_a, opt_b, opt_c, opt_d],
-                    "answer": new_answer,
-                    "type": "mcq"
-                }
-                str_app.session_state.SECRET_MASTER_QUESTION_BANKS[add_grade][add_subject].append(new_question_dict)
-                str_app.success("🎉 Gaaffiin haaraan kuusaa keessatti milkaa'inaan dabalamateera!")
-            else:
-                str_app.warning("Maaloo gaafficha guututti barreessi!")
-
-    str_app.write("")
-    if str_app.button("⬅️ Gara Furtuu Hojii Deebi'i"):
+    if str_app.button("🚪 Ba'i / Log Out"):
         str_app.session_state.teacher_auth = False
         str_app.session_state.current_page = "role_selection"
         str_app.rerun()
 
 
-# ROUTE CONTROLLER
-if str_app.session_state.current_page == "role_selection":
+# MAIN ROUTING LOGIC
+page = str_app.session_state.current_page
+
+if page == "role_selection":
     role_selection_screen()
-elif str_app.session_state.current_page == "teacher_login":
+elif page == "teacher_login":
     teacher_login_screen()
-elif str_app.session_state.current_page == "name_input":
-    name_input_screen()
-elif str_app.session_state.current_page == "home":
-    home_screen()
-elif str_app.session_state.current_page == "afaan_oromoo":
-    afaan_oromoo_screen()
-elif str_app.session_state.current_page == "math":
-    math_screen()
-elif str_app.session_state.current_page == "english":
-    english_screen()
-elif str_app.session_state.current_page == "teacher_dashboard":
+elif page == "teacher_dashboard":
     teacher_dashboard_screen()
+elif page == "name_input":
+    name_input_screen()
+elif page == "home":
+    home_screen()
+elif page == "afaan_oromoo":
+    afaan_oromoo_screen()
+elif page == "math":
+    math_screen()
+elif page == "english":
+    english_screen()
+else:
+    role_selection_screen()
