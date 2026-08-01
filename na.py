@@ -108,34 +108,6 @@ str_app.markdown(
     .chip-orange { background: linear-gradient(135deg, #FB8C00, #E65100); }
     .chip-purple { background: linear-gradient(135deg, #7B1FA2, #4a148c); }
     
-    .role-card {
-        background: #ffffff;
-        border-radius: 28px 12px 28px 12px;
-        padding: 20px 14px 16px 14px;
-        text-align: center;
-        box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-        transition: 0.3s ease;
-        margin-bottom: 10px;
-        border: 1px solid #e0e0e0;
-    }
-    .role-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 14px 30px rgba(0,0,0,0.16);
-    }
-    .role-avatar {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.7rem;
-        margin: 0 auto 10px auto;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-    .avatar-blue { background: linear-gradient(135deg, #42A5F5, #1976D2); }
-    .avatar-purple { background: linear-gradient(135deg, #AB47BC, #7B1FA2); }
-    
     .stButton>button {
         background-color: #2E7D32;
         color: white;
@@ -162,15 +134,12 @@ str_app.markdown(
         margin-bottom: 25px;
         box-shadow: 0 18px 40px rgba(0, 77, 64, 0.45), 0 0 0 8px rgba(128, 203, 196, 0.30);
         border: 4px solid #ffd54f;
-        position: relative;
-        overflow: hidden;
     }
     .hero-box h1 {
         font-size: 2rem;
         margin-bottom: 10px;
         font-weight: 800;
         letter-spacing: 1px;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.25);
     }
     .hero-box p {
         font-size: 1.05rem;
@@ -182,16 +151,13 @@ str_app.markdown(
         padding: 22px;
         border-radius: 10px 30px 10px 30px;
         border-left: 6px solid #004d40;
-        border-top: 1px solid #e0e0e0;
-        border-right: 1px solid #e0e0e0;
-        border-bottom: 1px solid #e0e0e0;
+        border: 1px solid #e0e0e0;
         box-shadow: 0 8px 22px rgba(0,0,0,0.10);
         margin-bottom: 20px;
     }
     .books-info-card h4 {
         color: #004d40;
         margin-top: 0;
-        margin-bottom: 10px;
         font-size: 1.15rem;
     }
     .books-info-card ul {
@@ -199,17 +165,13 @@ str_app.markdown(
         padding-left: 20px;
         color: #333333;
         font-size: 0.95rem;
-        text-align: left;
-    }
-    .books-info-card li {
-        margin-bottom: 5px;
     }
     </style>
 """,
     unsafe_allow_html=True,
 )
 
-# SESSION STATE INITIALIZATION
+# --- SESSION STATE INITIALIZATION ---
 if "current_page" not in str_app.session_state:
     str_app.session_state.current_page = "role_selection"
 if "current_student" not in str_app.session_state:
@@ -231,20 +193,16 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
                 {"question": "Qubeen jalqabaa Afaan Oromoo kami?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
                 {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq"},
                 {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu", "D) Qodaa"], "answer": "D", "type": "mcq"},
-                {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq"},
-                {"question": "Mana barumsaa maaliif deemna?", "options": ["A) Barachuuf", "B) Rafuuf", "C) Taphachuuf qofa", "D) Maseenuuf"], "answer": "A", "type": "mcq"},
-                {"question": "Qubee 'B'n jecha kam jalqaba?", "options": ["A) Balleessaa", "B) Adaamaa", "C) Caalaa", "D) Dhagaa"], "answer": "A", "type": "mcq"}
+                {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq"}
             ],
             "math": [
                 {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq"},
                 {"question": "3 - 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 0"], "answer": "B", "type": "mcq"},
-                {"question": "Lakkoofsi 5 irra caalu kami?", "options": ["A) 4", "B) 3", "C) 6", "D) 2"], "answer": "C", "type": "mcq"},
-                {"question": "2 + 3 hammami?", "options": ["A) 5", "B) 4", "C) 6", "D) 7"], "answer": "A", "type": "mcq"}
+                {"question": "Lakkoofsi 5 irra caalu kami?", "options": ["A) 4", "B) 3", "C) 6", "D) 2"], "answer": "C", "type": "mcq"}
             ],
             "english": [
                 {"question": "What letter comes after 'A'?", "options": ["A) B", "B) C", "C) D", "D) E"], "answer": "A", "type": "mcq"},
-                {"question": "Choose the color of the sky:", "options": ["A) Red", "B) Blue", "C) Green", "D) Yellow"], "answer": "B", "type": "mcq"},
-                {"question": "How many fingers on one hand?", "options": ["A) 3", "B) 4", "C) 5", "D) 10"], "answer": "C", "type": "mcq"}
+                {"question": "Choose the color of the sky:", "options": ["A) Red", "B) Blue", "C) Green", "D) Yellow"], "answer": "B", "type": "mcq"}
             ]
         },
         "Kutaa 6": {
@@ -271,8 +229,7 @@ def load_databases_for_grade(grade_str):
             return []
         items = list(pool)
         random.shuffle(items)
-        sample_size = min(len(items), 6)
-        return items[:sample_size]
+        return items[:min(len(items), 6)]
 
     return {
         "afaan_oromoo": select_unique_random_questions(bank.get("afaan_oromoo", [])),
@@ -280,14 +237,14 @@ def load_databases_for_grade(grade_str):
         "english": select_unique_random_questions(bank.get("english", []))
     }
 
-# --- LOGIN & ROLE SELECTION SCREEN WITH BORDER STYLING ---
+# --- 1. ROLE SELECTION & LOGIN SCREEN ---
 def role_selection_screen():
     str_app.markdown(
         """
         <div class="hero-box">
-            <h1>📖 Hiika Way (HW) APP</h1>
+            <h1>📖 HIKA WAY (HW) APP</h1>
             <p>
-                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu, Shallaguu Fi Qormaata Sagalee (Dictation) Barattootaa Adda Baasu "Hika Way" Kitesa Negasa tiin kalaqameetti Nagaan Dhuftan!
+                Baga Nagaan Gara App Dandeettii Dubbisuu, Barreessuu, Shallaguu Fi Qormaata Sagalee Barattootaa Adda Baasu "Hika Way" Kitesa Negasa tiin kalaqameetti Nagaan Dhuftan!
             </p>
         </div>
     """,
@@ -306,7 +263,6 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Book Content Overview Card with Custom Border
     str_app.markdown(
         """
         <div class="books-info-card">
@@ -322,7 +278,6 @@ def role_selection_screen():
         unsafe_allow_html=True,
     )
 
-    # Login System UI Container with Borders
     str_app.markdown('<div class="login-container">', unsafe_allow_html=True)
     str_app.subheader("🔐 Galmee fi Seensa (Login System)")
     
@@ -343,7 +298,7 @@ def role_selection_screen():
     else:
         teacher_pass = str_app.text_input("Jecha Darbii Barsiisaa Galchi (Enter Teacher Password):", type="password")
         if str_app.button("Barsiisaan Seeni (Login as Teacher)"):
-            if teacher_pass == "kitesa123" or teacher_pass == "": # Default or secure PIN
+            if teacher_pass == "kitesa123" or teacher_pass == "":
                 str_app.session_state.teacher_auth = True
                 str_app.session_state.current_page = "teacher_dashboard"
                 str_app.rerun()
@@ -352,16 +307,88 @@ def role_selection_screen():
                 
     str_app.markdown('</div>', unsafe_allow_html=True)
 
-# --- NAVIGATION ROUTER ---
+# --- 2. STUDENT DASHBOARD SCREEN ---
+def student_dashboard():
+    str_app.markdown(f"""
+        <div class="custom-border-box">
+            <h2>👋 Baga Nagaan Dhuftan, {str_app.session_state.current_student}!</h2>
+            <p><b>Kutaa:</b> {str_app.session_state.current_grade} | Barnoota barbaadde filachuun shaakali.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    if str_app.button("🚪 Ba'i (Logout)"):
+        str_app.session_state.current_page = "role_selection"
+        str_app.rerun()
+
+    tab1, tab2, tab3, tab4 = str_app.tabs(["📖 Afaan Oromoo", "🔢 Herrega (Math)", "🔤 Ingiliffaa", "🔊 Shaakala Sagalee"])
+
+    # Load questions for current student grade
+    if str_app.session_state.current_student not in str_app.session_state.student_random_questions:
+        str_app.session_state.student_random_questions[str_app.session_state.current_student] = load_databases_for_grade(str_app.session_state.current_grade)
+    
+    q_bank = str_app.session_state.student_random_questions[str_app.session_state.current_student]
+
+    with tab1:
+        str_app.subheader("📖 Qormaata Afaan Oromoo")
+        score = 0
+        for i, q in enumerate(q_bank["afaan_oromoo"]):
+            ans = str_app.radio(f"{i+1}. {q['question']}", q['options'], key=f"ao_{i}")
+            if ans and ans[0] == q['answer']:
+                score += 1
+        if str_app.button("Qabxii Afaan Oromoo Ergi", key="sub_ao"):
+            str_app.success((f"Galatoomi {str_app.session_state.current_student}! Qabxiin kee: {score} / {len(q_bank['afaan_oromoo'])}"))
+
+    with tab2:
+        str_app.subheader("🔢 Qormaata Herregaa")
+        score_m = 0
+        for i, q in enumerate(q_bank["math"]):
+            ans = str_app.radio(f"{i+1}. {q['question']}", q['options'], key=f"m_{i}")
+            if ans and ans[0] == q['answer']:
+                score_m += 1
+        if str_app.button("Qabxii Herregaa Ergi", key="sub_m"):
+            str_app.success(f"Galatoomi! Qabxiin Herregaa kee: {score_m} / {len(q_bank['math'])}")
+
+    with tab3:
+        str_app.subheader("🔤 Qormaata Ingiliffaa")
+        score_e = 0
+        for i, q in enumerate(q_bank["english"]):
+            ans = str_app.radio(f"{i+1}. {q['question']}", q['options'], key=f"en_{i}")
+            if ans and ans[0] == q['answer']:
+                score_e += 1
+        if str_app.button("Qabxii Ingiliffaa Ergi", key="sub_en"):
+            str_app.success(f"Galatoomi! Qabxiin Ingiliffaa kee: {score_e} / {len(q_bank['english'])}")
+
+    with tab4:
+        str_app.subheader("🔊 Shaakala Sagalee (Dictation Audio Practice)")
+        str_app.info("Fuula kana irratti sagalee dhaggeeffachuun barreessuu shaakalta.")
+        user_dictation = str_app.text_area("Jecha ykn Himaa dhageesse fuula kana irratti barreessi:")
+        if str_app.button("Ergi (Submit Dictation)"):
+            str.success("Galmeeffameera! Gaarii hojjeteetta.")
+
+# --- 3. TEACHER DASHBOARD SCREEN ---
+def teacher_dashboard():
+    str_app.markdown("""
+        <div class="custom-border-box">
+            <h2>👨‍🏫 Mana Hojii Barsiisaa (Teacher Dashboard)</h2>
+            <p>Qabxii barattootaa fi odeeffannoo waliigalaa ilaali.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    if str_app.button("🚪 Ba'i (Logout to Home)"):
+        str_app.session_state.current_page = "role_selection"
+        str_app.rerun()
+
+    str_app.subheader("📊 Barattoota Galmaa'an")
+    if str_app.session_state.student_random_questions:
+        for st_name in str_app.session_state.student_random_questions.keys():
+            str_app.write(f"- **Maqaa Barataa:** {st_name}")
+    else:
+        str_app.write("Ammaaf barataan galmaa'e hin jiru.")
+
+# --- NAVIGATION ROUTER ROUTING ---
 if str_app.session_state.current_page == "role_selection":
     role_selection_screen()
 elif str_app.session_state.current_page == "student_dashboard":
-    str_app.markdown(f"### Baga nagaan dhuftan, {str_app.session_state.current_student} ({str_app.session_state.current_grade})")
-    if str_app.button("Ba'i / Logout"):
-        str_app.session_state.current_page = "role_selection"
-        str_app.rerun()
+    student_dashboard()
 elif str_app.session_state.current_page == "teacher_dashboard":
-    str_app.markdown("### 👨‍🏫 Mana Hojii Barsiisaa (Teacher Dashboard)")
-    if str_app.button("Ba'i / Logout"):
-        str_app.session_state.current_page = "role_selection"
-        str_app.rerun()
+    teacher_dashboard()
