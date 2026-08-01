@@ -55,11 +55,61 @@ str_app.markdown(
     }
     .main {
         background:
-            radial-gradient(circle at 12% 18%, rgba(0,137,123,0.10) 0%, transparent 42%),
-            radial-gradient(circle at 88% 78%, rgba(255,213,79,0.14) 0%, transparent 42%),
+            radial-gradient(circle at 8% 15%, rgba(0,137,123,0.14) 0%, transparent 30%),
+            radial-gradient(circle at 92% 12%, rgba(255,213,79,0.16) 0%, transparent 28%),
+            radial-gradient(circle at 15% 90%, rgba(123,31,162,0.10) 0%, transparent 30%),
+            radial-gradient(circle at 88% 78%, rgba(25,118,210,0.10) 0%, transparent 32%),
             linear-gradient(135deg, #f4fbf7 0%, #e2f2e6 100%);
         background-attachment: fixed;
     }
+    .subject-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 4px 0 22px 0;
+    }
+    .subject-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .chip-teal { background: linear-gradient(135deg, #00897b, #00695c); }
+    .chip-blue { background: linear-gradient(135deg, #1976D2, #0d47a1); }
+    .chip-orange { background: linear-gradient(135deg, #FB8C00, #E65100); }
+    .chip-purple { background: linear-gradient(135deg, #7B1FA2, #4a148c); }
+    .role-card {
+        background: #ffffff;
+        border-radius: 28px 12px 28px 12px;
+        padding: 20px 14px 16px 14px;
+        text-align: center;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+        transition: 0.3s ease;
+        margin-bottom: 10px;
+    }
+    .role-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+    }
+    .role-avatar {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.7rem;
+        margin: 0 auto 10px auto;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+    }
+    .avatar-blue { background: linear-gradient(135deg, #42A5F5, #1976D2); }
+    .avatar-purple { background: linear-gradient(135deg, #AB47BC, #7B1FA2); }
     .student-btn button {
         background-color: #1976D2;
         color: white;
@@ -114,7 +164,7 @@ str_app.markdown(
     .hero-box {
         background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #00897b 100%);
         padding: 38px 22px;
-        border-radius: 24px;
+        border-radius: 40px 14px 40px 14px;
         color: white;
         text-align: center;
         margin-bottom: 25px;
@@ -157,7 +207,7 @@ str_app.markdown(
     .books-info-card {
         background-color: #ffffff;
         padding: 22px;
-        border-radius: 18px;
+        border-radius: 10px 30px 10px 30px;
         border-left: 6px solid #004d40;
         box-shadow: 0 8px 22px rgba(0,0,0,0.10);
         margin-bottom: 20px;
@@ -250,16 +300,16 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
     str_app.session_state.SECRET_MASTER_QUESTION_BANKS = {
         "Kutaa 1": {
             "afaan_oromoo": [
-                {"question": "Qubeen jalqabaa  Afaan Oromoo kami?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
+                {"question": "Qubeen jalqabaa Afaan Oromoo kami?", "options": ["A) A", "B) B", "C) C", "D) D"], "answer": "A", "type": "mcq"},
                 {"question": "Jecha 'Mama' jedhu keessatti sagaleen irra deddeebi'amu maali?", "options": ["A) M", "B) N", "C) T", "D) S"], "answer": "A", "type": "mcq"},
                 {"question": "Bishaan dhuguuf maal fayyadamna?", "options": ["A) Xurii", "B) Xiyyaara", "C) Xuuftuu", "D) Qodaa"], "answer": "D", "type": "mcq"},
                 {"question": "Jecha 'Haadha' jedhu keessaa qubee jalqabaa filadhu:", "options": ["A) H", "B) B", "C) K", "D) L"], "answer": "A", "type": "mcq"},
                 {"question": "Mana barumsaa maaliif deemna?", "options": ["A) Barachuuf", "B) Rafuuf", "C) Taphachuuf qofa", "D) Maseenuuf"], "answer": "A", "type": "mcq"},
                 {"question": "Qubee 'B'n jecha kam jalqaba?", "options": ["A) Balleessaa", "B) Adaamaa", "C) Caalaa", "D) Dhagaa"], "answer": "A", "type": "mcq"},
-                 {"question": "Jecha Lafaa Kan ta'e kami?", "options": ["A) Tulluu", "B) Kubbaa", "C) Mana", "D) Madda"], "answer": "C", "type": "mcq"},
-                 {"question": "Horii Manaa Kan ta'e kami?", "options": ["A) Qamalee", "B) Jaldeessa", "C) Leenca", "D) Hoolaa"], "answer": "D", "type": "mcq"},
-                 {"question": "Jecha Dheeraa Kan ta'e kami?", "options": ["A) Laafaa", "B) laga", "C) mala", "D) nama"], "answer": "A", "type": "mcq"},
-                 {"question": "Qubee Afaan oromoo keessaa Dachaa kan ta'e kami?", "options": ["A) A", "B) B", "C) Ch", "D) x"], "answer": "C", "type": "mcq"},
+                 {"question": "Jecha lafaa kan ta'e kami?", "options": ["A) Tulluu", "B) Kubbaa", "C) Mana", "D) Madda"], "answer": "C", "type": "mcq"},
+                 {"question": "Horii manaa kan ta'e kami?", "options": ["A) Qamalee", "B) Jaldeessa", "C) Leenca", "D) Hoolaa"], "answer": "D", "type": "mcq"},
+                 {"question": "Jecha dheeraa kan ta'e kami?", "options": ["A) Laafaa", "B) Laga", "C) Mala", "D) Nama"], "answer": "A", "type": "mcq"},
+                 {"question": "Qubee Afaan Oromoo keessaa dachaa kan ta'e kami?", "options": ["A) A", "B) B", "C) Ch", "D) X"], "answer": "C", "type": "mcq"},
             ],
             "math": [
                 {"question": "1 + 1 hammami?", "options": ["A) 1", "B) 2", "C) 3", "D) 4"], "answer": "B", "type": "mcq"},
@@ -414,10 +464,10 @@ if "SECRET_MASTER_QUESTION_BANKS" not in str_app.session_state:
 if "SECRET_AUDIO_DICTATION_BANKS" not in str_app.session_state:
     str_app.session_state.SECRET_AUDIO_DICTATION_BANKS = {
         "Kutaa 1": [
-            {"word": "Laafaa", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii (Fkn: laa-faa)"},
-            {"word": "malaa", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii"},
-            {"word":"Tulluu","hint":"sagalee dhaggeeffadhuu barreessii"},
-            {"word": "Mana", "hint": "Sagalee dubbatu dhaggeeffadhuu barreessii"},
+            {"word": "Laafaa", "hint": "Sagalee dubbatamu dhaggeeffadhuu barreessi (Fkn: laa-faa)"},
+            {"word": "Malaa", "hint": "Sagalee dubbatamu dhaggeeffadhuu barreessi"},
+            {"word": "Tulluu", "hint": "Sagalee dhaggeeffadhuu barreessi"},
+            {"word": "Mana", "hint": "Sagalee dubbatamu dhaggeeffadhuu barreessi"},
         ],
         "Kutaa 2": [
             {"word": "nama", "hint": "Jecha sagaleeffame barreessi"},
@@ -478,12 +528,24 @@ def role_selection_screen():
 
     str_app.markdown(
         """
+        <div class="subject-chip-row">
+            <span class="subject-chip chip-teal">📖 Afaan Oromoo</span>
+            <span class="subject-chip chip-blue">🔢 Herrega</span>
+            <span class="subject-chip chip-orange">🔤 Ingiliffaa</span>
+            <span class="subject-chip chip-purple">🔊 Sagalee</span>
+        </div>
+    """,
+        unsafe_allow_html=True,
+    )
+
+    str_app.markdown(
+        """
         <div class="books-info-card">
             <h4>📚 Qabiyyee Kitaabota madaallii (Kutaa 1 - 6):</h4>
             <ul>
                 <li><b>Kutaa 1 & 2:</b> Qubee bu'uuraa, jechoota gaggabaaboo fi herrega lakkoofsaa jalqabaa.</li>
                 <li><b>Kutaa 3 & 4:</b> Dubbisa hubachuu, jechoota hiika isaanii waliin, fi shallaggaa walxaxaa hin taane.</li>
-                <li><b>Kutaa 5 & 6:</b> Gaaffilee hubannoo dubbisaa bal'aa, caqasa, fi rakkoolee herregaa fi ingliffaa olaanoo.</li>
+                <li><b>Kutaa 5 & 6:</b> Gaaffilee hubannoo dubbisaa bal'aa, caqasa, fi rakkoolee herregaa fi ingiliffaa olaanoo.</li>
                 <li><b>🔊 Qormaata Sagalee (Audio Dictation):</b> Dandeettii barreessuu barattootaa sagaleen madaaluu.</li>
             </ul>
         </div>
@@ -502,7 +564,12 @@ def role_selection_screen():
     col1, col2 = str_app.columns(2)
     with col1:
         str_app.markdown(
-            "<p style='text-align: center; color: #1976D2; font-weight: bold; font-size: 1.1rem; background-color: #E3F2FD; padding: 6px; border-radius: 8px;'>👤 Barataa (Student)</p>",
+            """
+            <div class="role-card">
+                <div class="role-avatar avatar-blue">👤</div>
+                <p style='text-align: center; color: #1976D2; font-weight: bold; font-size: 1.1rem;'>Barataa (Student)</p>
+            </div>
+            """,
             unsafe_allow_html=True,
         )
         str_app.markdown('<div class="student-btn">', unsafe_allow_html=True)
@@ -513,7 +580,12 @@ def role_selection_screen():
 
     with col2:
         str_app.markdown(
-            "<p style='text-align: center; color: #7B1FA2; font-weight: bold; font-size: 1.1rem; background-color: #F3E5F5; padding: 6px; border-radius: 8px;'>🎓 Barsiisaa (Teacher)</p>",
+            """
+            <div class="role-card">
+                <div class="role-avatar avatar-purple">🎓</div>
+                <p style='text-align: center; color: #7B1FA2; font-weight: bold; font-size: 1.1rem;'>Barsiisaa (Teacher)</p>
+            </div>
+            """,
             unsafe_allow_html=True,
         )
         str_app.markdown('<div class="teacher-btn">', unsafe_allow_html=True)
@@ -544,7 +616,7 @@ def teacher_login_screen():
                 str_app.session_state.current_page = "teacher_dashboard"
                 str_app.rerun()
             else:
-                str_app.error("❌ Paasworriin dogoggora! Maaloo irra deebi'aa yaalaa.")
+                str_app.error("❌ Paasworiin dogoggora! Maaloo irra deebi'aa yaalaa.")
     with col2:
         if str_app.button("⬅️ Duubatti"):
             str_app.session_state.current_page = "role_selection"
@@ -608,14 +680,14 @@ def home_screen():
     str_app.markdown(
         f"""
         <div class="hero-box">
-            <h2>Baga nagaan dhuftte, {str_app.session_state.current_student} ({str_app.session_state.current_grade})!</h2>
+            <h2>Baga nagaan dhuftan, {str_app.session_state.current_student} ({str_app.session_state.current_grade})!</h2>
             <p>Gosa barnootaa ykn Qormaata barachuu barbaaddu filadhu</p>
         </div>
     """,
         unsafe_allow_html=True,
     )
 
-    if str_app.button("📖 Afaan Oromoo (Dubbisuu, Qubee, Jechoota, Hiika & Caqasa)"):
+    if str_app.button("📖 Afaan Oromoo (Dubbisuu, Qubee, Jechoota, Hiika & Caqasuu)"):
         str_app.session_state.current_page = "afaan_oromoo"
         str_app.rerun()
 
@@ -625,7 +697,7 @@ def home_screen():
         str_app.rerun()
 
     str_app.write("")
-    if str_app.button("🔤 Ingliffaa - English (Reading, Grammar & Vocabulary)"):
+    if str_app.button("🔤 Ingiliffaa - English (Reading, Grammar & Vocabulary)"):
         str_app.session_state.current_page = "english"
         str_app.rerun()
 
@@ -729,7 +801,7 @@ def afaan_oromoo_screen():
             str_app.rerun()
     with b2:
         if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="ao_next"):
+            if str_app.button("Fuulduratti (Next) ➡️", key="ao_next"):
                 str_app.session_state.ao_index += 1
                 str_app.rerun()
         else:
@@ -832,7 +904,7 @@ def math_screen():
             str_app.rerun()
     with b2:
         if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="m_next"):
+            if str_app.button("Fuulduratti (Next) ➡️", key="m_next"):
                 str_app.session_state.m_index += 1
                 str_app.rerun()
         else:
@@ -937,7 +1009,7 @@ def english_screen():
             str_app.rerun()
     with b2:
         if idx < len(questions) - 1:
-            if str_app.button("Fuuldharatti (Next) ➡️", key="e_next"):
+            if str_app.button("Fuulduratti (Next) ➡️", key="e_next"):
                 str_app.session_state.e_index += 1
                 str_app.rerun()
         else:
@@ -990,13 +1062,34 @@ def audio_dictation_screen():
     <script>
     function playAudioWord() {{
         const utterance = new SpeechSynthesisUtterance("{target_word}");
-        utterance.lang = 'sw-KE';
-        utterance.rate = 0.7;
-        window.speechSynthesis.speak(utterance);
+        utterance.rate = 0.75;
+
+        function pickVoiceAndSpeak() {{
+            const voices = window.speechSynthesis.getVoices();
+            // Jalqaba sagalee "Afaan Oromoo" (om) barbaadi
+            let voice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('om'));
+            // Yoo argamuu baate, sagalee "Afaan Amaaraa" (am-ET) kan naannoo wal fakkaatu fayyadami
+            if (!voice) {{
+                voice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('am'));
+            }}
+            if (voice) {{
+                utterance.voice = voice;
+                utterance.lang = voice.lang;
+            }} else {{
+                utterance.lang = 'am-ET';
+            }}
+            window.speechSynthesis.speak(utterance);
+        }}
+
+        if (window.speechSynthesis.getVoices().length === 0) {{
+            window.speechSynthesis.onvoiceschanged = pickVoiceAndSpeak;
+        }} else {{
+            pickVoiceAndSpeak();
+        }}
     }}
     </script>
     <button onclick="playAudioWord()" style="background-color: #00796B; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
-        🔊 Sagalee Suuta Dhaggeeffadhu (Play Audio)
+        🔊 Sagalee Suutaan Dhaggeeffadhu (Play Audio)
     </button>
     """
     str_app.components.v1.html(speech_js, height=70)
@@ -1021,7 +1114,7 @@ def audio_dictation_screen():
 
             if is_correct:
                 str_app.session_state.aud_score += 10
-                str_app.success("🎉 Sirriidha! Baayyee bareedduu barreessite.")
+                str_app.success("🎉 Sirriidha! Baayyee bareedinaan barreessite.")
                 str_app.session_state.attempts[attempt_key] = 3
             else:
                 rem = 3 - str_app.session_state.attempts[attempt_key]
@@ -1040,7 +1133,7 @@ def audio_dictation_screen():
             str_app.rerun()
     with b2:
         if idx < len(dict_list) - 1:
-            if str_app.button("Fuuldharatti ➡️", key="aud_next"):
+            if str_app.button("Fuulduratti ➡️", key="aud_next"):
                 str_app.session_state.aud_index += 1
                 str_app.rerun()
         else:
@@ -1067,7 +1160,7 @@ def teacher_dashboard_screen():
     str_app.subheader("🎓 Gabaasa Barsiisaa & Kuusaa Gaaffii (Teacher Dashboard)")
     
     tab1, tab2, tab3 = str_app.tabs([
-        "📊 Qabxii & Gabaasa Qinda'aa (Reports)", 
+        "📊 Qabxii & Gabaasa Qindaa'aa (Reports)", 
         "🔒 Kuusaa Gaaffii Haquu & Ilaaluu (Manage Banks)", 
         "➕ Gaaffii Haaraa Dabaluu (Add Question)"
     ])
@@ -1086,11 +1179,11 @@ def teacher_dashboard_screen():
             subjects_map = {
                 "afaanOromoo": "📖 Afaan Oromoo",
                 "math": "🔢 Herrega (Mathematics)",
-                "english": "🔤 Ingliffaa (English)"
+                "english": "🔤 Ingiliffaa (English)"
             }
 
             table_data = []
-            csv_data = "Maqaa Barataa,Kutaa,Korniyaa,Lakk Daree,Afaan Oromoo,Herrega,Ingliffaa,Qormaata Sagalee,Waliigala,Parsantii (%)\n"
+            csv_data = "Maqaa Barataa,Kutaa,Korniyaa,Lakk Daree,Afaan Oromoo,Herrega,Ingiliffaa,Qormaata Sagalee,Waliigala,Parsantii (%)\n"
 
             for name, data in students.items():
                 ao = data["afaanOromoo"]
@@ -1107,7 +1200,7 @@ def teacher_dashboard_screen():
                     "Lakk. Daree": data["section"],
                     "Afaan Oromoo": f"{ao}/30",
                     "Herrega": f"{math}/30",
-                    "Ingliffaa": f"{eng}/30",
+                    "Ingiliffaa": f"{eng}/30",
                     "Q. Sagalee": f"{aud} pts",
                     "Waliigala": f"{total}/90",
                     "Parsantii (%)": f"{percentage:.1f}%",
@@ -1139,7 +1232,7 @@ def teacher_dashboard_screen():
                         str_app.rerun()
 
             str_app.markdown("---")
-            str_app.markdown("### 📌 Gabaasa Qinda'aa fi Yaada Madaallii (Gosa Barnootaan)")
+            str_app.markdown("### 📌 Gabaasa Qindaa'aa fi Yaada Madaallii (Gosa Barnootaan)")
 
             for subj_key, subj_title in subjects_map.items():
                 str_app.markdown(f"#### ❖ {subj_title}")
@@ -1192,7 +1285,7 @@ def teacher_dashboard_screen():
 
         bank_type_view = str_app.radio(
             "Gosa Kuusaa Filadhu:",
-            ["📝 Gaaffilee MCQ (Afaan Oromoo / Herrega / Ingliffaa)", "🔊 Jechoota Qormaata Sagalee (Audio Dictation)"],
+            ["📝 Gaaffilee MCQ (Afaan Oromoo / Herrega / Ingiliffaa)", "🔊 Jechoota Qormaata Sagalee (Audio Dictation)"],
             key="manage_bank_type",
             horizontal=True,
         )
@@ -1223,7 +1316,7 @@ def teacher_dashboard_screen():
 
             str_app.markdown(f"#### 🔊 Jechoota Qormaata Sagalee - {selected_audio_grade}")
             if not audio_list:
-                str_app.info("Ammaaf jechi kutaa kanaaf hin galmoofne.")
+                str_app.info("Ammaaf jechi kutaa kanaaf hin galmaa'ne.")
             for i, a_item in enumerate(audio_list[:], 0):
                 col_a1, col_a2 = str_app.columns([4, 1])
                 with col_a1:
@@ -1247,7 +1340,7 @@ def teacher_dashboard_screen():
 
         add_bank_type = str_app.radio(
             "Maal Dabaluu Barbaadda?",
-            ["📝 Gaaffii MCQ Haaraa (Afaan Oromoo / Herrega / Ingliffaa)", "🔊 Jecha Qormaata Sagalee Haaraa (Audio Dictation)"],
+            ["📝 Gaaffii MCQ Haaraa (Afaan Oromoo / Herrega / Ingiliffaa)", "🔊 Jecha Qormaata Sagalee Haaraa (Audio Dictation)"],
             key="add_bank_type",
             horizontal=True,
         )
@@ -1294,7 +1387,7 @@ def teacher_dashboard_screen():
                     if new_q_image is not None:
                         new_question_dict["image"] = new_q_image
                     str_app.session_state.SECRET_MASTER_QUESTION_BANKS[add_grade][add_subject].append(new_question_dict)
-                    str_app.success("🎉 Gaaffiin haaraan kuusaa keessatti milkaa'inaan dabalamateera!")
+                    str_app.success("🎉 Gaaffiin haaraan kuusaa keessatti milkaa'inaan dabalameera!")
                 else:
                     str_app.warning("Maaloo gaafficha guututti barreessi!")
 
@@ -1339,7 +1432,7 @@ def teacher_dashboard_screen():
                     if new_audio_bytes is not None:
                         new_audio_dict["audio_bytes"] = new_audio_bytes
                     str_app.session_state.SECRET_AUDIO_DICTATION_BANKS[add_audio_grade].append(new_audio_dict)
-                    str_app.success("🎉 Jechi Qormaata Sagalee haaraan milkaa'inaan dabalamateera!")
+                    str_app.success("🎉 Jechi Qormaata Sagalee haaraan milkaa'inaan dabalameera!")
                 else:
                     str_app.warning("Maaloo Jecha fi Qajeelfama guutuu galchi!")
 
