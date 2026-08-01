@@ -1,7 +1,26 @@
 import streamlit as str_app
 import json
 import os
+import json
+import os
 
+STUDENTS_FILE = "global_students_data.json"
+
+def load_students_from_file():
+    if os.path.exists(STUDENTS_FILE):
+        try:
+            with open(STUDENTS_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def save_students_to_file(students_dict):
+    try:
+        with open(STUDENTS_FILE, "w", encoding="utf-8") as f:
+            json.dump(students_dict, f, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Error saving students: {e}")
 DATA_FILE = "students_data.json"
 
 def load_students():
